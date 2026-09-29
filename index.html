@@ -1,2186 +1,2388 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Randi Syahputra | RPL Student • Junior Web & Digital</title>
-  <meta name="description" content="Portfolio profesional Randi Syahputra — RPL Student | Junior Web & Digital. Web Development, WordPress, AI Assistant, Digital Tools.">
-  <meta name="author" content="Randi Syahputra">
-  <meta name="theme-color" content="#0B1F3A">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    /* =========================================================
-       RANDI SYAHPUTRA — PORTFOLIO
-       Single-file GitHub Pages portfolio
-       ========================================================= */
-
-    :root {
-      --navy: #0B1F3A;
-      --dark-blue: #102A43;
-      --accent: #1E40AF;
-      --accent-light: #EFF6FF;
-      --background: #F8FAFC;
-      --light-gray: #E2E8F0;
-      --white: #FFFFFF;
-      --text: #102A43;
-      --muted: #64748B;
-      --border: #DCE5EF;
-      --success: #0F766E;
-      --shadow-sm: 0 4px 18px rgba(11, 31, 58, .06);
-      --shadow-md: 0 14px 40px rgba(11, 31, 58, .09);
-      --shadow-lg: 0 24px 70px rgba(11, 31, 58, .13);
-      --radius-sm: 12px;
-      --radius-md: 18px;
-      --radius-lg: 26px;
-      --container: 1180px;
-      --nav-height: 78px;
-      --transition: 220ms ease;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 96px;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      color: var(--text);
-      background: var(--background);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    ::selection {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .container {
-      width: min(calc(100% - 40px), var(--container));
-      margin-inline: auto;
-    }
-
-    .section {
-      padding: 110px 0;
-      position: relative;
-    }
-
-    .section.alt {
-      background: var(--white);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--accent);
-      font-size: .76rem;
-      font-weight: 800;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 26px;
-      height: 2px;
-      border-radius: 99px;
-      background: var(--accent);
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin-bottom: 54px;
-    }
-
-    .section-heading h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      line-height: 1.1;
-      letter-spacing: -.045em;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 680px;
-      font-size: 1rem;
-    }
-
-    /* =========================================================
-       NAVBAR
-       ========================================================= */
-
-    .navbar {
-      position: fixed;
-      inset: 0 0 auto;
-      height: var(--nav-height);
-      z-index: 1000;
-      background: rgba(255,255,255,.88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid transparent;
-      transition: var(--transition);
-    }
-
-    .navbar.scrolled {
-      border-bottom-color: var(--border);
-      box-shadow: 0 5px 24px rgba(11,31,58,.06);
-    }
-
-    .nav-inner {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    /*
-      ==========================================================
-      LOGO SLOT
-      ==========================================================
-      Replace the .brand-mark contents with:
-      <img src="assets/logo-randi.png" alt="Randi Syahputra Logo">
-      ==========================================================
-    */
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      color: var(--white);
-      background: linear-gradient(145deg, var(--navy), var(--accent));
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: .92rem;
-      box-shadow: 0 8px 20px rgba(30,64,175,.18);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .brand-name {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: .92rem;
-      color: var(--navy);
-      letter-spacing: -.02em;
-    }
-
-    .brand-role {
-      color: var(--muted);
-      font-size: .67rem;
-      margin-top: 4px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding: 9px 12px;
-      color: #475569;
-      font-size: .83rem;
-      font-weight: 600;
-      border-radius: 10px;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--navy);
-      background: #F1F5F9;
-    }
-
-    .nav-links a.active::after {
-      content: "";
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      bottom: 3px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 99px;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-    }
-
-    .nav-cv {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 10px 14px;
-      color: var(--white);
-      background: var(--navy);
-      border-radius: 10px;
-      font-size: .8rem;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-
-    .nav-cv:hover {
-      background: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .menu-toggle {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border);
-      background: var(--white);
-      color: var(--navy);
-      border-radius: 11px;
-      cursor: pointer;
-      place-items: center;
-    }
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .hero {
-      min-height: 100vh;
-      padding: 145px 0 80px;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(circle at 80% 10%, rgba(30,64,175,.08), transparent 28%),
-        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.03fr .97fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .hero-copy {
-      max-width: 680px;
-    }
-
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 7px 11px;
-      border: 1px solid #CBD5E1;
-      border-radius: 999px;
-      background: rgba(255,255,255,.78);
-      color: var(--accent);
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .hero-label span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22C55E;
-      box-shadow: 0 0 0 5px rgba(34,197,94,.12);
-    }
-
-    .hero h1 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(3.1rem, 7vw, 6.15rem);
-      line-height: .95;
-      letter-spacing: -.065em;
-      color: var(--navy);
-      margin-bottom: 22px;
-    }
-
-    .hero h1 .hi {
-      display: block;
-      font-size: .3em;
-      line-height: 1;
-      letter-spacing: -.02em;
-      color: var(--muted);
-      font-weight: 600;
-      margin-bottom: 13px;
-    }
-
-    .hero h1 .name {
-      display: block;
-    }
-
-    .hero-subtitle {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--dark-blue);
-      font-weight: 700;
-      margin-bottom: 17px;
-    }
-
-    .hero-description {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 36px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      padding: 12px 18px;
-      border-radius: 11px;
-      font-size: .83rem;
-      font-weight: 750;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      color: var(--white);
-      background: var(--navy);
-      box-shadow: 0 10px 22px rgba(11,31,58,.14);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(30,64,175,.2);
-    }
-
-    .btn-secondary {
-      color: var(--navy);
-      background: var(--white);
-      border-color: var(--border);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--navy);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .hero-meta-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: .78rem;
-    }
-
-    .hero-meta-item i {
-      width: 16px;
-      color: var(--accent);
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      padding: 13px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background: rgba(255,255,255,.74);
-      box-shadow: var(--shadow-lg);
-      transform: rotate(1deg);
-    }
-
-    .hero-image-wrap::before {
-      content: "";
-      position: absolute;
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      background: rgba(30,64,175,.1);
-      top: -70px;
-      right: -65px;
-      z-index: -1;
-    }
-
-    .hero-image {
-      width: 100%;
-      aspect-ratio: 1 / .92;
-      object-fit: cover;
-      border-radius: 21px;
-      filter: saturate(.92);
-    }
-
-    .hero-image-credit {
-      position: absolute;
-      bottom: 23px;
-      right: 24px;
-      padding: 5px 8px;
-      border-radius: 7px;
-      background: rgba(11,31,58,.72);
-      color: rgba(255,255,255,.9);
-      font-size: .61rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-float {
-      position: absolute;
-      left: -32px;
-      bottom: 34px;
-      width: 205px;
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,.7);
-      border-radius: 16px;
-      background: rgba(255,255,255,.94);
-      box-shadow: var(--shadow-md);
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-float-label {
-      color: var(--muted);
-      font-size: .64rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 6px;
-    }
-
-    .hero-float strong {
-      display: block;
-      font-family: "Manrope", sans-serif;
-      color: var(--navy);
-      font-size: .94rem;
-    }
-
-    .hero-float small {
-      display: block;
-      color: var(--muted);
-      font-size: .68rem;
-      margin-top: 3px;
-    }
-
-    /* =========================================================
-       ABOUT
-       ========================================================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .84fr 1.16fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .about-image-card {
-      position: relative;
-      padding: 12px;
-      border-radius: var(--radius-lg);
-      background: var(--white);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-md);
-    }
-
-    .about-image-card img {
-      width: 100%;
-      aspect-ratio: .9 / 1;
-      object-fit: cover;
-      border-radius: 18px;
-    }
-
-    .support-label {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      padding: 7px 10px;
-      border-radius: 8px;
-      color: var(--white);
-      background: rgba(11,31,58,.78);
-      font-size: .64rem;
-      font-weight: 700;
-      backdrop-filter: blur(10px);
-    }
-
-    .about-content h3 {
-      font-family: "Manrope", sans-serif;
-      color: var(--navy);
-      font-size: 1.55rem;
-      letter-spacing: -.03em;
-      margin-bottom: 15px;
-    }
-
-    .about-content > p {
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 13px;
-    }
-
-    .info-box {
-      padding: 17px;
-      background: var(--background);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-    }
-
-    .info-box .label {
-      display: block;
-      color: var(--muted);
-      font-size: .68rem;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .info-box strong {
-      color: var(--navy);
-      font-size: .86rem;
-    }
-
-    .mindset {
-      margin-top: 14px;
-      padding: 19px;
-      border-radius: 15px;
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .mindset strong {
-      display: block;
-      font-family: "Manrope", sans-serif;
-      margin-bottom: 4px;
-    }
-
-    .mindset p {
-      color: #CBD5E1;
-      font-size: .82rem;
-    }
-
-    /* =========================================================
-       STRENGTHS
-       ========================================================= */
-
-    .strength-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .strength-card {
-      padding: 23px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: var(--white);
-      transition: var(--transition);
-    }
-
-    .strength-card:hover {
-      transform: translateY(-5px);
-      border-color: #B7C6DB;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .strength-number {
-      font-size: .7rem;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: .08em;
-      margin-bottom: 22px;
-    }
-
-    .strength-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      color: var(--accent);
-      background: var(--accent-light);
-      margin-bottom: 18px;
-    }
-
-    .strength-card h3 {
-      color: var(--navy);
-      font-family: "Manrope", sans-serif;
-      font-size: .98rem;
-      margin-bottom: 7px;
-    }
-
-    .strength-card p {
-      color: var(--muted);
-      font-size: .77rem;
-    }
-
-    /* =========================================================
-       EXPERIENCE
-       ========================================================= */
-
-    .experience-card {
-      position: relative;
-      padding: 38px;
-      border-radius: var(--radius-lg);
-      background: var(--navy);
-      color: var(--white);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-    }
-
-    .experience-card::after {
-      content: "";
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      background: rgba(30,64,175,.25);
-      right: -130px;
-      top: -160px;
-    }
-
-    .experience-top {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: flex-start;
-      margin-bottom: 31px;
-    }
-
-    .experience-company {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .company-mark {
-      width: 53px;
-      height: 53px;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.14);
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: .85rem;
-    }
-
-    .experience-company h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 1.35rem;
-    }
-
-    .experience-company p {
-      color: #AFC0D4;
-      font-size: .8rem;
-      margin-top: 2px;
-    }
-
-    .experience-date {
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 9px;
-      color: #D8E4F1;
-      font-size: .73rem;
-      white-space: nowrap;
-    }
-
-    .experience-body {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 50px;
-    }
-
-    .experience-location {
-      color: #AFC0D4;
-      font-size: .8rem;
-      margin-bottom: 18px;
-    }
-
-    .experience-location i {
-      vertical-align: -3px;
-      margin-right: 5px;
-      width: 15px;
-    }
-
-    .experience-body h4 {
-      font-family: "Manrope", sans-serif;
-      margin-bottom: 13px;
-      font-size: .85rem;
-      color: #FFFFFF;
-    }
-
-    .experience-list {
-      list-style: none;
-    }
-
-    .experience-list li {
-      position: relative;
-      padding-left: 19px;
-      margin-bottom: 10px;
-      color: #D5E0EB;
-      font-size: .82rem;
-    }
-
-    .experience-list li::before {
-      content: "";
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #7EA2FF;
-      left: 2px;
-      top: .68em;
-    }
-
-    .visit-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 22px;
-      color: #FFFFFF;
-      font-size: .78rem;
-      font-weight: 700;
-    }
-
-    .visit-link:hover {
-      color: #AFC7FF;
-    }
-
-    /* =========================================================
-       PROJECTS
-       ========================================================= */
-
-    .project-group {
-      margin-bottom: 85px;
-    }
-
-    .project-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .project-group-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 25px;
-      margin-bottom: 25px;
-    }
-
-    .project-group-head h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 1.45rem;
-      color: var(--navy);
-      letter-spacing: -.03em;
-    }
-
-    .project-group-head p {
-      color: var(--muted);
-      font-size: .78rem;
-      max-width: 560px;
-      text-align: right;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: var(--transition);
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: #B7C6DB;
-      box-shadow: var(--shadow-md);
-    }
-
-    .project-card.featured {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-    }
-
-    .project-media {
-      position: relative;
-      min-height: 235px;
-      background:
-        radial-gradient(circle at 25% 20%, rgba(126,162,255,.25), transparent 32%),
-        linear-gradient(145deg, var(--navy), var(--dark-blue));
-      overflow: hidden;
-    }
-
-    .project-card.featured .project-media {
-      min-height: 100%;
-    }
-
-    .project-media img {
-      width: 100%;
-      height: 100%;
-      min-height: 235px;
-      object-fit: cover;
-    }
-
-    .project-placeholder {
-      height: 100%;
-      min-height: 235px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-placeholder::before {
-      content: "";
-      position: absolute;
-      width: 190px;
-      height: 190px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%;
-    }
-
-    .project-placeholder::after {
-      content: "";
-      position: absolute;
-      width: 125px;
-      height: 125px;
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 50%;
-    }
-
-    .placeholder-content {
-      position: relative;
-      z-index: 1;
-      color: var(--white);
-    }
-
-    .placeholder-content i {
-      width: 30px;
-      height: 30px;
-      margin: 0 auto 10px;
-      color: #AFC7FF;
-    }
-
-    .placeholder-content strong {
-      display: block;
-      font-family: "Manrope", sans-serif;
-      font-size: .86rem;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-    }
-
-    .placeholder-content span {
-      display: block;
-      margin-top: 5px;
-      color: #AFC0D4;
-      font-size: .67rem;
-    }
-
-    .project-status {
-      position: absolute;
-      left: 16px;
-      top: 16px;
-      z-index: 3;
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 9px;
-      border-radius: 7px;
-      background: rgba(11,31,58,.83);
-      color: var(--white);
-      font-size: .62rem;
-      font-weight: 700;
-      backdrop-filter: blur(8px);
-    }
-
-    .project-content {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .project-category {
-      color: var(--accent);
-      font-size: .66rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 9px;
-    }
-
-    .project-title {
-      font-family: "Manrope", sans-serif;
-      color: var(--navy);
-      font-size: 1.18rem;
-      line-height: 1.2;
-      letter-spacing: -.025em;
-      margin-bottom: 10px;
-    }
-
-    .project-description {
-      color: var(--muted);
-      font-size: .8rem;
-      margin-bottom: 20px;
-    }
-
-    .contribution {
-      padding: 15px;
-      margin-bottom: 19px;
-      border-radius: 12px;
-      background: var(--background);
-      border: 1px solid var(--border);
-    }
-
-    .contribution strong {
-      display: block;
-      color: var(--navy);
-      font-size: .7rem;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      margin-bottom: 8px;
-    }
-
-    .contribution ul {
-      list-style: none;
-    }
-
-    .contribution li {
-      position: relative;
-      padding-left: 14px;
-      color: var(--muted);
-      font-size: .73rem;
-      margin-bottom: 5px;
-    }
-
-    .contribution li:last-child {
-      margin-bottom: 0;
-    }
-
-    .contribution li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: auto;
-      padding-top: 2px;
-    }
-
-    .tag {
-      padding: 5px 8px;
-      border-radius: 7px;
-      background: #F1F5F9;
-      color: #475569;
-      border: 1px solid #E2E8F0;
-      font-size: .63rem;
-      font-weight: 650;
-    }
-
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 9px 11px;
-      border-radius: 9px;
-      border: 1px solid var(--border);
-      color: var(--navy);
-      font-size: .69rem;
-      font-weight: 750;
-      transition: var(--transition);
-    }
-
-    .project-link:hover {
-      color: var(--white);
-      border-color: var(--navy);
-      background: var(--navy);
-    }
-
-    .project-link.primary {
-      color: var(--white);
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .project-link.primary:hover {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-
-    .page-links {
-      display: grid;
-      gap: 7px;
-      margin-bottom: 20px;
-    }
-
-    .page-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 10px 12px;
-      border-radius: 9px;
-      border: 1px solid var(--border);
-      color: var(--navy);
-      font-size: .72rem;
-      background: var(--background);
-      transition: var(--transition);
-    }
-
-    .page-link:hover {
-      border-color: #AFC0D4;
-      background: var(--white);
-    }
-
-    .page-link span:first-child {
-      font-weight: 700;
-    }
-
-    .page-link small {
-      color: var(--muted);
-      font-size: .62rem;
-    }
-
-    .personal-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .personal-grid .project-card {
-      min-height: 100%;
-    }
-
-    /* =========================================================
-       SKILLS
-       ========================================================= */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-    .skill-box {
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      background: var(--white);
-    }
-
-    .skill-box h3 {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--navy);
-      font-family: "Manrope", sans-serif;
-      font-size: .95rem;
-      margin-bottom: 16px;
-    }
-
-    .skill-box h3 i {
-      width: 18px;
-      color: var(--accent);
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .skill-pill {
-      padding: 7px 10px;
-      border-radius: 8px;
-      background: var(--background);
-      border: 1px solid var(--border);
-      color: #475569;
-      font-size: .7rem;
-      font-weight: 600;
-    }
-
-    /* =========================================================
-       ORGANIZATION / ADDITIONAL
-       ========================================================= */
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .content-card {
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--white);
-    }
-
-    .content-card h3 {
-      font-family: "Manrope", sans-serif;
-      color: var(--navy);
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .content-card .meta {
-      color: var(--accent);
-      font-size: .7rem;
-      font-weight: 750;
-      margin-bottom: 19px;
-    }
-
-    .clean-list {
-      list-style: none;
-    }
-
-    .clean-list li {
-      position: relative;
-      padding-left: 19px;
-      color: var(--muted);
-      font-size: .78rem;
-      margin-bottom: 9px;
-    }
-
-    .clean-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .72em;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .mini-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 17px;
-    }
-
-    .mini-tag {
-      color: var(--dark-blue);
-      background: #EEF4FF;
-      padding: 6px 8px;
-      border-radius: 7px;
-      font-size: .63rem;
-      font-weight: 700;
-    }
-
-    /* =========================================================
-       ACHIEVEMENTS
-       ========================================================= */
-
-    .achievement-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 13px;
-    }
-
-    .achievement {
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: var(--white);
-      transition: var(--transition);
-    }
-
-    .achievement:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .achievement-icon {
-      width: 40px;
-      height: 40px;
-      flex: 0 0 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 11px;
-      background: #EEF4FF;
-      color: var(--accent);
-    }
-
-    .achievement strong {
-      display: block;
-      color: var(--navy);
-      font-family: "Manrope", sans-serif;
-      font-size: .82rem;
-      line-height: 1.4;
-    }
-
-    .achievement span {
-      display: block;
-      color: var(--muted);
-      font-size: .7rem;
-      margin-top: 4px;
-    }
-
-    /* =========================================================
-       CONTACT
-       ========================================================= */
-
-    .contact-section {
-      background:
-        radial-gradient(circle at 10% 20%, rgba(30,64,175,.18), transparent 30%),
-        var(--navy);
-      color: var(--white);
-      overflow: hidden;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr .82fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .contact-section .eyebrow {
-      color: #9DB7FF;
-    }
-
-    .contact-section .eyebrow::before {
-      background: #9DB7FF;
-    }
-
-    .contact-section h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(2.2rem, 5vw, 4.4rem);
-      line-height: 1;
-      letter-spacing: -.055em;
-      margin-bottom: 18px;
-    }
-
-    .contact-section .lead {
-      max-width: 590px;
-      color: #B8C8DA;
-      font-size: .95rem;
-      margin-bottom: 28px;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .contact-actions .btn-primary {
-      background: var(--white);
-      color: var(--navy);
-    }
-
-    .contact-actions .btn-primary:hover {
-      background: #EAF0F7;
-    }
-
-    .contact-actions .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,.22);
-    }
-
-    .contact-actions .btn-secondary:hover {
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.4);
-    }
-
-    .contact-info {
-      padding: 25px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.055);
-    }
-
-    .contact-info-item {
-      display: flex;
-      gap: 13px;
-      align-items: flex-start;
-      padding: 13px 0;
-      border-bottom: 1px solid rgba(255,255,255,.09);
-    }
-
-    .contact-info-item:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .contact-info-item:first-child {
-      padding-top: 0;
-    }
-
-    .contact-icon {
-      width: 36px;
-      height: 36px;
-      flex: 0 0 36px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      color: #AFC7FF;
-      background: rgba(255,255,255,.07);
-    }
-
-    .contact-info-item small {
-      display: block;
-      color: #91A7BF;
-      font-size: .62rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 3px;
-    }
-
-    .contact-info-item a,
-    .contact-info-item strong {
-      color: var(--white);
-      font-size: .78rem;
-      font-weight: 650;
-      word-break: break-word;
-    }
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-      padding: 28px 0;
-      background: #08172B;
-      color: #91A7BF;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-brand .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      font-size: .68rem;
-    }
-
-    .footer-brand span {
-      font-size: .7rem;
-    }
-
-    .footer-copy {
-      font-size: .68rem;
-      text-align: right;
-    }
-
-    /* =========================================================
-       REVEAL ANIMATION
-       ========================================================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition:
-        opacity .65s ease,
-        transform .65s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 1050px) {
-      .hero-grid {
-        gap: 45px;
-      }
-
-      .about-grid {
-        gap: 45px;
-      }
-
-      .strength-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .experience-body {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .project-card.featured {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card.featured .project-media {
-        min-height: 260px;
-      }
-
-      .contact-grid {
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 850px) {
-      :root {
-        --nav-height: 70px;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: var(--nav-height);
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-        padding: 16px 20px 22px;
-        background: rgba(255,255,255,.97);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 18px 35px rgba(11,31,58,.08);
-        transform: translateY(-130%);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform .25s ease, opacity .25s ease;
-      }
-
-      .nav-links.open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .nav-links a {
-        padding: 12px;
-      }
-
-      .nav-links a.active::after {
-        left: 12px;
-        right: auto;
-        width: 25px;
-        bottom: 5px;
-      }
-
-      .nav-cv {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: grid;
-      }
-
-      .hero {
-        padding-top: 120px;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        max-width: 760px;
-      }
-
-      .hero-visual {
-        max-width: 690px;
-      }
-
-      .about-image-card {
-        max-width: 520px;
-      }
-
-      .contact-info {
-        max-width: 600px;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .container {
-        width: min(calc(100% - 28px), var(--container));
-      }
-
-      .section {
-        padding: 78px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 36px;
-      }
-
-      .hero {
-        padding: 112px 0 65px;
-        min-height: auto;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.7rem, 15vw, 4.2rem);
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .hero-meta {
-        flex-direction: column;
-        gap: 9px;
-      }
-
-      .hero-float {
-        left: 12px;
-        bottom: 18px;
-        width: 180px;
-      }
-
-      .info-grid,
-      .strength-grid,
-      .skills-grid,
-      .two-column,
-      .achievement-grid,
-      .project-grid,
-      .personal-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card.featured {
-        grid-column: auto;
-      }
-
-      .project-group {
-        margin-bottom: 58px;
-      }
-
-      .project-group-head {
-        display: block;
-      }
-
-      .project-group-head p {
-        text-align: left;
-        margin-top: 8px;
-      }
-
-      .experience-card {
-        padding: 24px;
-      }
-
-      .experience-top {
-        display: block;
-      }
-
-      .experience-date {
-        display: inline-flex;
-        margin-top: 15px;
-      }
-
-      .project-content {
-        padding: 22px;
-      }
-
-      .contact-section h2 {
-        font-size: clamp(2.4rem, 13vw, 4rem);
-      }
-
-      .contact-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .footer-copy {
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 390px) {
-      .brand-role {
-        display: none;
-      }
-
-      .brand-name {
-        font-size: .82rem;
-      }
-
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-      }
-
-      .hero h1 {
-        font-size: 2.65rem;
-      }
-
-      .hero-float {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        margin-top: 12px;
-        width: 100%;
-      }
-
-      .hero-image-wrap {
-        transform: none;
-      }
-
-      .page-link {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 3px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Randi Syahputra | RPL Student, Junior Web & Digital</title>
+
+<meta name="description" content="Portofolio Randi Syahputra, siswa RPL SMK Nurjamilah. Web development, WordPress, AI Assistant, digital tools, dan project mandiri.">
+<meta name="theme-color" content="#0B1F3A">
+
+<meta property="og:title" content="Randi Syahputra | RPL Student, Junior Web & Digital">
+<meta property="og:description" content="Web Development • WordPress • AI Assistant • Digital Tools">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arlotarlotnasional-cmd.github.io/Portofolio-Randi.html/">
+
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<rect width='100' height='100' rx='22' fill='%230B1F3A'/>
+<text x='50' y='69' font-size='58' font-family='sans-serif'
+font-weight='700' text-anchor='middle' fill='%2393c5fd'>RS</text>
+</svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0B1F3A;
+  --navy2:#102A43;
+  --navy3:#17345A;
+  --blue:#1E40AF;
+  --blue2:#2563EB;
+  --sky:#93C5FD;
+  --bg:#F8FAFC;
+  --soft:#EEF4FC;
+  --line:#DCE5F0;
+  --card:#FFFFFF;
+  --ink:#0F1C33;
+  --muted:#5A6A82;
+  --success:#047857;
+  --warning:#B45309;
+  --w:min(1160px,100% - 40px);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:78px;
+}
+
+body{
+  font:16px/1.65 "Plus Jakarta Sans",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+img{
+  max-width:100%;
+}
+
+:focus-visible{
+  outline:3px solid var(--sky);
+  outline-offset:3px;
+  border-radius:7px;
+}
+
+.wrap{
+  width:var(--w);
+  margin:auto;
+}
+
+section{
+  padding:92px 0;
+}
+
+h1,
+h2,
+h3{
+  color:var(--ink);
+}
+
+h2{
+  font-size:clamp(30px,4vw,44px);
+  line-height:1.1;
+  letter-spacing:-.04em;
+}
+
+.sub{
+  color:var(--muted);
+  max-width:720px;
+  margin-top:12px;
+}
+
+.head{
+  margin-bottom:42px;
+}
+
+.section-label{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+
+.section-label::before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:var(--blue);
+  display:block;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:44px;
+  padding:11px 18px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--ink);
+  font:700 13px/1.2 "Plus Jakarta Sans",system-ui,sans-serif;
+  cursor:pointer;
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  border-color:#B8CBE5;
+  box-shadow:0 7px 18px rgba(15,28,51,.08);
+}
+
+.btn.primary{
+  background:var(--blue);
+  border-color:var(--blue);
+  color:#fff;
+}
+
+.btn.primary:hover{
+  background:#193790;
+  border-color:#193790;
+}
+
+.btn.dark{
+  background:transparent;
+  border-color:rgba(255,255,255,.32);
+  color:#fff;
+}
+
+.btn.dark:hover{
+  border-color:#fff;
+  background:rgba(255,255,255,.07);
+}
+
+.btn.small{
+  min-height:38px;
+  padding:9px 13px;
+  font-size:12px;
+}
+
+.btn.disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+.acts{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(11,31,58,.96);
+  backdrop-filter:blur(14px);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-right:auto;
+}
+
+.brand-mark{
+  width:38px;
+  height:38px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#1E40AF,#2563EB);
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:-.04em;
+  border:1px solid rgba(255,255,255,.12);
+  overflow:hidden;
+  flex:none;
+}
+
+.brand-mark img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+.brand-name{
+  font-weight:800;
+  letter-spacing:-.03em;
+  font-size:16px;
+}
+
+.brand-name span{
+  color:var(--sky);
+}
+
+.nav-link{
+  font-size:13px;
+  font-weight:600;
+  color:#C6D3EA;
+  transition:color .2s ease;
+}
+
+.nav-link:hover{
+  color:#fff;
+}
+
+#burger{
+  display:none;
+  width:42px;
+  height:42px;
+  border-radius:9px;
+  border:1px solid rgba(255,255,255,.25);
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  font-size:19px;
+}
+
+#mobileMenu{
+  display:none;
+  flex-direction:column;
+  background:var(--navy);
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:8px 20px 18px;
+}
+
+#mobileMenu.open{
+  display:flex;
+}
+
+#mobileMenu a{
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  color:#C6D3EA;
+  font-weight:600;
+  font-size:14px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      800px 400px at 88% 0,
+      rgba(37,99,235,.5),
+      transparent 62%
+    ),
+    linear-gradient(135deg,var(--navy),#0D2949);
+  color:#fff;
+  padding:88px 0 82px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid rgba(147,197,253,.08);
+  border-radius:50%;
+  right:-220px;
+  bottom:-270px;
+}
+
+.hero-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero-eyebrow{
+  color:var(--sky);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  color:#fff;
+  font-size:clamp(42px,6vw,72px);
+  line-height:1.02;
+  letter-spacing:-.055em;
+  margin:9px 0 13px;
+}
+
+.hero-role{
+  color:#E1EBFA;
+  font-size:20px;
+  font-weight:700;
+}
+
+.hero-tagline{
+  max-width:620px;
+  color:#C7D5E9;
+  font-size:17px;
+  margin-top:17px;
+}
+
+.hero-sub{
+  color:#91A7C8;
+  font-size:13px;
+  margin-top:8px;
+}
+
+.hero .acts{
+  margin-top:29px;
+}
+
+.hero-visual{
+  position:relative;
+  aspect-ratio:4/3;
+  border-radius:25px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);
+  background:#102A43;
+  box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.hero-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.visual-caption{
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  background:rgba(11,31,58,.82);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.12);
+  padding:6px 11px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+}
+
+.hero-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(11,31,58,.05),
+    rgba(11,31,58,.35)
+  );
+  pointer-events:none;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:55px;
+  align-items:start;
+}
+
+.about-copy{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.strength-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  margin-top:28px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:22px;
+  box-shadow:0 2px 4px rgba(15,28,51,.035);
+}
+
+.strength-card h3{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.strength-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.about-photo{
+  position:relative;
+  aspect-ratio:4/3;
+  border-radius:19px;
+  overflow:hidden;
+  margin-bottom:16px;
+  border:1px solid var(--line);
+}
+
+.about-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.about-photo .visual-caption{
+  background:rgba(255,255,255,.92);
+  color:var(--navy);
+}
+
+.facts{
+  list-style:none;
+}
+
+.facts li{
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+  font-size:14px;
+}
+
+.facts li:last-child{
+  border-bottom:0;
+}
+
+.facts b{
+  display:block;
+  color:var(--blue);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  margin-bottom:2px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+#skills{
+  background:#fff;
+  border-block:1px solid var(--line);
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.skill-card h3{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  font-size:12px;
+  margin-bottom:13px;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.chips span{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#EEF4FC;
+  border:1px solid #DCE8F7;
+  color:var(--blue);
+  font-size:11.5px;
+  font-weight:700;
+}
+
+/* =========================
+   PROJECT SECTION
+========================= */
+
+.project-section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.project-group{
+  margin-top:50px;
+}
+
+.project-group:first-of-type{
+  margin-top:0;
+}
+
+.project-group-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.project-group-title h3{
+  font-size:20px;
+  letter-spacing:-.02em;
+}
+
+.project-group-title span{
+  padding:5px 10px;
+  border-radius:999px;
+  background:#E8EEF8;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+/*
+  IMPORTANT:
+  Card TIDAK dibuat sama tinggi.
+  Setiap card mengikuti jumlah kontennya sendiri.
+*/
+
+.project-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 2px 5px rgba(15,28,51,.035);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-4px);
+  border-color:#C5D5EA;
+  box-shadow:0 18px 40px rgba(15,28,51,.1);
+}
+
+.project-visual{
+  position:relative;
+  height:235px;
+  overflow:hidden;
+  background:var(--navy);
+}
+
+.project-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+
+.project-card:hover .project-visual img{
+  transform:scale(1.035);
+}
+
+.project-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(11,31,58,.04),
+    rgba(11,31,58,.45)
+  );
+  pointer-events:none;
+}
+
+.project-badge{
+  position:absolute;
+  top:13px;
+  left:13px;
+  z-index:2;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(11,31,58,.86);
+  border:1px solid rgba(255,255,255,.13);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+}
+
+.project-photo-note{
+  position:absolute;
+  left:13px;
+  bottom:13px;
+  z-index:2;
+  color:#fff;
+  background:rgba(11,31,58,.78);
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+}
+
+.project-body{
+  padding:24px;
+}
+
+.project-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.status{
+  display:inline-flex;
+  padding:4px 9px;
+  border-radius:999px;
+  background:#E0E7FF;
+  color:#3730A3;
+  font-size:10.5px;
+  font-weight:800;
+}
+
+.status.personal{
+  background:#D1FAE5;
+  color:#065F46;
+}
+
+.status.draft{
+  background:#FEF3C7;
+  color:#92400E;
+}
+
+.project-body h3{
+  font-size:21px;
+  line-height:1.23;
+  letter-spacing:-.025em;
+  margin-bottom:9px;
+}
+
+.project-desc{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+
+.project-block{
+  margin-top:17px;
+}
+
+.project-block h4{
+  color:var(--blue);
+  font-size:11px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+
+.project-block ul{
+  padding-left:18px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.project-block li{
+  margin:3px 0;
+}
+
+.project-note{
+  margin-top:15px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#F1F5F9;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.project-tech{
+  margin-top:18px;
+}
+
+.project-actions{
+  margin-top:18px;
+}
+
+.project-actions:empty{
+  display:none;
+}
+
+.project-actions .btn{
+  margin-right:4px;
+}
+
+.supporting-note{
+  margin-top:10px;
+  color:#718096;
+  font-size:11px;
+}
+
+/* =========================
+   DIGITAL WORK
+========================= */
+
+.digital-work{
+  margin-top:25px;
+}
+
+.digital-work h3{
+  font-size:17px;
+  margin-bottom:12px;
+}
+
+.digital-work p{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:13px;
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+#experience{
+  background:#fff;
+  border-block:1px solid var(--line);
+}
+
+.experience-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.experience-card{
+  position:relative;
+}
+
+.experience-card.full{
+  grid-column:1/-1;
+}
+
+.experience-top{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  margin-bottom:7px;
+}
+
+.experience-date{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+}
+
+.experience-card h3{
+  font-size:19px;
+  letter-spacing:-.02em;
+}
+
+.experience-org{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:2px;
+}
+
+.experience-card ul{
+  padding-left:18px;
+  margin-top:13px;
+  color:var(--muted);
+  font-size:13.5px;
+}
+
+.experience-card li{
+  margin:4px 0;
+}
+
+.subheading{
+  color:var(--blue);
+  font-size:13px;
+  font-weight:800;
+  margin:44px 0 15px;
+}
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
+
+.achievement-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.achievement-card{
+  overflow:hidden;
+  padding:0;
+}
+
+.certificate-area{
+  position:relative;
+  height:230px;
+  overflow:hidden;
+  background:#E9EEF5;
+  cursor:pointer;
+}
+
+.certificate-area img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .35s ease;
+}
+
+.achievement-card:hover .certificate-area img{
+  transform:scale(1.025);
+}
+
+.certificate-area::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(11,31,58,.42)
+  );
+  pointer-events:none;
+}
+
+.certificate-label{
+  position:absolute;
+  left:14px;
+  bottom:13px;
+  z-index:2;
+  color:#fff;
+  background:rgba(11,31,58,.84);
+  border:1px solid rgba(255,255,255,.12);
+  padding:6px 11px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+}
+
+.achievement-content{
+  padding:20px 21px 22px;
+}
+
+.achievement-kicker{
+  color:var(--blue);
+  text-transform:uppercase;
+  font-size:10.5px;
+  font-weight:800;
+  letter-spacing:.08em;
+  margin-bottom:5px;
+}
+
+.achievement-content h3{
+  font-size:17px;
+  line-height:1.35;
+}
+
+.achievement-content p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:6px;
+}
+
+.replace-note{
+  margin-top:10px;
+  color:#8A6A2D;
+  background:#FFF8E7;
+  border:1px solid #F4E4B7;
+  border-radius:8px;
+  padding:7px 9px;
+  font-size:10.5px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact{
+  background:
+    radial-gradient(
+      650px 300px at 80% 0,
+      rgba(37,99,235,.4),
+      transparent 65%
+    ),
+    var(--navy);
+  color:#fff;
+  text-align:center;
+}
+
+#contact h2{
+  color:#fff;
+}
+
+#contact .sub{
+  color:#C6D3EA;
+  margin:12px auto 0;
+}
+
+.contact-actions{
+  justify-content:center;
+  margin-top:28px;
+}
+
+.contact-info{
+  margin-top:25px;
+  color:#9FB6DA;
+  font-size:14px;
+  line-height:2;
+}
+
+.contact-info a{
+  color:#DCE9FB;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#071630;
+  color:#8EA6CC;
+  padding:27px 0;
+  font-size:12.5px;
+}
+
+.footer-wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.footer-mark{
+  width:30px;
+  height:30px;
+  border-radius:8px;
+  background:#102A43;
+  color:var(--sky);
+  display:grid;
+  place-items:center;
+  font-size:10px;
+  font-weight:800;
+}
+
+.footer-nav{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.footer-nav a:hover{
+  color:#fff;
+}
+
+/* =========================
+   TO TOP
+========================= */
+
+#toTop{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:70;
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--navy);
+  font-size:18px;
+  cursor:pointer;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:.2s ease;
+  box-shadow:0 8px 25px rgba(15,28,51,.12);
+}
+
+#toTop.show{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  background:rgba(5,15,30,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+}
+
+.lightbox.open{
+  display:flex;
+}
+
+.lightbox-inner{
+  max-width:min(1000px,95vw);
+  max-height:90vh;
+  position:relative;
+}
+
+.lightbox img{
+  display:block;
+  max-width:100%;
+  max-height:82vh;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 20px 70px rgba(0,0,0,.4);
+}
+
+.lightbox-close{
+  position:absolute;
+  right:-8px;
+  top:-48px;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(11,31,58,.9);
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.js .reveal{
+  opacity:0;
+  transform:translateY(16px);
+  transition:
+    opacity .65s ease,
+    transform .65s ease;
+}
+
+.js .reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+  .js .reveal{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:980px){
+
+  .nav-link{
+    display:none;
+  }
+
+  #burger{
+    display:block;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .hero-visual{
+    max-width:720px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .project-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .experience-grid{
+    grid-template-columns:1fr;
+  }
+
+  .experience-card.full{
+    grid-column:auto;
+  }
+}
+
+@media(max-width:720px){
+
+  section{
+    padding:68px 0;
+  }
+
+  .wrap{
+    width:min(100% - 28px,1160px);
+  }
+
+  .hero{
+    padding:65px 0 58px;
+  }
+
+  .hero h1{
+    font-size:clamp(40px,13vw,58px);
+  }
+
+  .hero-role{
+    font-size:17px;
+  }
+
+  .hero-tagline{
+    font-size:15px;
+  }
+
+  .strength-grid,
+  .skills-grid,
+  .project-grid,
+  .achievement-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-visual{
+    height:220px;
+  }
+
+  .project-group{
+    margin-top:40px;
+  }
+
+  .project-group-title{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .achievement-card{
+    max-width:none;
+  }
+
+  .footer-wrap{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+
+@media(max-width:480px){
+
+  .brand-name{
+    font-size:14px;
+  }
+
+  .hero .btn{
+    width:100%;
+  }
+
+  .hero-visual{
+    aspect-ratio:1/1;
+  }
+
+  .project-body{
+    padding:20px;
+  }
+
+  .project-body h3{
+    font-size:19px;
+  }
+
+  .project-visual{
+    height:195px;
+  }
+
+  .certificate-area{
+    height:210px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =========================================================
-       NAVBAR
-       ========================================================= -->
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
-  <header class="navbar" id="navbar">
-    <div class="container nav-inner">
+<header>
+  <div class="wrap nav">
 
-      <a href="#home" class="brand" aria-label="Randi Syahputra — Home">
-
+    <a class="brand" href="#home" aria-label="Randi Syahputra">
+      <span class="brand-mark">
         <!-- REPLACE WITH RANDI LOGO -->
-        <div class="brand-mark" aria-hidden="true">RS</div>
-
-        <!--
-        Jika sudah punya logo:
         <img src="assets/logo-randi.png"
              alt="Randi Syahputra Logo"
-             style="width:42px;height:42px;border-radius:13px;">
-        -->
+             onerror="this.style.display='none'">
+        <span>RS</span>
+      </span>
 
-        <div class="brand-text">
-          <span class="brand-name">Randi Syahputra</span>
-          <span class="brand-role">RPL Student • Junior Web & Digital</span>
-        </div>
-      </a>
+      <span class="brand-name">
+        Randi<span>.</span>
+      </span>
+    </a>
 
-      <nav aria-label="Main navigation">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#achievements" class="nav-link">Achievements</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+    <a class="nav-link" href="#home">Home</a>
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#skills">Skills</a>
+    <a class="nav-link" href="#projects">Projects</a>
+    <a class="nav-link" href="#experience">Experience</a>
+    <a class="nav-link" href="#achievements">Achievements</a>
 
-      <div class="nav-actions">
+    <a class="btn primary small" href="#contact">Contact</a>
+
+    <button
+      id="burger"
+      aria-label="Buka menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu">
+      ☰
+    </button>
+
+  </div>
+
+  <nav id="mobileMenu" aria-label="Mobile Navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+<main>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+  <div class="wrap hero-grid">
+
+    <div class="reveal">
+
+      <div class="hero-eyebrow">
+        RPL Student • Junior Web & Digital
+      </div>
+
+      <h1>
+        RANDI<br>
+        SYAHPUTRA
+      </h1>
+
+      <div class="hero-role">
+        Web Development • WordPress • AI Assistant • Digital Tools
+      </div>
+
+      <p class="hero-tagline">
+        Building digital experiences through web development,
+        WordPress, AI assistants, and creative technology.
+      </p>
+
+      <p class="hero-sub">
+        Siswa kelas XII Rekayasa Perangkat Lunak (RPL)
+        dengan pengalaman PKL di bidang IT & Web Development.
+      </p>
+
+      <div class="acts">
+
+        <a class="btn primary" href="#projects">
+          View My Projects →
+        </a>
+
+        <a class="btn dark" href="#contact">
+          Contact Me
+        </a>
+
         <!-- REPLACE WITH CV PDF URL -->
-        <a href="#contact"
-           class="nav-cv"
-           aria-label="Download CV placeholder">
-          <i data-lucide="download"></i>
+        <a
+          class="btn dark"
+          href="#"
+          onclick="return false;"
+          title="Ganti href dengan URL CV PDF kamu">
           Download CV
         </a>
 
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          type="button"
-          aria-label="Buka menu"
-          aria-expanded="false"
-          aria-controls="navLinks">
-          <i data-lucide="menu"></i>
-        </button>
       </div>
 
     </div>
-  </header>
 
 
-  <main>
+    <div class="hero-visual reveal">
 
-    <!-- =======================================================
-         HERO
-         ======================================================= -->
+      <img
+        src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600"
+        alt="Modern developer workspace with laptop and coding software"
+        loading="eager">
 
-    <section class="hero" id="home">
-      <div class="container hero-grid">
+      <div class="visual-caption">
+        Temporary Unsplash Visual • Ganti jika sudah punya foto sendiri
+      </div>
 
-        <div class="hero-copy reveal">
+    </div>
 
-          <div class="hero-label">
-            <span></span>
-            RPL Student • Junior Web & Digital
-          </div>
+  </div>
 
-          <h1>
-            <span class="hi">Hi, I'm</span>
-            <span class="name">RANDI<br>SYAHPUTRA</span>
-          </h1>
+</section>
 
-          <p class="hero-subtitle">
-            Web Development • WordPress • AI Assistant • Digital Tools
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+  <div class="wrap about-grid">
+
+    <div class="reveal">
+
+      <div class="section-label">
+        About Me
+      </div>
+
+      <h2>
+        Learning, building,<br>
+        and improving.
+      </h2>
+
+      <p class="about-copy" style="margin-top:18px">
+
+        Siswa kelas XII Rekayasa Perangkat Lunak (RPL) yang memiliki
+        pengalaman Praktik Kerja Lapangan di bidang IT dan Web Development.
+        Memiliki pengalaman dalam pengembangan dan pengelolaan website,
+        WordPress, web hosting, pengolahan dokumen dan data, desain digital,
+        video editing, serta eksplorasi AI Assistant menggunakan Aksita AI
+        dan Fonte.
+
+        <br><br>
+
+        Terbiasa mempelajari teknologi baru secara mandiri,
+        menyelesaikan masalah, dan mengembangkan proyek digital
+        dari tahap ide hingga implementasi.
+
+        Selain pengalaman PKL, saya juga membuat project mandiri
+        untuk belajar, bereksperimen, dan mengembangkan kemampuan
+        web development secara bertahap.
+
+      </p>
+
+
+      <div class="strength-grid">
+
+        <div class="card strength-card reveal">
+          <h3>01 — Web & IT</h3>
+          <p>
+            Website, WordPress, hosting, deployment,
+            dan web development.
           </p>
-
-          <p class="hero-description">
-            Building digital projects through web development, AI assistants,
-            WordPress, and creative technology.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              View My Projects
-              <i data-lucide="arrow-up-right"></i>
-            </a>
-
-            <a href="#contact" class="btn btn-secondary">
-              Contact Me
-              <i data-lucide="mail"></i>
-            </a>
-          </div>
-
-          <div class="hero-meta">
-            <span class="hero-meta-item">
-              <i data-lucide="map-pin"></i>
-              Bekasi, Jawa Barat
-            </span>
-
-            <span class="hero-meta-item">
-              <i data-lucide="graduation-cap"></i>
-              SMK Nurjamilah • RPL
-            </span>
-
-            <span class="hero-meta-item">
-              <i data-lucide="calendar"></i>
-              Expected Graduation 2027
-            </span>
-          </div>
-
         </div>
 
-        <div class="hero-visual reveal">
+        <div class="card strength-card reveal">
+          <h3>02 — AI & Automation</h3>
+          <p>
+            AI Assistant, conversation workflow,
+            dan pengujian interaksi.
+          </p>
+        </div>
 
-          <div class="hero-image-wrap">
+        <div class="card strength-card reveal">
+          <h3>03 — Digital & Creative</h3>
+          <p>
+            Desain visual, Canva, Figma,
+            video editing, dan basic animation.
+          </p>
+        </div>
 
-            <!-- Verified Unsplash image -->
-            <img
-              class="hero-image"
-              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
-              alt="Modern software developer workspace with laptop and coding screen"
-              loading="eager">
-
-            <span class="hero-image-credit">
-              Photo via Unsplash
-            </span>
-
-          </div>
-
-          <div class="hero-float">
-            <div class="hero-float-label">Current Focus</div>
-            <strong>Web & Digital</strong>
-            <small>Learning • Building • Exploring</small>
-          </div>
-
+        <div class="card strength-card reveal">
+          <h3>04 — Leadership & Initiative</h3>
+          <p>
+            Pengalaman organisasi, koordinasi kegiatan,
+            dan inisiatif mengembangkan project.
+          </p>
         </div>
 
       </div>
-    </section>
+
+    </div>
 
 
-    <!-- =======================================================
-         ABOUT
-         ======================================================= -->
+    <div class="reveal">
 
-    <section class="section alt" id="about">
-      <div class="container">
+      <div class="about-photo">
 
-        <div class="section-heading reveal">
-          <span class="eyebrow">About Me</span>
-          <h2>Learning, building, and growing through real projects.</h2>
-          <p>
-            A short overview of my background, education, and learning mindset.
-          </p>
+        <img
+          src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1400"
+          alt="Developer working with code on laptop"
+          loading="lazy">
+
+        <div class="visual-caption">
+          Supporting Visual • Unsplash
         </div>
 
-        <div class="about-grid">
+      </div>
 
-          <div class="about-image-card reveal">
 
-            <!-- Verified Unsplash image -->
+      <ul class="card facts">
+
+        <li>
+          <b>Status</b>
+          Siswa Kelas XII
+        </li>
+
+        <li>
+          <b>Sekolah</b>
+          SMK Nurjamilah
+        </li>
+
+        <li>
+          <b>Jurusan</b>
+          Rekayasa Perangkat Lunak (RPL)
+        </li>
+
+        <li>
+          <b>Periode</b>
+          2025–2027 · Expected Graduation 2027
+        </li>
+
+        <li>
+          <b>PKL</b>
+          IT / Web Development Intern · PQI Consultant
+        </li>
+
+        <li>
+          <b>Domisili</b>
+          Bekasi, Jawa Barat
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+  <div class="wrap">
+
+    <div class="head reveal">
+
+      <div class="section-label">
+        Technical Skills
+      </div>
+
+      <h2>
+        Tools I work with.
+      </h2>
+
+      <p class="sub">
+        Keterampilan yang saya gunakan dalam project,
+        PKL, pembelajaran, dan pekerjaan digital.
+      </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+      <div class="card skill-card reveal">
+        <h3>Web Development</h3>
+
+        <div class="chips">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>PHP</span>
+          <span>SQL</span>
+          <span>MySQL</span>
+          <span>Python</span>
+        </div>
+      </div>
+
+
+      <div class="card skill-card reveal">
+        <h3>WordPress & Web Tools</h3>
+
+        <div class="chips">
+          <span>WordPress</span>
+          <span>Elementor</span>
+          <span>ACF</span>
+          <span>CPT UI</span>
+          <span>Forminator</span>
+          <span>WP Mail SMTP</span>
+          <span>Automator</span>
+        </div>
+      </div>
+
+
+      <div class="card skill-card reveal">
+        <h3>AI & Conversational</h3>
+
+        <div class="chips">
+          <span>Aksita AI</span>
+          <span>Fonte</span>
+          <span>AI Agent</span>
+          <span>Conversation Workflow</span>
+          <span>WhatsApp AI Assistant</span>
+        </div>
+      </div>
+
+
+      <div class="card skill-card reveal">
+        <h3>Design & Digital Media</h3>
+
+        <div class="chips">
+          <span>Canva</span>
+          <span>Figma</span>
+          <span>Graphic Design</span>
+          <span>Flyer Design</span>
+          <span>Video Editing</span>
+          <span>Basic Animation</span>
+        </div>
+      </div>
+
+
+      <div class="card skill-card reveal">
+        <h3>Development Tools</h3>
+
+        <div class="chips">
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>Web Hosting</span>
+          <span>Deployment</span>
+        </div>
+      </div>
+
+
+      <div class="card skill-card reveal">
+        <h3>Office & Data</h3>
+
+        <div class="chips">
+          <span>Microsoft Excel</span>
+          <span>Microsoft Word</span>
+          <span>PowerPoint</span>
+          <span>PDF</span>
+          <span>Data Processing</span>
+          <span>Reporting</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+  <div class="wrap">
+
+    <div class="head reveal">
+
+      <div class="section-label">
+        Selected Projects
+      </div>
+
+      <h2>
+        Projects that represent<br>
+        what I build.
+      </h2>
+
+      <p class="sub">
+        Project dibagi menjadi pengalaman profesional selama PKL
+        dan project mandiri yang dibuat untuk belajar serta bereksperimen.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         PROFESSIONAL / PKL PROJECTS
+    ====================================================== -->
+
+    <div class="project-group">
+
+      <div class="project-group-title reveal">
+
+        <h3>
+          Professional Experience — PKL
+        </h3>
+
+        <span>
+          PQI Consultant
+        </span>
+
+      </div>
+
+
+      <div class="project-grid">
+
+
+        <!-- PQI WEBSITE -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
             <img
-              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1000"
-              alt="Developer typing code on a laptop"
+              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
+              alt="Supporting visual for web development project"
               loading="lazy">
 
-            <span class="support-label">Supporting Visual • Unsplash</span>
-
-          </div>
-
-          <div class="about-content reveal">
-
-            <h3>RPL Student | Junior Web & Digital</h3>
-
-            <p>
-              Siswa kelas XII Rekayasa Perangkat Lunak (RPL) yang memiliki
-              pengalaman Praktik Kerja Lapangan di bidang IT dan Web Development.
-              Memiliki pengalaman dalam pengembangan dan pengelolaan website,
-              WordPress, web hosting, pengolahan dokumen dan data, desain digital,
-              video editing, serta eksplorasi AI Assistant menggunakan Aksita AI
-              dan Fonte. Terbiasa mempelajari teknologi baru secara mandiri,
-              menyelesaikan masalah, dan mengembangkan proyek digital dari tahap
-              ide hingga implementasi.
-            </p>
-
-            <p>
-              Selain pengalaman PKL, saya juga membuat berbagai project mandiri
-              untuk belajar, bereksperimen, dan mengembangkan kemampuan di bidang
-              web development dan creative technology.
-            </p>
-
-            <div class="info-grid">
-
-              <div class="info-box">
-                <span class="label">Education</span>
-                <strong>SMK Nurjamilah</strong>
-              </div>
-
-              <div class="info-box">
-                <span class="label">Major</span>
-                <strong>Rekayasa Perangkat Lunak</strong>
-              </div>
-
-              <div class="info-box">
-                <span class="label">Period</span>
-                <strong>2025–2027</strong>
-              </div>
-
-              <div class="info-box">
-                <span class="label">Location</span>
-                <strong>Bekasi, Jawa Barat</strong>
-              </div>
-
+            <div class="project-badge">
+              PKL Project
             </div>
 
-            <div class="mindset">
-              <strong>Learning Mindset</strong>
-              <p>
-                Mempelajari teknologi baru secara mandiri, mencoba melalui
-                project nyata, dan terus mengembangkan kemampuan melalui
-                eksplorasi serta problem solving.
-              </p>
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot project
             </div>
 
           </div>
 
-        </div>
 
-      </div>
-    </section>
+          <div class="project-body">
 
+            <div class="project-meta">
 
-    <!-- =======================================================
-         FOUR STRENGTHS
-         ======================================================= -->
+              <span class="status">
+                PKL Project
+              </span>
 
-    <section class="section">
-      <div class="container">
+              WordPress / Web Management
 
-        <div class="section-heading reveal">
-          <span class="eyebrow">Personal Brand</span>
-          <h2>Four areas that shape my work.</h2>
-          <p>
-            Kombinasi kemampuan teknis, eksplorasi teknologi, kreativitas,
-            dan pengalaman organisasi.
-          </p>
-        </div>
-
-        <div class="strength-grid">
-
-          <article class="strength-card reveal">
-            <div class="strength-number">01</div>
-            <div class="strength-icon">
-              <i data-lucide="code-2"></i>
             </div>
-            <h3>Web & IT</h3>
-            <p>
-              Web development, WordPress, hosting, deployment, dan digital tools.
+
+
+            <h3>
+              PQI Consultant Website & Web Management
+            </h3>
+
+
+            <p class="project-desc">
+              Pengalaman pengembangan dan pengelolaan website
+              PQI Consultant selama kegiatan Praktik Kerja Lapangan.
             </p>
-          </article>
-
-          <article class="strength-card reveal">
-            <div class="strength-number">02</div>
-            <div class="strength-icon">
-              <i data-lucide="bot"></i>
-            </div>
-            <h3>AI & Automation</h3>
-            <p>
-              Eksplorasi AI Assistant dan conversational workflow menggunakan
-              Aksita AI dan Fonte.
-            </p>
-          </article>
-
-          <article class="strength-card reveal">
-            <div class="strength-number">03</div>
-            <div class="strength-icon">
-              <i data-lucide="palette"></i>
-            </div>
-            <h3>Digital & Creative</h3>
-            <p>
-              Desain digital, visual content, Canva, Figma, video editing,
-              dan creative web project.
-            </p>
-          </article>
-
-          <article class="strength-card reveal">
-            <div class="strength-number">04</div>
-            <div class="strength-icon">
-              <i data-lucide="users"></i>
-            </div>
-            <h3>Leadership & Initiative</h3>
-            <p>
-              Pengalaman organisasi, koordinasi kegiatan, teamwork,
-              communication, dan responsibility.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
 
 
-    <!-- =======================================================
-         PROFESSIONAL EXPERIENCE
-         ======================================================= -->
+            <div class="project-block">
 
-    <section class="section alt" id="experience">
-      <div class="container">
+              <h4>
+                Contribution
+              </h4>
 
-        <div class="section-heading reveal">
-          <span class="eyebrow">Professional Experience</span>
-          <h2>Practical Work Experience — PQI Consultant.</h2>
-          <p>
-            Pengalaman Praktik Kerja Lapangan di bidang IT dan Web Development.
-          </p>
-        </div>
-
-        <article class="experience-card reveal">
-
-          <div class="experience-top">
-
-            <div class="experience-company">
-              <div class="company-mark">PQI</div>
-
-              <div>
-                <h3>PQI Consultant</h3>
-                <p>IT / Web Development Intern</p>
-              </div>
-            </div>
-
-            <div class="experience-date">
-              Agustus 2026 – Sekarang
-            </div>
-
-          </div>
-
-          <div class="experience-body">
-
-            <div>
-              <div class="experience-location">
-                <i data-lucide="map-pin"></i>
-                Bekasi, Jawa Barat
-              </div>
-
-              <h4>Role</h4>
-              <p style="color:#D5E0EB;font-size:.82rem;">
-                IT / Web Development Intern
-              </p>
-
-              <a
-                href="https://pqiconsultant.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="visit-link">
-                Visit PQI Consultant
-                <i data-lucide="arrow-up-right"></i>
-              </a>
-            </div>
-
-            <div>
-              <h4>Responsibilities & Contributions</h4>
-
-              <ul class="experience-list">
+              <ul>
                 <li>
-                  Membantu pengembangan dan pengelolaan website menggunakan
-                  WordPress dan Elementor.
+                  Membantu pengembangan dan pengelolaan website.
                 </li>
+
                 <li>
-                  Mengelola kebutuhan website menggunakan ACF, CPT UI,
-                  Forminator, WP Mail SMTP, dan Automator.
+                  Membuat, mengedit, dan mengatur halaman serta konten.
                 </li>
+
                 <li>
-                  Membuat, mengedit, dan mengatur halaman serta konten website
-                  sesuai kebutuhan.
+                  Melakukan penyesuaian layout sesuai kebutuhan.
                 </li>
+
                 <li>
-                  Mengembangkan dan menguji prototype WhatsApp AI Assistant
-                  menggunakan Aksita AI dan Fonte.
+                  Membantu kebutuhan form dan website management.
                 </li>
+
                 <li>
-                  Merancang conversation flow, menu, percabangan, serta
-                  pengujian interaksi AI Assistant.
-                </li>
-                <li>
-                  Menggunakan GitHub, web hosting, dan deployment untuk
-                  mendukung proyek web.
-                </li>
-                <li>
-                  Mengolah data dan dokumen menggunakan Microsoft Excel,
-                  Word, PowerPoint, dan PDF.
-                </li>
-                <li>
-                  Membantu kebutuhan desain digital, flyer, materi visual,
-                  dan konten menggunakan Canva dan Figma.
+                  Membantu troubleshooting dan deployment.
                 </li>
               </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>WordPress</span>
+                <span>Elementor</span>
+                <span>ACF</span>
+                <span>CPT UI</span>
+                <span>Forminator</span>
+                <span>WP Mail SMTP</span>
+                <span>Automator</span>
+                <span>GitHub</span>
+                <span>Web Hosting</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PLAYBOOK -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1400"
+              alt="Supporting visual for digital web project"
+              loading="lazy">
+
+            <div class="project-badge">
+              PKL Project
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot Playbook
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status">
+                PKL Project
+              </span>
+
+              Operational Excellence Playbook Ecosystem
+
+            </div>
+
+
+            <h3>
+              Operational Excellence Playbook Ecosystem
+            </h3>
+
+
+            <p class="project-desc">
+              Ekosistem halaman web untuk kebutuhan Playbook
+              Operational Excellence PQI Consultant yang terdiri
+              dari landing page, follow-up/content page,
+              dan Excellence Hub.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Pages
+              </h4>
+
+              <ul>
+
+                <li>
+                  Playbook Landing Page
+                </li>
+
+                <li>
+                  Playbook Content / Follow-up Page
+                </li>
+
+                <li>
+                  Excellence Hub
+                </li>
+
+                <li>
+                  Related Explore PQI page
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block">
+
+              <h4>
+                Contribution
+              </h4>
+
+              <ul>
+
+                <li>
+                  Membantu pengelolaan dan pengaturan halaman.
+                </li>
+
+                <li>
+                  Membantu kebutuhan form dan content flow.
+                </li>
+
+                <li>
+                  Mendukung pengembangan tampilan dan struktur halaman.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>WordPress</span>
+                <span>Elementor</span>
+                <span>Forminator</span>
+                <span>WP Mail SMTP</span>
+                <span>Automator</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-actions acts">
+
+              <a
+                class="btn primary small"
+                href="https://pqiconsultant.com/playbook-baru/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Landing Page ↗
+              </a>
+
+              <a
+                class="btn small"
+                href="https://pqiconsultant.com/playbook-baru-2-pqi-consultant/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Content Page ↗
+              </a>
+
+              <a
+                class="btn small"
+                href="https://pqiconsultant.com/excellence-hub/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Excellence Hub ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- WHATSAPP AI -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
+              alt="Supporting visual for AI assistant project"
+              loading="lazy">
+
+            <div class="project-badge">
+              PKL Project
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot AI Assistant
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status">
+                PKL Project
+              </span>
+
+              AI Assistant / Conversational Workflow
+
+            </div>
+
+
+            <h3>
+              WhatsApp AI Customer Service Assistant
+            </h3>
+
+
+            <p class="project-desc">
+              AI Assistant untuk membantu pengguna memperoleh
+              informasi mengenai layanan PQI Consultant melalui
+              percakapan berbasis WhatsApp.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Contribution
+              </h4>
+
+              <ul>
+
+                <li>
+                  Membuat dan mengonfigurasi AI Agent PQI Consultant
+                  pada Aksita AI.
+                </li>
+
+                <li>
+                  Menentukan konteks dan instruksi assistant.
+                </li>
+
+                <li>
+                  Merancang conversation flow menggunakan Fonte.
+                </li>
+
+                <li>
+                  Menyusun menu, percabangan, dan respons.
+                </li>
+
+                <li>
+                  Menguji interaksi assistant melalui WhatsApp.
+                </li>
+
+                <li>
+                  Mengevaluasi dan menyesuaikan respons serta alur
+                  percakapan.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block">
+
+              <h4>
+                Workflow
+              </h4>
+
+              <ul>
+
+                <li>
+                  Aksita AI Agent Configuration
+                </li>
+
+                <li>
+                  Fonte Conversation Workflow
+                </li>
+
+                <li>
+                  WhatsApp Conversation Testing
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>Aksita AI</span>
+                <span>Fonte</span>
+                <span>WhatsApp</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CERTIFICATE -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary document visual for certificate verification project"
+              loading="lazy">
+
+            <div class="project-badge">
+              Draft / Development
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot prototype
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status draft">
+                Draft / Not Published
+              </span>
+
+              Web / WordPress
+
+            </div>
+
+
+            <h3>
+              Certificate Verification System
+            </h3>
+
+
+            <p class="project-desc">
+              Prototype sistem verifikasi sertifikat yang dirancang
+              agar pengguna dapat melakukan pengecekan berdasarkan
+              kode sertifikat atau mekanisme QR/barcode.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Concept
+              </h4>
+
+              <ul>
+
+                <li>
+                  Input kode sertifikat.
+                </li>
+
+                <li>
+                  Opsi verifikasi melalui QR/barcode.
+                </li>
+
+                <li>
+                  Menampilkan informasi sertifikat yang relevan.
+                </li>
+
+                <li>
+                  Tidak menggunakan public directory yang mengekspos
+                  seluruh data sertifikat.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>WordPress</span>
+                <span>PHP</span>
+                <span>ACF</span>
+                <span>CPT UI</span>
+                <span>Forminator</span>
+                <span>Database Concept</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-note">
+              Status: Draft / Not Published. Belum ditampilkan
+              sebagai sistem live.
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- FORM E -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary visual for certificate form project"
+              loading="lazy">
+
+            <div class="project-badge">
+              Draft / Development
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot Form E
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status draft">
+                Draft / Not Published
+              </span>
+
+              WordPress Project
+
+            </div>
+
+
+            <h3>
+              Form E Certificate
+            </h3>
+
+
+            <p class="project-desc">
+              Project draft berbasis WordPress yang berkaitan
+              dengan kebutuhan pengelolaan Form E Certificate
+              selama kegiatan PKL.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Project Status
+              </h4>
+
+              <ul>
+
+                <li>
+                  Masih dalam tahap draft.
+                </li>
+
+                <li>
+                  Belum dipublikasikan sebagai halaman live.
+                </li>
+
+                <li>
+                  Detail implementasi dapat diperbarui sesuai
+                  perkembangan project.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>WordPress</span>
+                <span>Web Management</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ISO FLYER -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary creative workspace visual for ISO flyer project"
+              loading="lazy">
+
+            <div class="project-badge">
+              PKL Work
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan flyer asli
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status">
+                PKL Work
+              </span>
+
+              Graphic Design
+
+            </div>
+
+
+            <h3>
+              ISO Training Flyer & Digital Materials
+            </h3>
+
+
+            <p class="project-desc">
+              Membuat materi flyer digital bertema ISO untuk
+              kebutuhan komunikasi atau publikasi internal
+              menggunakan Canva, dengan memperhatikan struktur
+              informasi, visual hierarchy, dan branding perusahaan.
+            </p>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>Canva</span>
+                <span>Figma</span>
+                <span>Graphic Design</span>
+
+              </div>
+
             </div>
 
           </div>
@@ -2188,1355 +2390,1666 @@
         </article>
 
       </div>
-    </section>
 
+    </div>
 
-    <!-- =======================================================
-         PROJECTS
-         ======================================================= -->
 
-    <section class="section" id="projects">
-      <div class="container">
+    <!-- =====================================================
+         PERSONAL PROJECTS
+    ====================================================== -->
 
-        <div class="section-heading reveal">
-          <span class="eyebrow">Selected Projects</span>
-          <h2>Professional work and independent projects.</h2>
-          <p>
-            Project PKL dan project mandiri ditampilkan secara terpisah
-            agar konteks kontribusi tetap jelas.
-          </p>
-        </div>
+    <div class="project-group">
 
+      <div class="project-group-title reveal">
 
-        <!-- ===================================================
-             PROFESSIONAL PROJECTS
-             =================================================== -->
-
-        <div class="project-group">
-
-          <div class="project-group-head reveal">
-            <div>
-              <span class="eyebrow">Professional Projects</span>
-              <h3>PQI Consultant — PKL</h3>
-            </div>
-
-            <p>
-              Project yang dikerjakan dalam konteks Praktik Kerja Lapangan
-              di PQI Consultant.
-            </p>
-          </div>
-
-
-          <!-- PKL PROJECT 01 -->
-
-          <article class="project-card featured reveal">
-
-            <div class="project-media">
-              <div class="project-status">Professional Experience / PKL</div>
-
-              <div class="project-placeholder">
-                <div class="placeholder-content">
-                  <i data-lucide="layout-dashboard"></i>
-                  <strong>Project Screenshot</strong>
-                  <span>Replace with real project screenshot</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-category">
-                WordPress / Web Development
-              </div>
-
-              <h3 class="project-title">
-                PQI Consultant Website & Web Management
-              </h3>
-
-              <p class="project-description">
-                Pengembangan dan pengelolaan berbagai kebutuhan website
-                PQI Consultant selama kegiatan Praktik Kerja Lapangan.
-              </p>
-
-              <div class="contribution">
-                <strong>My Contribution</strong>
-
-                <ul>
-                  <li>Membuat dan mengedit halaman website.</li>
-                  <li>Mengatur layout dan konten.</li>
-                  <li>Mengelola kebutuhan WordPress.</li>
-                  <li>Menggunakan Elementor.</li>
-                  <li>Menggunakan ACF dan CPT UI.</li>
-                  <li>Mengelola form menggunakan Forminator.</li>
-                  <li>Mendukung kebutuhan email menggunakan WP Mail SMTP.</li>
-                  <li>Menggunakan Automator sesuai kebutuhan workflow.</li>
-                  <li>Membantu kebutuhan visual menggunakan Canva dan Figma.</li>
-                </ul>
-              </div>
-
-              <div class="project-tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">Elementor</span>
-                <span class="tag">ACF</span>
-                <span class="tag">CPT UI</span>
-                <span class="tag">Forminator</span>
-                <span class="tag">WP Mail SMTP</span>
-                <span class="tag">Automator</span>
-                <span class="tag">GitHub</span>
-                <span class="tag">Web Hosting</span>
-              </div>
-
-              <div class="project-links">
-                <a
-                  href="https://pqiconsultant.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link primary">
-                  Visit Website
-                  <i data-lucide="external-link"></i>
-                </a>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- PKL PROJECT 02 -->
-
-          <article class="project-card featured reveal">
-
-            <div class="project-media">
-              <div class="project-status">Professional Experience / PKL</div>
-
-              <div class="project-placeholder">
-                <div class="placeholder-content">
-                  <i data-lucide="book-open"></i>
-                  <strong>Project Screenshot</strong>
-                  <span>Replace with real project screenshot</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-category">
-                Web Development / Landing Page / WordPress
-              </div>
-
-              <h3 class="project-title">
-                Operational Excellence Playbook
-              </h3>
-
-              <p class="project-description">
-                Ekosistem beberapa halaman yang saling berkaitan untuk
-                kebutuhan Operational Excellence Playbook.
-              </p>
-
-              <div class="page-links">
-
-                <a
-                  href="https://pqiconsultant.com/playbook-baru/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="page-link">
-                  <span>01 — Playbook Landing Page</span>
-                  <small>Open ↗</small>
-                </a>
-
-                <a
-                  href="https://pqiconsultant.com/playbook-baru-2-pqi-consultant/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="page-link">
-                  <span>02 — Playbook Content / Follow-up Page</span>
-                  <small>Open ↗</small>
-                </a>
-
-                <a
-                  href="https://pqiconsultant.com/excellence-hub/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="page-link">
-                  <span>03 — Playbook Home / Excellence Hub</span>
-                  <small>Open ↗</small>
-                </a>
-
-                <a
-                  href="https://pqiconsultant.com/excellence-hub-pqi-consultant/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="page-link">
-                  <span>Related — Explore PQI</span>
-                  <small>Open ↗</small>
-                </a>
-
-              </div>
-
-              <div class="contribution">
-                <strong>Project Structure</strong>
-
-                <ul>
-                  <li>Playbook Landing Page memiliki form untuk kebutuhan playbook.</li>
-                  <li>Playbook Content / Follow-up Page menjadi bagian lanjutan dari ekosistem.</li>
-                  <li>Playbook Home / Excellence Hub menjadi halaman utama terkait playbook.</li>
-                  <li>Explore PQI ditampilkan sebagai related page.</li>
-                  <li>Project ditampilkan sebagai satu ecosystem, bukan tiga project terpisah.</li>
-                </ul>
-              </div>
-
-              <div class="project-tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">Elementor</span>
-                <span class="tag">Landing Page</span>
-                <span class="tag">Web Development</span>
-              </div>
-
-              <div class="project-links">
-                <a
-                  href="https://pqiconsultant.com/playbook-baru/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link primary">
-                  View Playbook
-                  <i data-lucide="external-link"></i>
-                </a>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- PKL PROJECT 03 -->
-
-          <article class="project-card reveal">
-
-            <div class="project-media">
-              <div class="project-status">PKL</div>
-
-              <div class="project-placeholder">
-                <div class="placeholder-content">
-                  <i data-lucide="message-circle"></i>
-                  <strong>Project Screenshot</strong>
-                  <span>Replace with real AI Assistant screenshot</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-category">
-                AI Assistant / Conversational Workflow
-              </div>
-
-              <h3 class="project-title">
-                WhatsApp AI Customer Service Assistant
-              </h3>
-
-              <p class="project-description">
-                AI Assistant untuk membantu pengguna memperoleh informasi
-                mengenai layanan PQI Consultant melalui percakapan
-                berbasis WhatsApp.
-              </p>
-
-              <div class="contribution">
-                <strong>My Contribution</strong>
-
-                <ul>
-                  <li>Membuat dan mengonfigurasi AI Agent PQI Consultant pada Aksita AI.</li>
-                  <li>Menentukan konteks dan instruksi assistant.</li>
-                  <li>Merancang conversation flow menggunakan Fonte.</li>
-                  <li>Menyusun menu, percabangan, dan respons pada workflow.</li>
-                  <li>Menguji kemampuan assistant dalam menangani pertanyaan pengguna secara bebas.</li>
-                  <li>Melakukan pengujian interaksi melalui WhatsApp.</li>
-                  <li>Mengevaluasi dan menyesuaikan respons serta alur percakapan.</li>
-                </ul>
-              </div>
-
-              <div class="project-tags">
-                <span class="tag">Aksita AI</span>
-                <span class="tag">Fonte</span>
-                <span class="tag">AI Agent</span>
-                <span class="tag">Conversation Workflow</span>
-                <span class="tag">WhatsApp</span>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- PKL PROJECT 04 -->
-
-          <article class="project-card reveal">
-
-            <div class="project-media">
-              <div class="project-status">Draft / Not Published</div>
-
-              <div class="project-placeholder">
-                <div class="placeholder-content">
-                  <i data-lucide="badge-check"></i>
-                  <strong>Project Screenshot</strong>
-                  <span>Draft project — no public URL</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-category">
-                WordPress / Certificate Management
-              </div>
-
-              <h3 class="project-title">
-                Certificate Verification System
-              </h3>
-
-              <p class="project-description">
-                Prototype sistem verifikasi sertifikat yang dirancang untuk
-                membantu proses pengecekan sertifikat berdasarkan kode
-                sertifikat atau mekanisme QR/barcode.
-              </p>
-
-              <div class="contribution">
-                <strong>Status</strong>
-                <ul>
-                  <li>Masih dalam tahap draft di WordPress.</li>
-                  <li>Belum dipublish sebagai fitur live.</li>
-                  <li>Tidak memiliki public URL.</li>
-                </ul>
-              </div>
-
-              <div class="project-tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">ACF</span>
-                <span class="tag">CPT UI</span>
-                <span class="tag">PHP</span>
-                <span class="tag">Forminator</span>
-              </div>
-
-              <div class="project-links">
-                <span class="project-link">
-                  Draft Project
-                  <i data-lucide="file-clock"></i>
-                </span>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- PKL PROJECT 05 -->
-
-          <article class="project-card reveal">
-
-            <div class="project-media">
-              <div class="project-status">Draft / Not Published</div>
-
-              <div class="project-placeholder">
-                <div class="placeholder-content">
-                  <i data-lucide="file-pen-line"></i>
-                  <strong>Project Screenshot</strong>
-                  <span>Draft project — no public URL</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-category">
-                Form / Certificate Workflow
-              </div>
-
-              <h3 class="project-title">
-                Form E Certificate
-              </h3>
-
-              <p class="project-description">
-                Pengembangan Form E Certificate untuk kebutuhan proses
-                terkait sertifikat di lingkungan PQI Consultant.
-              </p>
-
-              <div class="contribution">
-                <strong>Status</strong>
-                <ul>
-                  <li>Project terpisah dari Certificate Verification System.</li>
-                  <li>Masih berupa draft di WordPress.</li>
-                  <li>Belum dipublish.</li>
-                  <li>Tidak memiliki public URL.</li>
-                </ul>
-              </div>
-
-              <div class="project-tags">
-                <span class="tag">WordPress</span>
-                <span class="tag">Form Workflow</span>
-                <span class="tag">Certificate</span>
-              </div>
-
-              <div class="project-links">
-                <span class="project-link">
-                  Draft Project
-                  <i data-lucide="file-clock"></i>
-                </span>
-              </div>
-
-            </div>
-          </article>
-
-
-          <!-- PKL PROJECT 06 -->
-
-          <article class="project-card reveal">
-
-            <div class="project-media">
-              <div class="project-status">Professional Experience / PKL</div>
-
-              <div class="project-placeholder">
-                <div class="placeholder-content">
-                  <i data-lucide="image"></i>
-                  <strong>Project Screenshot</strong>
-                  <span>Replace with real flyer/material screenshot</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-category">
-                Graphic Design / Digital Media
-              </div>
-
-              <h3 class="project-title">
-                ISO Training Flyer & Digital Materials
-              </h3>
-
-              <p class="project-description">
-                Membuat materi flyer digital bertema ISO untuk kebutuhan
-                komunikasi/publikasi internal menggunakan Canva, dengan
-                memperhatikan struktur informasi, visual hierarchy,
-                dan branding perusahaan.
-              </p>
-
-              <div class="project-tags">
-                <span class="tag">Canva</span>
-                <span class="tag">Figma</span>
-                <span class="tag">Graphic Design</span>
-                <span class="tag">Digital Media</span>
-              </div>
-
-            </div>
-          </article>
-
-        </div>
-
-
-        <!-- ===================================================
-             PERSONAL PROJECTS
-             =================================================== -->
-
-        <div class="project-group">
-
-          <div class="project-group-head reveal">
-            <div>
-              <span class="eyebrow">Personal Projects</span>
-              <h3>Independent Work</h3>
-            </div>
-
-            <p>
-              Project mandiri yang dibuat untuk learning, experimentation,
-              dan personal development — bukan project PKL.
-            </p>
-          </div>
-
-
-          <div class="project-grid personal-grid">
-
-            <!-- HEALTHLY -->
-
-            <article class="project-card reveal">
-
-              <div class="project-media">
-                <div class="project-status">Prototype / Development</div>
-
-                <div class="project-placeholder">
-                  <div class="placeholder-content">
-                    <i data-lucide="heart-pulse"></i>
-                    <strong>Healthly</strong>
-                    <span>Independent Web Project</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-content">
-
-                <div class="project-category">
-                  Independent Web Project
-                </div>
-
-                <h3 class="project-title">
-                  Healthly — Health Education Platform
-                </h3>
-
-                <p class="project-description">
-                  Platform edukasi kesehatan berbasis web untuk membantu
-                  pengguna memahami keluhan, informasi kondisi kesehatan,
-                  kebiasaan hidup sehat, dan tanda peringatan.
-                </p>
-
-                <div class="contribution">
-                  <strong>Concept</strong>
-
-                  <ul>
-                    <li>Keluhan → Informasi edukatif.</li>
-                    <li>Safe self-care.</li>
-                    <li>Medication education.</li>
-                    <li>Natural/supportive approaches.</li>
-                    <li>Warning signs.</li>
-                    <li>When to seek professional help.</li>
-                  </ul>
-                </div>
-
-                <div class="project-tags">
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">GitHub</span>
-                  <span class="tag">GitHub Pages</span>
-                  <span class="tag">JSON / localStorage</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="https://arlotarlotnasional-cmd.github.io/Healthy.html/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link primary">
-                    View Live
-                    <i data-lucide="external-link"></i>
-                  </a>
-                </div>
-
-              </div>
-            </article>
-
-
-            <!-- RANZHA -->
-
-            <article class="project-card reveal">
-
-              <div class="project-media">
-                <div class="project-status">In Development</div>
-
-                <div class="project-placeholder">
-                  <div class="placeholder-content">
-                    <i data-lucide="wallet-cards"></i>
-                    <strong>Ranzha</strong>
-                    <span>Independent Web Application</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-content">
-
-                <div class="project-category">
-                  Independent Web Application
-                </div>
-
-                <h3 class="project-title">
-                  Ranzha — Personal Finance Application
-                </h3>
-
-                <p class="project-description">
-                  Aplikasi web untuk membantu pengguna mengelola dan
-                  memantau keuangan pribadi.
-                </p>
-
-                <div class="project-tags">
-                  <span class="tag">PHP</span>
-                  <span class="tag">MySQL</span>
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">Web Hosting</span>
-                  <span class="tag">InfinityFree</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="https://ranzha.infinityfree.me/auth.php?page=login"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link primary">
-                    View Live
-                    <i data-lucide="external-link"></i>
-                  </a>
-                </div>
-
-              </div>
-            </article>
-
-
-            <!-- FIND THE TOY -->
-
-            <article class="project-card reveal">
-
-              <div class="project-media">
-                <div class="project-status">Personal Project</div>
-
-                <div class="project-placeholder">
-                  <div class="placeholder-content">
-                    <i data-lucide="gamepad-2"></i>
-                    <strong>Find the Toy</strong>
-                    <span>Independent Web Game</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-content">
-
-                <div class="project-category">
-                  Independent Web Game
-                </div>
-
-                <h3 class="project-title">
-                  Find the Toy
-                </h3>
-
-                <p class="project-description">
-                  Mini web game yang dibuat secara mandiri sebagai project
-                  eksperimen dan pembelajaran web development.
-                </p>
-
-                <div class="project-tags">
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">GitHub Pages</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="https://arlotarlotnasional-cmd.github.io/mini-game-find-the-toy/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link primary">
-                    View Live
-                    <i data-lucide="external-link"></i>
-                  </a>
-                </div>
-
-              </div>
-            </article>
-
-
-            <!-- BIRTHDAY -->
-
-            <article class="project-card reveal">
-
-              <div class="project-media">
-                <div class="project-status">Personal Project</div>
-
-                <div class="project-placeholder">
-                  <div class="placeholder-content">
-                    <i data-lucide="gift"></i>
-                    <strong>Birthday Website</strong>
-                    <span>Independent Creative Web Project</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="project-content">
-
-                <div class="project-category">
-                  Independent Creative Web Project
-                </div>
-
-                <h3 class="project-title">
-                  Interactive Birthday Website
-                </h3>
-
-                <p class="project-description">
-                  Website interaktif bertema birthday yang dibuat secara
-                  mandiri sebagai eksplorasi creative web development.
-                </p>
-
-                <div class="contribution">
-                  <strong>Features</strong>
-
-                  <ul>
-                    <li>Interactive envelope.</li>
-                    <li>Letter reveal.</li>
-                    <li>Photos.</li>
-                    <li>Audio.</li>
-                    <li>Animation.</li>
-                    <li>Interactive UI.</li>
-                  </ul>
-                </div>
-
-                <div class="project-tags">
-                  <span class="tag">HTML</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">GitHub Pages</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="https://arlotarlotnasional-cmd.github.io/Birthday-Cards.html/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link primary">
-                    View Live
-                    <i data-lucide="external-link"></i>
-                  </a>
-                </div>
-
-              </div>
-            </article>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =======================================================
-         SKILLS
-         ======================================================= -->
-
-    <section class="section alt" id="skills">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="eyebrow">Technical Skills</span>
-          <h2>Tools and technologies I work with.</h2>
-          <p>
-            Skill set berdasarkan teknologi dan tools yang telah saya gunakan
-            dalam project dan kegiatan belajar.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-
-          <article class="skill-box reveal">
-            <h3>
-              <i data-lucide="code-2"></i>
-              Web Development
-            </h3>
-
-            <div class="skill-list">
-              <span class="skill-pill">HTML</span>
-              <span class="skill-pill">CSS</span>
-              <span class="skill-pill">JavaScript</span>
-              <span class="skill-pill">PHP</span>
-              <span class="skill-pill">SQL</span>
-              <span class="skill-pill">MySQL</span>
-              <span class="skill-pill">Python</span>
-            </div>
-          </article>
-
-
-          <article class="skill-box reveal">
-            <h3>
-              <i data-lucide="globe"></i>
-              WordPress & Web Tools
-            </h3>
-
-            <div class="skill-list">
-              <span class="skill-pill">WordPress</span>
-              <span class="skill-pill">Elementor</span>
-              <span class="skill-pill">ACF</span>
-              <span class="skill-pill">CPT UI</span>
-              <span class="skill-pill">Forminator</span>
-              <span class="skill-pill">WP Mail SMTP</span>
-              <span class="skill-pill">Automator</span>
-            </div>
-          </article>
-
-
-          <article class="skill-box reveal">
-            <h3>
-              <i data-lucide="bot"></i>
-              AI & Conversational
-            </h3>
-
-            <div class="skill-list">
-              <span class="skill-pill">Aksita AI</span>
-              <span class="skill-pill">Fonte</span>
-              <span class="skill-pill">AI Agent</span>
-              <span class="skill-pill">Conversation Workflow</span>
-              <span class="skill-pill">WhatsApp AI Assistant</span>
-            </div>
-          </article>
-
-
-          <article class="skill-box reveal">
-            <h3>
-              <i data-lucide="palette"></i>
-              Design & Digital Media
-            </h3>
-
-            <div class="skill-list">
-              <span class="skill-pill">Canva</span>
-              <span class="skill-pill">Figma</span>
-              <span class="skill-pill">Graphic Design</span>
-              <span class="skill-pill">Flyer Design</span>
-              <span class="skill-pill">Video Editing</span>
-              <span class="skill-pill">Basic Animation</span>
-            </div>
-          </article>
-
-
-          <article class="skill-box reveal">
-            <h3>
-              <i data-lucide="git-branch"></i>
-              Development Tools
-            </h3>
-
-            <div class="skill-list">
-              <span class="skill-pill">Git</span>
-              <span class="skill-pill">GitHub</span>
-              <span class="skill-pill">Web Hosting</span>
-              <span class="skill-pill">Deployment</span>
-            </div>
-          </article>
-
-
-          <article class="skill-box reveal">
-            <h3>
-              <i data-lucide="file-spreadsheet"></i>
-              Office & Data
-            </h3>
-
-            <div class="skill-list">
-              <span class="skill-pill">Microsoft Excel</span>
-              <span class="skill-pill">Microsoft Word</span>
-              <span class="skill-pill">PowerPoint</span>
-              <span class="skill-pill">PDF</span>
-              <span class="skill-pill">Data Processing</span>
-              <span class="skill-pill">Reporting</span>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =======================================================
-         ORGANIZATIONAL + ADDITIONAL EXPERIENCE
-         ======================================================= -->
-
-    <section class="section" id="experience-extra">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="eyebrow">Additional Experience</span>
-          <h2>Leadership, initiative, and practical experience.</h2>
-          <p>
-            Pengalaman di luar project development yang membentuk kemampuan
-            komunikasi, koordinasi, tanggung jawab, dan problem solving.
-          </p>
-        </div>
-
-        <div class="two-column">
-
-          <!-- OSIS -->
-
-          <article class="content-card reveal">
-
-            <h3>OSIS — Ketua Sekbid Seni dan Budaya</h3>
-            <div class="meta">2026 • Kelas XI</div>
-
-            <ul class="clean-list">
-              <li>Menjabat sebagai Ketua Sekbid Seni dan Budaya.</li>
-              <li>
-                Terlibat dalam pelaksanaan Class Meeting, kegiatan 17 Agustus,
-                Batik Day, G30S/PKI, dan Wisuda.
-              </li>
-              <li>
-                Menjadi Penanggung Jawab (PJ) kegiatan 17 Agustus dan Class Meeting.
-              </li>
-              <li>Mengoordinasikan sekitar 20 orang.</li>
-              <li>
-                Membantu mengatur perlengkapan/logistik, konsumsi, dekorasi,
-                dokumentasi, registrasi, persiapan venue, serta pelaksanaan acara.
-              </li>
-            </ul>
-
-            <div class="mini-tags">
-              <span class="mini-tag">Leadership</span>
-              <span class="mini-tag">Teamwork</span>
-              <span class="mini-tag">Communication</span>
-              <span class="mini-tag">Planning</span>
-              <span class="mini-tag">Problem Solving</span>
-              <span class="mini-tag">Responsibility</span>
-              <span class="mini-tag">Time Management</span>
-            </div>
-
-          </article>
-
-
-          <!-- ENTREPRENEURSHIP -->
-
-          <article class="content-card reveal">
-
-            <h3>Student Entrepreneurship</h3>
-            <div class="meta">Additional Experience</div>
-
-            <ul class="clean-list">
-              <li>
-                Memulai aktivitas penjualan makanan dan minuman sejak SMP
-                dan berlanjut saat SMK.
-              </li>
-              <li>
-                Pada periode tertentu, omzet penjualan mencapai sekitar
-                Rp100.000–Rp200.000 per hari.
-              </li>
-              <li>
-                Mengelola proses penjualan, komunikasi dengan pembeli,
-                dan kebutuhan operasional sederhana.
-              </li>
-            </ul>
-
-            <h3 style="margin-top:30px;">Freelance Design & Project Assistance</h3>
-
-            <ul class="clean-list" style="margin-top:15px;">
-              <li>Menerima permintaan desain berdasarkan brief.</li>
-              <li>Membuat desain visual sesuai kebutuhan requester.</li>
-              <li>
-                Membantu penyusunan dokumen/material berbasis brief.
-              </li>
-              <li>
-                Berkomunikasi dengan requester dan melakukan revisi
-                sesuai kebutuhan.
-              </li>
-            </ul>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =======================================================
-         ACHIEVEMENTS
-         ======================================================= -->
-
-    <section class="section alt" id="achievements">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="eyebrow">Achievements</span>
-          <h2>Selected achievements and participation.</h2>
-          <p>
-            Pencapaian yang dicantumkan berdasarkan informasi yang tersedia,
-            tanpa menambahkan tahun yang belum diberikan.
-          </p>
-        </div>
-
-        <div class="achievement-grid">
-
-          <article class="achievement reveal">
-            <div class="achievement-icon">
-              <i data-lucide="medal"></i>
-            </div>
-            <div>
-              <strong>Peraih Medali Emas — Olimpiade Sains Indonesia</strong>
-              <span>Tingkat Nasional</span>
-            </div>
-          </article>
-
-          <article class="achievement reveal">
-            <div class="achievement-icon">
-              <i data-lucide="video"></i>
-            </div>
-            <div>
-              <strong>Peserta Lomba Video Editing Promosi OPPO</strong>
-              <span>Tingkat Nasional</span>
-            </div>
-          </article>
-
-          <article class="achievement reveal">
-            <div class="achievement-icon">
-              <i data-lucide="palette"></i>
-            </div>
-            <div>
-              <strong>Juara Harapan 2 — Lomba Desain Poster Hari Guru</strong>
-              <span>Tingkat Nasional</span>
-            </div>
-          </article>
-
-          <article class="achievement reveal">
-            <div class="achievement-icon">
-              <i data-lucide="pen-tool"></i>
-            </div>
-            <div>
-              <strong>Penulis Terpilih — Lomba Puisi</strong>
-              <span>Tingkat Nasional</span>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =======================================================
-         CONTACT
-         ======================================================= -->
-
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
-
-        <div class="reveal">
-
-          <span class="eyebrow">Let's Connect</span>
-
-          <h2>
-            Let's build<br>
-            something useful.
-          </h2>
-
-          <p class="lead">
-            Saya terbuka untuk kesempatan belajar, project, internship,
-            maupun peluang kerja junior yang relevan dengan Web, IT,
-            Digital Tools, dan creative technology.
-          </p>
-
-          <div class="contact-actions">
-
-            <a
-              href="https://wa.me/628578226880"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary">
-              WhatsApp Me
-              <i data-lucide="message-circle"></i>
-            </a>
-
-            <a
-              href="mailto:randisyahputra280109@gmail.com"
-              class="btn btn-secondary">
-              Send Email
-              <i data-lucide="mail"></i>
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="contact-info reveal">
-
-          <div class="contact-info-item">
-
-            <div class="contact-icon">
-              <i data-lucide="user"></i>
-            </div>
-
-            <div>
-              <small>Name</small>
-              <strong>Randi Syahputra</strong>
-            </div>
-
-          </div>
-
-
-          <div class="contact-info-item">
-
-            <div class="contact-icon">
-              <i data-lucide="map-pin"></i>
-            </div>
-
-            <div>
-              <small>Location</small>
-              <strong>Bekasi, Jawa Barat</strong>
-            </div>
-
-          </div>
-
-
-          <div class="contact-info-item">
-
-            <div class="contact-icon">
-              <i data-lucide="mail"></i>
-            </div>
-
-            <div>
-              <small>Email</small>
-              <a href="mailto:randisyahputra280109@gmail.com">
-                randisyahputra280109@gmail.com
-              </a>
-            </div>
-
-          </div>
-
-
-          <div class="contact-info-item">
-
-            <div class="contact-icon">
-              <i data-lucide="message-circle"></i>
-            </div>
-
-            <div>
-              <small>WhatsApp</small>
-              <a
-                href="https://wa.me/628578226880"
-                target="_blank"
-                rel="noopener noreferrer">
-                085782026880
-              </a>
-            </div>
-
-          </div>
-
-
-          <div class="contact-info-item">
-
-            <div class="contact-icon">
-              <i data-lucide="graduation-cap"></i>
-            </div>
-
-            <div>
-              <small>Education</small>
-              <strong>SMK Nurjamilah • RPL • 2025–2027</strong>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
-
-  <footer>
-    <div class="container footer-inner">
-
-      <div class="footer-brand">
-
-        <!-- REPLACE WITH RANDI LOGO -->
-        <div class="brand-mark">RS</div>
+        <h3>
+          Personal / Independent Projects
+        </h3>
 
         <span>
-          RPL Student | Junior Web & Digital
+          Learning & Exploration
         </span>
 
       </div>
 
-      <div class="footer-copy">
-        © 2026 Randi Syahputra
+
+      <div class="project-grid">
+
+
+        <!-- FIND THE TOY -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary technology visual for Find the Toy project"
+              loading="lazy">
+
+            <div class="project-badge">
+              Personal Project
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot game
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status personal">
+                Independent Project
+              </span>
+
+              Web Game
+
+            </div>
+
+
+            <h3>
+              Find the Toy
+            </h3>
+
+
+            <p class="project-desc">
+              Mini web game yang dibuat secara mandiri sebagai
+              project eksperimen dan pembelajaran web development.
+            </p>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GitHub Pages</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-actions acts">
+
+              <a
+                class="btn primary small"
+                href="https://arlotarlotnasional-cmd.github.io/mini-game-find-the-toy/"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Live ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- BIRTHDAY WEBSITE -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary creative workspace visual for birthday website"
+              loading="lazy">
+
+            <div class="project-badge">
+              Personal Project
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot website
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status personal">
+                Independent Creative Project
+              </span>
+
+              Interactive Website
+
+            </div>
+
+
+            <h3>
+              Interactive Birthday Website
+            </h3>
+
+
+            <p class="project-desc">
+              Website interaktif bertema ulang tahun yang dibuat
+              secara mandiri sebagai eksplorasi creative web development.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Features
+              </h4>
+
+              <ul>
+
+                <li>
+                  Interactive envelope
+                </li>
+
+                <li>
+                  Letter reveal
+                </li>
+
+                <li>
+                  Photos
+                </li>
+
+                <li>
+                  Audio
+                </li>
+
+                <li>
+                  Animation
+                </li>
+
+                <li>
+                  Interactive UI
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GitHub Pages</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-actions acts">
+
+              <a
+                class="btn primary small"
+                href="https://arlotarlotnasional-cmd.github.io/Birthday-Cards.html/"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Live ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- HEALTHLY -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary technology visual for Healthly project"
+              loading="lazy">
+
+            <div class="project-badge">
+              Personal Project
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot Healthly
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status personal">
+                Prototype / Development
+              </span>
+
+              Health Education Platform
+
+            </div>
+
+
+            <h3>
+              Healthly — Health Education Platform
+            </h3>
+
+
+            <p class="project-desc">
+              Platform edukasi kesehatan berbasis web untuk membantu
+              pengguna memahami keluhan, informasi kondisi kesehatan,
+              kebiasaan hidup sehat, dan tanda peringatan.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Concept
+              </h4>
+
+              <ul>
+
+                <li>
+                  Keluhan → Informasi edukatif
+                </li>
+
+                <li>
+                  Safe self-care
+                </li>
+
+                <li>
+                  Medication education
+                </li>
+
+                <li>
+                  Natural / supportive approaches
+                </li>
+
+                <li>
+                  Warning signs
+                </li>
+
+                <li>
+                  When to seek professional help
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-note">
+              Healthly merupakan platform edukasi kesehatan,
+              bukan alat diagnosis dan bukan alat pemberi resep.
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GitHub</span>
+                <span>GitHub Pages</span>
+                <span>JSON / localStorage</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-actions acts">
+
+              <a
+                class="btn primary small"
+                href="https://arlotarlotnasional-cmd.github.io/Healthy.html/"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Live ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- RANZHA -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary technology visual for Ranzha personal finance project"
+              loading="lazy">
+
+            <div class="project-badge">
+              Personal Project
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot Ranzha
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status personal">
+                In Development
+              </span>
+
+              Personal Finance Application
+
+            </div>
+
+
+            <h3>
+              Ranzha — Personal Finance Application
+            </h3>
+
+
+            <p class="project-desc">
+              Aplikasi web untuk membantu pengguna mengelola
+              dan memantau keuangan pribadi.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Project Focus
+              </h4>
+
+              <ul>
+
+                <li>
+                  Pengembangan aplikasi web.
+                </li>
+
+                <li>
+                  Pengelolaan data menggunakan database.
+                </li>
+
+                <li>
+                  Pengembangan melalui web hosting.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Web Hosting</span>
+                <span>InfinityFree</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-actions acts">
+
+              <a
+                class="btn primary small"
+                href="https://ranzha.infinityfree.me/auth.php?page=login"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Live ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PORTFOLIO ITSELF -->
+
+        <article class="project-card reveal">
+
+          <div class="project-visual">
+
+            <img
+              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1400"
+              alt="Temporary developer workspace visual for portfolio project"
+              loading="lazy">
+
+            <div class="project-badge">
+              Personal Project
+            </div>
+
+            <div class="project-photo-note">
+              Temporary Visual • Ganti dengan screenshot portfolio
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-meta">
+
+              <span class="status personal">
+                In Development
+              </span>
+
+              Web Development
+
+            </div>
+
+
+            <h3>
+              Personal Portfolio Website
+            </h3>
+
+
+            <p class="project-desc">
+              Website portofolio pribadi yang digunakan untuk
+              menampilkan profil, skill, pengalaman, achievement,
+              dan project Randi.
+            </p>
+
+
+            <div class="project-block">
+
+              <h4>
+                Purpose
+              </h4>
+
+              <ul>
+
+                <li>
+                  Menampilkan professional profile.
+                </li>
+
+                <li>
+                  Menampilkan pengalaman PKL.
+                </li>
+
+                <li>
+                  Menampilkan personal project.
+                </li>
+
+                <li>
+                  Menjadi digital showcase untuk kebutuhan
+                  melamar kerja.
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <div class="project-block project-tech">
+
+              <h4>
+                Technologies
+              </h4>
+
+              <div class="chips">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>GitHub Pages</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-actions acts">
+
+              <a
+                class="btn primary small"
+                href="https://arlotarlotnasional-cmd.github.io/Portofolio-Randi.html/"
+                target="_blank"
+                rel="noopener noreferrer">
+                View Live ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
       </div>
 
     </div>
-  </footer>
 
 
-  <!-- =========================================================
-       JAVASCRIPT
-       ========================================================= -->
+    <!-- OTHER DIGITAL WORK -->
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    <div class="card digital-work reveal">
 
-      /* =======================================================
-         LUCIDE ICONS
-         ======================================================= */
+      <h3>
+        Other Projects & Digital Work
+      </h3>
 
-      if (window.lucide) {
-        lucide.createIcons();
+      <p>
+        Beberapa pekerjaan digital lain yang pernah dikerjakan
+        selama pembelajaran maupun kegiatan PKL.
+      </p>
+
+      <div class="chips">
+
+        <span>Training Presentation Materials</span>
+        <span>PowerPoint Presentations</span>
+        <span>Excel Data Processing</span>
+        <span>Training Post-Test</span>
+        <span>Google Forms</span>
+        <span>PDF Documentation</span>
+        <span>Certificate Design</span>
+        <span>Canva Visual Design</span>
+        <span>Figma Design</span>
+        <span>Video Editing</span>
+        <span>Basic Animation</span>
+        <span>Excel Reporting</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience">
+
+  <div class="wrap">
+
+    <div class="head reveal">
+
+      <div class="section-label">
+        Experience
+      </div>
+
+      <h2>
+        Experience beyond projects.
+      </h2>
+
+      <p class="sub">
+        Pengalaman PKL, organisasi, pendidikan, dan aktivitas
+        tambahan yang membentuk kemampuan kerja saya.
+      </p>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+
+      <!-- PKL -->
+
+      <div class="card experience-card full reveal">
+
+        <div class="experience-top">
+
+          <span class="experience-date">
+            Agustus 2026 – Sekarang
+          </span>
+
+          <span class="status">
+            Professional Experience
+          </span>
+
+        </div>
+
+
+        <h3>
+          IT / Web Development Intern
+        </h3>
+
+        <div class="experience-org">
+          PQI Consultant · Bekasi, Jawa Barat
+        </div>
+
+
+        <ul>
+
+          <li>
+            Membantu pengembangan dan pengelolaan website
+            menggunakan WordPress dan Elementor.
+          </li>
+
+          <li>
+            Mengelola kebutuhan website menggunakan ACF,
+            CPT UI, Forminator, WP Mail SMTP, dan Automator.
+          </li>
+
+          <li>
+            Membuat, mengedit, dan mengatur halaman serta
+            konten website sesuai kebutuhan.
+          </li>
+
+          <li>
+            Mengembangkan dan menguji prototype WhatsApp
+            AI Assistant menggunakan Aksita AI dan Fonte.
+          </li>
+
+          <li>
+            Merancang conversation flow, menu, percabangan,
+            serta pengujian interaksi AI Assistant.
+          </li>
+
+          <li>
+            Menggunakan GitHub, web hosting, dan deployment
+            untuk mendukung proyek web.
+          </li>
+
+          <li>
+            Mengolah data dan dokumen menggunakan Microsoft Excel,
+            Word, PowerPoint, dan PDF.
+          </li>
+
+          <li>
+            Membantu kebutuhan desain digital, flyer,
+            materi visual, dan konten menggunakan Canva dan Figma.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- OSIS -->
+
+      <div class="card experience-card reveal">
+
+        <div class="experience-top">
+
+          <span class="experience-date">
+            2026 · Kelas XI
+          </span>
+
+          <span class="status personal">
+            Organization
+          </span>
+
+        </div>
+
+
+        <h3>
+          Ketua Sekbid Seni dan Budaya
+        </h3>
+
+        <div class="experience-org">
+          OSIS
+        </div>
+
+
+        <ul>
+
+          <li>
+            Menjabat sebagai Ketua Sekbid Seni dan Budaya.
+          </li>
+
+          <li>
+            Terlibat dalam Class Meeting, 17 Agustus,
+            Batik Day, G30S/PKI, dan Wisuda.
+          </li>
+
+          <li>
+            Menjadi Penanggung Jawab kegiatan 17 Agustus
+            dan Class Meeting.
+          </li>
+
+          <li>
+            Mengoordinasikan sekitar 20 orang.
+          </li>
+
+          <li>
+            Membantu perlengkapan, konsumsi, dekorasi,
+            dokumentasi, registrasi, venue, dan pelaksanaan.
+          </li>
+
+          <li>
+            Mengembangkan leadership, teamwork, komunikasi,
+            perencanaan, problem solving, responsibility,
+            dan time management.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- EDUCATION -->
+
+      <div class="card experience-card reveal">
+
+        <div class="experience-top">
+
+          <span class="experience-date">
+            2025–2027
+          </span>
+
+          <span class="status">
+            Education
+          </span>
+
+        </div>
+
+
+        <h3>
+          Rekayasa Perangkat Lunak (RPL)
+        </h3>
+
+        <div class="experience-org">
+          SMK Nurjamilah · Expected Graduation 2027
+        </div>
+
+
+        <ul>
+
+          <li>
+            Fokus pada pembelajaran dan pengembangan
+            kemampuan di bidang software dan web.
+          </li>
+
+          <li>
+            Mengembangkan project mandiri sebagai bagian
+            dari proses belajar dan eksplorasi teknologi.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="subheading">
+      Additional Experience
+    </div>
+
+
+    <div class="experience-grid">
+
+
+      <!-- ENTREPRENEURSHIP -->
+
+      <div class="card experience-card reveal">
+
+        <div class="experience-top">
+
+          <span class="experience-date">
+            Sejak SMP, berlanjut saat SMK
+          </span>
+
+        </div>
+
+
+        <h3>
+          Student Entrepreneurship
+        </h3>
+
+
+        <ul>
+
+          <li>
+            Memulai aktivitas penjualan makanan dan minuman
+            sejak SMP dan berlanjut saat SMK.
+          </li>
+
+          <li>
+            Pada periode tertentu, omzet penjualan mencapai
+            sekitar Rp100.000–Rp200.000 per hari.
+          </li>
+
+          <li>
+            Mengelola proses penjualan, komunikasi dengan pembeli,
+            dan kebutuhan operasional sederhana.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- FREELANCE -->
+
+      <div class="card experience-card reveal">
+
+        <div class="experience-top">
+
+          <span class="experience-date">
+            Freelance / Independent
+          </span>
+
+        </div>
+
+
+        <h3>
+          Freelance Design & Project Assistance
+        </h3>
+
+
+        <ul>
+
+          <li>
+            Menerima permintaan desain berdasarkan brief.
+          </li>
+
+          <li>
+            Membuat desain visual sesuai kebutuhan requester.
+          </li>
+
+          <li>
+            Membantu penyusunan dokumen atau material
+            berbasis brief.
+          </li>
+
+          <li>
+            Berkomunikasi dengan requester dan melakukan
+            revisi sesuai kebutuhan.
+          </li>
+
+          <li>
+            Mengembangkan kemampuan desain, komunikasi,
+            attention to detail, dan client-oriented work.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ACHIEVEMENTS
+========================================================= -->
+
+<section id="achievements">
+
+  <div class="wrap">
+
+    <div class="head reveal">
+
+      <div class="section-label">
+        Achievements
+      </div>
+
+      <h2>
+        Achievements & participation.
+      </h2>
+
+      <p class="sub">
+        Bagian ini disiapkan dengan area gambar agar sertifikat
+        asli dapat ditampilkan sebagai bukti dokumentasi.
+        Untuk sementara digunakan foto Unsplash dan akan kamu ganti.
+      </p>
+
+    </div>
+
+
+    <div class="achievement-grid">
+
+
+      <!-- ACHIEVEMENT 1 -->
+
+      <article class="card achievement-card reveal">
+
+        <div
+          class="certificate-area certificate-trigger"
+          data-image="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600"
+          data-title="Peraih Medali Emas — Olimpiade Sains Indonesia">
+
+          <img
+            src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1200"
+            alt="Temporary certificate visual">
+
+          <div class="certificate-label">
+            Temporary Visual • Klik untuk memperbesar
+          </div>
+
+        </div>
+
+
+        <div class="achievement-content">
+
+          <div class="achievement-kicker">
+            Medali Emas
+          </div>
+
+          <h3>
+            Peraih Medali Emas — Olimpiade Sains Indonesia
+          </h3>
+
+          <p>
+            Tingkat Nasional
+          </p>
+
+          <div class="replace-note">
+            📌 Ganti foto di atas dengan sertifikat asli kamu.
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ACHIEVEMENT 2 -->
+
+      <article class="card achievement-card reveal">
+
+        <div
+          class="certificate-area certificate-trigger"
+          data-image="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600"
+          data-title="Peserta Lomba Video Editing Promosi OPPO">
+
+          <img
+            src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1200"
+            alt="Temporary certificate visual">
+
+          <div class="certificate-label">
+            Temporary Visual • Klik untuk memperbesar
+          </div>
+
+        </div>
+
+
+        <div class="achievement-content">
+
+          <div class="achievement-kicker">
+            Peserta
+          </div>
+
+          <h3>
+            Peserta Lomba Video Editing Promosi OPPO
+          </h3>
+
+          <p>
+            Tingkat Nasional
+          </p>
+
+          <div class="replace-note">
+            📌 Ganti foto di atas dengan sertifikat asli kamu.
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ACHIEVEMENT 3 -->
+
+      <article class="card achievement-card reveal">
+
+        <div
+          class="certificate-area certificate-trigger"
+          data-image="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600"
+          data-title="Juara Harapan 2 — Lomba Desain Poster Hari Guru">
+
+          <img
+            src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1200"
+            alt="Temporary certificate visual">
+
+          <div class="certificate-label">
+            Temporary Visual • Klik untuk memperbesar
+          </div>
+
+        </div>
+
+
+        <div class="achievement-content">
+
+          <div class="achievement-kicker">
+            Juara Harapan 2
+          </div>
+
+          <h3>
+            Juara Harapan 2 — Lomba Desain Poster Hari Guru
+          </h3>
+
+          <p>
+            Tingkat Nasional
+          </p>
+
+          <div class="replace-note">
+            📌 Ganti foto di atas dengan sertifikat asli kamu.
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ACHIEVEMENT 4 -->
+
+      <article class="card achievement-card reveal">
+
+        <div
+          class="certificate-area certificate-trigger"
+          data-image="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600"
+          data-title="Penulis Terpilih — Lomba Puisi">
+
+          <img
+            src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1200"
+            alt="Temporary certificate visual">
+
+          <div class="certificate-label">
+            Temporary Visual • Klik untuk memperbesar
+          </div>
+
+        </div>
+
+
+        <div class="achievement-content">
+
+          <div class="achievement-kicker">
+            Penulis Terpilih
+          </div>
+
+          <h3>
+            Penulis Terpilih — Lomba Puisi
+          </h3>
+
+          <p>
+            Tingkat Nasional
+          </p>
+
+          <div class="replace-note">
+            📌 Ganti foto di atas dengan sertifikat asli kamu.
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+  <div class="wrap reveal">
+
+    <div class="section-label" style="color:#93C5FD;justify-content:center;">
+      Contact
+    </div>
+
+    <h2>
+      Let's Connect.
+    </h2>
+
+    <p class="sub">
+      Terbuka untuk kesempatan magang, kerja entry-level,
+      dan project di bidang web serta digital.
+    </p>
+
+
+    <div class="acts contact-actions">
+
+      <a
+        class="btn primary"
+        href="https://wa.me/6285782026880?text=Halo%20Randi%2C%20saya%20melihat%20portfolio%20Anda."
+        target="_blank"
+        rel="noopener noreferrer">
+        WhatsApp
+      </a>
+
+
+      <a
+        class="btn dark"
+        href="mailto:randisyahputra280109@gmail.com">
+        Email
+      </a>
+
+
+      <!-- REPLACE WITH CV PDF URL -->
+      <a
+        class="btn dark"
+        href="#"
+        onclick="return false;">
+        Download CV
+      </a>
+
+    </div>
+
+
+    <div class="contact-info">
+
+      <strong style="color:#fff;">
+        Randi Syahputra
+      </strong>
+
+      · Bekasi, Jawa Barat
+
+      <br>
+
+      WhatsApp:
+      <span style="color:#DCE9FB;">
+        085782026880
+      </span>
+
+      <br>
+
+      Email:
+      <a href="mailto:randisyahputra280109@gmail.com">
+        randisyahputra280109@gmail.com
+      </a>
+
+      <br>
+
+      Portfolio:
+      <a
+        href="https://arlotarlotnasional-cmd.github.io/Portofolio-Randi.html/"
+        target="_blank"
+        rel="noopener noreferrer">
+        arlotarlotnasional-cmd.github.io/Portofolio-Randi.html
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="wrap footer-wrap">
+
+    <div class="footer-brand">
+
+      <div class="footer-mark">
+        RS
+      </div>
+
+      <div>
+        © 2026 Randi Syahputra<br>
+        RPL Student | Junior Web & Digital
+      </div>
+
+    </div>
+
+
+    <nav class="footer-nav" aria-label="Footer Navigation">
+
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+
+    </nav>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+  id="toTop"
+  aria-label="Kembali ke atas">
+  ↑
+</button>
+
+
+<!-- =========================================================
+     CERTIFICATE LIGHTBOX
+========================================================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  aria-hidden="true">
+
+  <div class="lightbox-inner">
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Tutup">
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Certificate preview">
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   BASIC SETUP
+========================================================= */
+
+document.documentElement.classList.add("js");
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", function(){
+
+  const isOpen = mobileMenu.classList.toggle("open");
+
+  burger.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+
+  burger.textContent = isOpen ? "×" : "☰";
+
+});
+
+
+mobileMenu.querySelectorAll("a").forEach(function(link){
+
+  link.addEventListener("click", function(){
+
+    mobileMenu.classList.remove("open");
+
+    burger.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    burger.textContent = "☰";
+
+  });
+
+});
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const toTop = document.getElementById("toTop");
+
+window.addEventListener(
+  "scroll",
+  function(){
+
+    if(window.scrollY > 650){
+
+      toTop.classList.add("show");
+
+    }else{
+
+      toTop.classList.remove("show");
+
+    }
+
+  },
+  {passive:true}
+);
+
+
+toTop.addEventListener(
+  "click",
+  function(){
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+
+if("IntersectionObserver" in window){
+
+  const observer =
+    new IntersectionObserver(
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.08
       }
+    );
 
 
-      /* =======================================================
-         NAVBAR SCROLL EFFECT
-         ======================================================= */
+  revealElements.forEach(function(element){
 
-      const navbar = document.getElementById("navbar");
+    observer.observe(element);
 
-      const updateNavbar = () => {
-        if (window.scrollY > 18) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      };
+  });
 
-      updateNavbar();
-      window.addEventListener("scroll", updateNavbar, { passive: true });
+}else{
 
+  revealElements.forEach(function(element){
 
-      /* =======================================================
-         MOBILE MENU
-         ======================================================= */
+    element.classList.add("visible");
 
-      const menuToggle = document.getElementById("menuToggle");
-      const navLinks = document.getElementById("navLinks");
+  });
 
-      const closeMenu = () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Buka menu");
-        menuToggle.innerHTML = '<i data-lucide="menu"></i>';
-
-        if (window.lucide) {
-          lucide.createIcons();
-        }
-
-        document.body.classList.remove("menu-open");
-      };
-
-      const openMenu = () => {
-        navLinks.classList.add("open");
-        menuToggle.setAttribute("aria-expanded", "true");
-        menuToggle.setAttribute("aria-label", "Tutup menu");
-        menuToggle.innerHTML = '<i data-lucide="x"></i>';
-
-        if (window.lucide) {
-          lucide.createIcons();
-        }
-
-        document.body.classList.add("menu-open");
-      };
-
-      menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.contains("open");
-
-        if (isOpen) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      });
+}
 
 
-      /* =======================================================
-         CLOSE MOBILE MENU WHEN LINK CLICKED
-         ======================================================= */
+/* =========================================================
+   CERTIFICATE LIGHTBOX
+========================================================= */
 
-      document.querySelectorAll(".nav-link").forEach(link => {
-        link.addEventListener("click", closeMenu);
-      });
+const lightbox =
+  document.getElementById("lightbox");
 
+const lightboxImage =
+  document.getElementById("lightboxImage");
 
-      /* =======================================================
-         ESC KEY
-         ======================================================= */
-
-      document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
-          closeMenu();
-        }
-      });
+const lightboxClose =
+  document.getElementById("lightboxClose");
 
 
-      /* =======================================================
-         ACTIVE NAVIGATION STATE
-         ======================================================= */
+document
+  .querySelectorAll(".certificate-trigger")
+  .forEach(function(item){
 
-      const sections = document.querySelectorAll("main section[id]");
-      const navItems = document.querySelectorAll(".nav-link");
+    item.addEventListener(
+      "click",
+      function(){
 
-      const setActiveNav = () => {
-        let current = "home";
+        const image =
+          item.getAttribute("data-image");
 
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 140;
+        const title =
+          item.getAttribute("data-title") ||
+          "Certificate preview";
 
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
+        lightboxImage.src = image;
 
-        navItems.forEach(link => {
-          const href = link.getAttribute("href");
-          link.classList.toggle("active", href === "#" + current);
-        });
-      };
+        lightboxImage.alt =
+          title;
 
-      setActiveNav();
+        lightbox.classList.add("open");
 
-      window.addEventListener("scroll", setActiveNav, { passive: true });
-
-
-      /* =======================================================
-         REVEAL ANIMATION
-         ======================================================= */
-
-      const revealElements = document.querySelectorAll(".reveal");
-
-      if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(
-          entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          {
-            threshold: 0.08,
-            rootMargin: "0px 0px -40px 0px"
-          }
+        lightbox.setAttribute(
+          "aria-hidden",
+          "false"
         );
 
-        revealElements.forEach(element => {
-          observer.observe(element);
-        });
+        document.body.classList.add("modal-open");
 
-      } else {
+      }
+    );
 
-        revealElements.forEach(element => {
-          element.classList.add("visible");
-        });
+  });
+
+
+function closeLightbox(){
+
+  lightbox.classList.remove("open");
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  lightboxImage.src = "";
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+}
+
+
+lightboxClose.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+lightbox.addEventListener(
+  "click",
+  function(event){
+
+    if(event.target === lightbox){
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Escape"){
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   LOGO FALLBACK
+========================================================= */
+
+const logoImage =
+  document.querySelector(".brand-mark img");
+
+const logoText =
+  document.querySelector(".brand-mark span");
+
+
+if(logoImage){
+
+  logoImage.addEventListener(
+    "load",
+    function(){
+
+      logoImage.style.display = "block";
+
+      if(logoText){
+
+        logoText.style.display = "none";
 
       }
 
+    }
+  );
 
-      /* =======================================================
-         CLOSE MENU ON RESIZE
-         ======================================================= */
+}
 
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 850) {
-          closeMenu();
+
+/* =========================================================
+   IMAGE FALLBACK
+   Kalau suatu saat URL Unsplash gagal,
+   tampilkan visual fallback yang tetap rapi.
+========================================================= */
+
+document
+  .querySelectorAll("img")
+  .forEach(function(img){
+
+    img.addEventListener(
+      "error",
+      function(){
+
+        if(img.classList.contains("logo-image")){
+
+          return;
+
         }
-      });
 
+        img.style.display = "none";
 
-      /* =======================================================
-         PREVENT EMPTY CV PLACEHOLDER FROM BREAKING UX
-         ======================================================= */
+        const parent =
+          img.parentElement;
 
-      const cvButton = document.querySelector(".nav-cv");
+        if(parent){
 
-      if (cvButton) {
-        cvButton.addEventListener("click", event => {
-          const confirmed = window.confirm(
-            "Link CV PDF belum dipasang. Ganti href tombol ini dengan URL PDF CV kamu."
-          );
+          parent.style.background =
+            "linear-gradient(135deg,#102A43,#17345A)";
 
-          if (!confirmed) {
-            event.preventDefault();
-          }
-        });
+        }
+
       }
+    );
 
-    });
-  </script>
+  });
+
+
+/* =========================================================
+   CLOSE MOBILE MENU WHEN RESIZING
+========================================================= */
+
+window.addEventListener(
+  "resize",
+  function(){
+
+    if(window.innerWidth > 980){
+
+      mobileMenu.classList.remove("open");
+
+      burger.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      burger.textContent = "☰";
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   PREVENT EMPTY HASH JUMP
+========================================================= */
+
+document
+  .querySelectorAll('a[href="#"]')
+  .forEach(function(link){
+
+    link.addEventListener(
+      "click",
+      function(event){
+
+        event.preventDefault();
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   DONE
+========================================================= */
+
+</script>
 
 </body>
 </html>
