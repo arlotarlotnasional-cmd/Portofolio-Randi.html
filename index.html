@@ -303,7 +303,7 @@
        ========================================================= */
 
     .hero {
-      min-height: clamp(620px, 100svh, 900px);
+      min-height: 100vh;
       padding: 145px 0 80px;
       display: flex;
       align-items: center;
@@ -888,27 +888,6 @@
       grid-template-columns: .85fr 1.15fr;
     }
 
-    .project-support-image {
-      width: 100%;
-      height: 100%;
-      min-height: 235px;
-      object-fit: cover;
-    }
-
-    .project-visual-note {
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      z-index: 3;
-      padding: 6px 9px;
-      border-radius: 7px;
-      background: rgba(11,31,58,.78);
-      color: rgba(255,255,255,.94);
-      font-size: .6rem;
-      font-weight: 700;
-      backdrop-filter: blur(8px);
-    }
-
     .project-media {
       position: relative;
       min-height: 235px;
@@ -1294,33 +1273,6 @@
        ACHIEVEMENTS
        ========================================================= */
 
-    .achievement-photo {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 16px;
-      border: 1px solid var(--border);
-      background: #EAF0F7;
-    }
-
-    .achievement-photo-wrap {
-      position: relative;
-    }
-
-    .achievement-photo-label {
-      position: absolute;
-      left: 10px;
-      bottom: 10px;
-      padding: 5px 8px;
-      border-radius: 7px;
-      background: rgba(11,31,58,.78);
-      color: #fff;
-      font-size: .58rem;
-      font-weight: 700;
-      backdrop-filter: blur(8px);
-    }
-
     .achievement-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1631,9 +1583,7 @@
       }
 
       .hero {
-        min-height: auto;
         padding-top: 120px;
-        padding-bottom: 72px;
       }
 
       .hero-grid,
@@ -1678,15 +1628,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(2.65rem, 14vw, 4.15rem);
-      }
-
-      .hero-subtitle {
-        font-size: clamp(.95rem, 4vw, 1.1rem);
-      }
-
-      .hero-description {
-        font-size: .92rem;
+        font-size: clamp(2.7rem, 15vw, 4.2rem);
       }
 
       .hero-actions {
@@ -1827,6 +1769,92 @@
         transform: none;
       }
     }
+  
+
+    /* FINAL RESPONSIVE POLISH — preserves the original desktop design */
+    .project-media .project-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 235px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .achievement {
+      display: grid;
+      grid-template-columns: 112px 40px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .achievement-image {
+      width: 112px;
+      height: 76px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #EEF4FF;
+    }
+
+    .achievement-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: clamp(2.8rem, 8.5vw, 5rem);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: clamp(2.45rem, 12vw, 4.1rem);
+        letter-spacing: -.06em;
+      }
+
+      .hero h1 .name {
+        overflow-wrap: anywhere;
+      }
+
+      .achievement {
+        grid-template-columns: 86px 40px minmax(0, 1fr);
+        gap: 11px;
+        padding: 15px;
+      }
+
+      .achievement-image {
+        width: 86px;
+        height: 64px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero h1 {
+        font-size: clamp(2.25rem, 12.5vw, 3.2rem);
+      }
+
+      .achievement {
+        grid-template-columns: 72px 34px minmax(0, 1fr);
+        gap: 9px;
+        padding: 13px;
+      }
+
+      .achievement-image {
+        width: 72px;
+        height: 58px;
+      }
+
+      .achievement-icon {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1895,7 +1923,11 @@
 
   <main>
 
-<section class="hero" id="home">
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+
+    <section class="hero" id="home">
       <div class="container hero-grid">
 
         <div class="hero-copy reveal">
@@ -2064,6 +2096,72 @@
       </div>
     </section>
 
+<section class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Personal Brand</span>
+          <h2>Four areas that shape my work.</h2>
+          <p>
+            Kombinasi kemampuan teknis, eksplorasi teknologi, kreativitas,
+            dan pengalaman organisasi.
+          </p>
+        </div>
+
+        <div class="strength-grid">
+
+          <article class="strength-card reveal">
+            <div class="strength-number">01</div>
+            <div class="strength-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+            <h3>Web & IT</h3>
+            <p>
+              Web development, WordPress, hosting, deployment, dan digital tools.
+            </p>
+          </article>
+
+          <article class="strength-card reveal">
+            <div class="strength-number">02</div>
+            <div class="strength-icon">
+              <i data-lucide="bot"></i>
+            </div>
+            <h3>AI & Automation</h3>
+            <p>
+              Eksplorasi AI Assistant dan conversational workflow menggunakan
+              Aksita AI dan Fonte.
+            </p>
+          </article>
+
+          <article class="strength-card reveal">
+            <div class="strength-number">03</div>
+            <div class="strength-icon">
+              <i data-lucide="palette"></i>
+            </div>
+            <h3>Digital & Creative</h3>
+            <p>
+              Desain digital, visual content, Canva, Figma, video editing,
+              dan creative web project.
+            </p>
+          </article>
+
+          <article class="strength-card reveal">
+            <div class="strength-number">04</div>
+            <div class="strength-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Leadership & Initiative</h3>
+            <p>
+              Pengalaman organisasi, koordinasi kegiatan, teamwork,
+              communication, dan responsibility.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
 <section class="section alt" id="experience">
       <div class="container">
 
@@ -2163,99 +2261,6 @@
       </div>
     </section>
 
-<section class="section" id="experience-extra">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="eyebrow">Additional Experience</span>
-          <h2>Leadership, initiative, and practical experience.</h2>
-          <p>
-            Pengalaman di luar project development yang membentuk kemampuan
-            komunikasi, koordinasi, tanggung jawab, dan problem solving.
-          </p>
-        </div>
-
-        <div class="two-column">
-
-          <!-- OSIS -->
-
-          <article class="content-card reveal">
-
-            <h3>OSIS — Ketua Sekbid Seni dan Budaya</h3>
-            <div class="meta">2026 • Kelas XI</div>
-
-            <ul class="clean-list">
-              <li>Menjabat sebagai Ketua Sekbid Seni dan Budaya.</li>
-              <li>
-                Terlibat dalam pelaksanaan Class Meeting, kegiatan 17 Agustus,
-                Batik Day, G30S/PKI, dan Wisuda.
-              </li>
-              <li>
-                Menjadi Penanggung Jawab (PJ) kegiatan 17 Agustus dan Class Meeting.
-              </li>
-              <li>Mengoordinasikan sekitar 20 orang.</li>
-              <li>
-                Membantu mengatur perlengkapan/logistik, konsumsi, dekorasi,
-                dokumentasi, registrasi, persiapan venue, serta pelaksanaan acara.
-              </li>
-            </ul>
-
-            <div class="mini-tags">
-              <span class="mini-tag">Leadership</span>
-              <span class="mini-tag">Teamwork</span>
-              <span class="mini-tag">Communication</span>
-              <span class="mini-tag">Planning</span>
-              <span class="mini-tag">Problem Solving</span>
-              <span class="mini-tag">Responsibility</span>
-              <span class="mini-tag">Time Management</span>
-            </div>
-
-          </article>
-
-
-          <!-- ENTREPRENEURSHIP -->
-
-          <article class="content-card reveal">
-
-            <h3>Student Entrepreneurship</h3>
-            <div class="meta">Additional Experience</div>
-
-            <ul class="clean-list">
-              <li>
-                Memulai aktivitas penjualan makanan dan minuman sejak SMP
-                dan berlanjut saat SMK.
-              </li>
-              <li>
-                Pada periode tertentu, omzet penjualan mencapai sekitar
-                Rp100.000–Rp200.000 per hari.
-              </li>
-              <li>
-                Mengelola proses penjualan, komunikasi dengan pembeli,
-                dan kebutuhan operasional sederhana.
-              </li>
-            </ul>
-
-            <h3 style="margin-top:30px;">Freelance Design & Project Assistance</h3>
-
-            <ul class="clean-list" style="margin-top:15px;">
-              <li>Menerima permintaan desain berdasarkan brief.</li>
-              <li>Membuat desain visual sesuai kebutuhan requester.</li>
-              <li>
-                Membantu penyusunan dokumen/material berbasis brief.
-              </li>
-              <li>
-                Berkomunikasi dengan requester dan melakukan revisi
-                sesuai kebutuhan.
-              </li>
-            </ul>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
 <section class="section" id="projects">
       <div class="container">
 
@@ -2295,11 +2300,7 @@
             <div class="project-media">
               <div class="project-status">Professional Experience / PKL</div>
 
-              <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/pqi-website.jpg" alt="Supporting visual for Pqi Website" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+              <img class="project-image" src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600" alt="PQI Consultant website and web development workspace" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2367,11 +2368,7 @@
             <div class="project-media">
               <div class="project-status">Professional Experience / PKL</div>
 
-              <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/operational-excellence-playbook.jpg" alt="Supporting visual for Operational Excellence Playbook" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+              <img class="project-image" src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600" alt="Temporary playbook and certificate style supporting visual" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2470,11 +2467,7 @@
             <div class="project-media">
               <div class="project-status">PKL</div>
 
-              <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/whatsapp-ai.jpg" alt="Supporting visual for Whatsapp Ai" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+              <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Developer workspace supporting the WhatsApp AI Assistant project" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2526,11 +2519,7 @@
             <div class="project-media">
               <div class="project-status">Draft / Not Published</div>
 
-              <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/certificate-verification.jpg" alt="Supporting visual for Certificate Verification" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+              <img class="project-image" src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600" alt="Temporary certificate verification project visual" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2584,11 +2573,7 @@
             <div class="project-media">
               <div class="project-status">Draft / Not Published</div>
 
-              <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/form-e-certificate.jpg" alt="Supporting visual for Form E Certificate" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+              <img class="project-image" src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1600" alt="Temporary certificate form project visual" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2640,11 +2625,7 @@
             <div class="project-media">
               <div class="project-status">Professional Experience / PKL</div>
 
-              <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/iso-flyer.jpg" alt="Supporting visual for Iso Flyer" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+              <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Digital design and creative technology workspace" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2705,11 +2686,7 @@
               <div class="project-media">
                 <div class="project-status">Prototype / Development</div>
 
-                <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/healthly.jpg" alt="Supporting visual for Healthly" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+                <img class="project-image" src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600" alt="Healthly web development supporting visual" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -2772,11 +2749,7 @@
               <div class="project-media">
                 <div class="project-status">In Development</div>
 
-                <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/ranzha.jpg" alt="Supporting visual for Ranzha" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+                <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Ranzha web application supporting visual" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -2826,11 +2799,7 @@
               <div class="project-media">
                 <div class="project-status">Personal Project</div>
 
-                <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/find-the-toy.jpg" alt="Supporting visual for Find The Toy" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+                <img class="project-image" src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600" alt="Find the Toy web game supporting visual" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -2877,11 +2846,7 @@
               <div class="project-media">
                 <div class="project-status">Personal Project</div>
 
-                <div class="project-placeholder">
-                <img class="project-support-image" src="assets/projects/birthday-website.jpg" alt="Supporting visual for Birthday Website" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600';">
-                <span class="project-visual-note">Preview sementara • ganti dengan screenshot asli</span>
-              </div>
-            </div>
+                <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Interactive Birthday Website supporting visual" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -3074,11 +3039,7 @@
         <div class="achievement-grid">
 
           <article class="achievement reveal">
-            <div class="achievement-photo-wrap">
-              <img class="achievement-photo" src="assets/certificates/olimpiade-sains.jpg" alt="Placeholder certificate photo" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1600';">
-              <span class="achievement-photo-label">Preview sementara • ganti dengan sertifikat asli</span>
-            </div>
-            
+            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
             <div class="achievement-icon">
               <i data-lucide="medal"></i>
             </div>
@@ -3089,11 +3050,7 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="achievement-photo-wrap">
-              <img class="achievement-photo" src="assets/certificates/video-editing-oppo.jpg" alt="Placeholder certificate photo" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1600';">
-              <span class="achievement-photo-label">Preview sementara • ganti dengan sertifikat asli</span>
-            </div>
-            
+            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
             <div class="achievement-icon">
               <i data-lucide="video"></i>
             </div>
@@ -3104,11 +3061,7 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="achievement-photo-wrap">
-              <img class="achievement-photo" src="assets/certificates/poster-hari-guru.jpg" alt="Placeholder certificate photo" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1600';">
-              <span class="achievement-photo-label">Preview sementara • ganti dengan sertifikat asli</span>
-            </div>
-            
+            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
             <div class="achievement-icon">
               <i data-lucide="palette"></i>
             </div>
@@ -3119,11 +3072,7 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="achievement-photo-wrap">
-              <img class="achievement-photo" src="assets/certificates/lomba-puisi.jpg" alt="Placeholder certificate photo" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1600';">
-              <span class="achievement-photo-label">Preview sementara • ganti dengan sertifikat asli</span>
-            </div>
-            
+            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
             <div class="achievement-icon">
               <i data-lucide="pen-tool"></i>
             </div>
