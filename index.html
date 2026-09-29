@@ -1,366 +1,3542 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Randi Syahputra | RPL Student, Junior Web & Digital</title>
-<meta name="description" content="Portofolio Randi Syahputra, siswa RPL SMK Nurjamilah. Web development, WordPress, AI assistant, dan digital tools. PKL di PQI Consultant.">
-<meta name="theme-color" content="#0B1F3A">
-<meta property="og:title" content="Randi Syahputra | RPL Student, Junior Web & Digital">
-<meta property="og:description" content="Web development, WordPress, AI assistant, dan digital tools.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://arlotarlotnasional-cmd.github.io/Portofolio-Randi.html/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B1F3A'/><text x='50' y='69' font-size='58' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2393c5fd'>R</text></svg>">
-<!-- Resource eksternal: hanya Google Fonts (Plus Jakarta Sans) dan, jika kamu isi, gambar Unsplash. Tanpa library JS. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#0B1F3A;--navy2:#102A43;--blue:#1E40AF;--sky:#93c5fd;--bg:#F8FAFC;--line:#E2E8F0;--card:#fff;--ink:#0f1c33;--muted:#526079;--w:min(1120px,100% - 40px)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font:16px/1.65 "Plus Jakarta Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
-.wrap{width:var(--w);margin:auto}
-section{padding:92px 0}
-h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.035em}
-.sub{color:var(--muted);max-width:660px;margin-top:10px}
-.head{margin-bottom:40px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;font:600 14px/1.2 "Plus Jakarta Sans",system-ui,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s}
-.btn:hover{border-color:var(--blue)}
-.btn.p{background:var(--blue);border-color:var(--blue);color:#fff}.btn.p:hover{background:#1a3690}
-.btn.g{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}.btn.g:hover{border-color:var(--sky)}
-.btn.s{padding:8px 14px;font-size:13px}
-.acts{display:flex;gap:10px;flex-wrap:wrap}
-header{position:sticky;top:0;z-index:50;background:rgba(11,31,58,.95);backdrop-filter:blur(12px);color:#fff}
-.nav{display:flex;align-items:center;gap:22px;height:64px}
-.logo{font-weight:800;letter-spacing:-.02em;margin-right:auto}.logo span{color:var(--sky)}
-.nav a.l{font-size:13.5px;color:#c6d3ea}.nav a.l:hover{color:#fff}
-#burger{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;width:42px;height:42px;font-size:20px;cursor:pointer}
-#menu{display:none;flex-direction:column;background:var(--navy);padding:6px 20px 16px;border-top:1px solid var(--navy2)}
-#menu.open{display:flex}#menu a{padding:12px 0;color:#c6d3ea;border-bottom:1px solid var(--navy2)}
-/* hero */
-.hero{background:radial-gradient(800px 380px at 88% 0,rgba(30,64,175,.55),transparent 62%),var(--navy);color:#fff;padding:80px 0 72px}
-.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
-.hi{color:var(--sky);font-weight:600}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.045em;margin:6px 0 10px}
-.role{font-size:20px;font-weight:600;color:#dbe7fb}
-.tag{color:#c6d3ea;font-size:17px;max-width:540px;margin:16px 0 8px}
-.alt{color:#8ea6cc;font-size:14px}
-.hero .acts{margin-top:28px}
-.vis{position:relative;aspect-ratio:4/3.4;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.14)}
-.vis img{width:100%;height:100%;object-fit:cover}
-.fb{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:24px;color:#9fb6da;font-size:13px;background:linear-gradient(rgba(147,197,253,.07) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(90deg,rgba(147,197,253,.07) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(140deg,var(--navy2),#183a7a)}
-.fb b{display:block;color:#dbe7fb;font-size:15px;margin-bottom:4px}
-.cap{position:absolute;left:12px;bottom:10px;font-size:11px;color:#fff;background:rgba(11,31,58,.7);padding:3px 10px;border-radius:99px}
-/* about */
-.ab{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:start}
-.ab p{color:var(--muted)}
-.ab .vis{aspect-ratio:4/3;border-color:var(--line);margin-bottom:16px}
-.ab .fb{color:#57709a;background:linear-gradient(140deg,#eaf1fb,#dbe7f7)}.ab .fb b{color:var(--navy)}
-.str{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 1px 2px rgba(15,28,51,.04)}
-.card h3{font-size:16px;margin-bottom:6px}.card p{font-size:14px}
-.facts{list-style:none;font-size:15px}.facts li{padding:10px 0;border-bottom:1px solid var(--line)}.facts li:last-child{border:0}
-.facts b{display:block;font-size:12.5px;color:var(--blue)}
-/* chips */
-.chips{display:flex;gap:6px;flex-wrap:wrap}
-.chips span{padding:4px 11px;border-radius:99px;background:#E6EEFB;color:var(--blue);font-size:12.5px;font-weight:600}
-/* skills */
-#skills{position:relative;background:#fff;border-block:1px solid var(--line);isolation:isolate}
-#skills::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--skillbg,none) center/cover;opacity:.06}
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.sg h3{font-size:13px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
-.sg .chips span{background:var(--bg);border:1px solid var(--line);color:var(--ink)}
-/* projects */
-.pg{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.proj{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(15,28,51,.04);transition:box-shadow .25s,border-color .25s}
-.proj:hover{box-shadow:0 14px 34px rgba(15,28,51,.1);border-color:#c4d3ec}
-.shots{display:grid;gap:2px;background:var(--line)}
-.shots.n3{grid-template-columns:repeat(3,1fr)}
-.shot{position:relative;aspect-ratio:16/9;background:var(--navy);overflow:hidden}
-.shots.n3 .shot{aspect-ratio:4/3}
-.shot img{width:100%;height:100%;object-fit:cover}
-.ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:2px;padding:14px;color:#9fb6da;font-size:12px;background:repeating-linear-gradient(135deg,rgba(147,197,253,.06) 0 12px,transparent 12px 24px),linear-gradient(140deg,var(--navy),var(--navy2))}
-.ph b{color:#dbe7fb;font-size:13px;letter-spacing:.06em}
-.lab{position:absolute;left:10px;top:10px;font-size:11px;font-weight:700;color:#fff;background:rgba(30,64,175,.9);padding:2px 10px;border-radius:99px}
-.pb{padding:24px;display:flex;flex-direction:column;gap:14px;flex:1}
-.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.st{padding:3px 10px;border-radius:99px;font-weight:700;font-size:12px;background:#FEF3C7;color:#92400E}
-.st.pkl{background:#E0E7FF;color:#3730A3}.st.ok{background:#D1FAE5;color:#065F46}
-.pb h3{font-size:22px;line-height:1.2;letter-spacing:-.02em}
-.pb>p{font-size:15px;color:var(--muted)}
-.pb h4{font-size:12.5px;color:var(--blue);margin-bottom:4px}
-.pb ul{margin-left:18px;font-size:14px;color:var(--muted)}.pb li{margin:2px 0}
-.pb .acts{margin-top:auto}
-.note{font-size:12.5px;color:var(--muted);background:#F1F5F9;border-radius:8px;padding:8px 12px}
-.todo{color:#B45309}
-.dw{margin-top:22px}.dw .chips{margin-top:12px}
-/* experience */
-.eg{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.xp .meta{margin-bottom:8px}.xp h3{font-size:20px;letter-spacing:-.02em;margin-bottom:2px}
-.xp ul{margin:12px 0 0 18px;font-size:14.5px;color:var(--muted)}.xp li{margin:4px 0}
-.xp.full{grid-column:1/-1}
-.sec{font-size:14px;font-weight:700;color:var(--blue);margin:44px 0 16px}
-/* achievements */
-.ag{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.medal{width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--sky);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
-.ag h3{font-size:16px;line-height:1.35}.ag p{font-size:13.5px;color:var(--muted);margin-top:6px}
-.ag .k{font-size:12px;font-weight:700;color:var(--blue);margin-bottom:6px}
-/* contact */
-#contact{background:var(--navy);color:#fff;text-align:center}
-#contact .sub{color:#c6d3ea;margin:12px auto 0}
-#contact .acts{justify-content:center;margin-top:28px}
-.ci{margin-top:26px;color:#9fb6da;font-size:14.5px;line-height:2}
-.ci a{color:#dbe7fb;text-decoration:underline;text-underline-offset:3px}
-footer{background:#071630;color:#8ea6cc;font-size:13px;padding:26px 0}
-footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
-footer nav{display:flex;gap:16px;flex-wrap:wrap}footer a:hover{color:#fff}
-#toTop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:18px;opacity:0;pointer-events:none;transition:opacity .2s}
-#toTop.show{opacity:1;pointer-events:auto}
-@keyframes up{from{opacity:0;transform:translateY(14px)}}
-.hero .wrap>*{animation:up .7s ease both}.hero .wrap>*:last-child{animation-delay:.15s}
-.js .rv{opacity:0;transition:opacity .6s}.js .rv.on{opacity:1}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1}}
-@media(max-width:940px){.nav a.l{display:none}#burger{display:block}.hg,.ab,.pg,.eg,.sg{grid-template-columns:1fr}.ag{grid-template-columns:1fr 1fr}section{padding:64px 0}.hero{padding:48px 0}.vis{aspect-ratio:16/10}}
-@media(max-width:520px){.ag,.str{grid-template-columns:1fr}.hero .btn{flex:1 1 100%}.shots.n3{grid-template-columns:1fr}.shots.n3 .shot{aspect-ratio:16/9}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Randi Syahputra | RPL Student • Junior Web & Digital</title>
+  <meta name="description" content="Portfolio profesional Randi Syahputra — RPL Student | Junior Web & Digital. Web Development, WordPress, AI Assistant, Digital Tools.">
+  <meta name="author" content="Randi Syahputra">
+  <meta name="theme-color" content="#0B1F3A">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* =========================================================
+       RANDI SYAHPUTRA — PORTFOLIO
+       Single-file GitHub Pages portfolio
+       ========================================================= */
+
+    :root {
+      --navy: #0B1F3A;
+      --dark-blue: #102A43;
+      --accent: #1E40AF;
+      --accent-light: #EFF6FF;
+      --background: #F8FAFC;
+      --light-gray: #E2E8F0;
+      --white: #FFFFFF;
+      --text: #102A43;
+      --muted: #64748B;
+      --border: #DCE5EF;
+      --success: #0F766E;
+      --shadow-sm: 0 4px 18px rgba(11, 31, 58, .06);
+      --shadow-md: 0 14px 40px rgba(11, 31, 58, .09);
+      --shadow-lg: 0 24px 70px rgba(11, 31, 58, .13);
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+      --container: 1180px;
+      --nav-height: 78px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section.alt {
+      background: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--accent);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 54px;
+    }
+
+    .section-heading h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.1;
+      letter-spacing: -.045em;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1rem;
+    }
+
+    /* =========================================================
+       NAVBAR
+       ========================================================= */
+
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      height: var(--nav-height);
+      z-index: 1000;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      border-bottom-color: var(--border);
+      box-shadow: 0 5px 24px rgba(11,31,58,.06);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /*
+      ==========================================================
+      LOGO SLOT
+      ==========================================================
+      Replace the .brand-mark contents with:
+      <img src="assets/logo-randi.png" alt="Randi Syahputra Logo">
+      ==========================================================
+    */
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--white);
+      background: linear-gradient(145deg, var(--navy), var(--accent));
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: .92rem;
+      box-shadow: 0 8px 20px rgba(30,64,175,.18);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: .92rem;
+      color: var(--navy);
+      letter-spacing: -.02em;
+    }
+
+    .brand-role {
+      color: var(--muted);
+      font-size: .67rem;
+      margin-top: 4px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 9px 12px;
+      color: #475569;
+      font-size: .83rem;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--navy);
+      background: #F1F5F9;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 3px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 99px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .nav-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 14px;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 10px;
+      font-size: .8rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .nav-cv:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--navy);
+      border-radius: 11px;
+      cursor: pointer;
+      place-items: center;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 145px 0 80px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(30,64,175,.08), transparent 28%),
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 11px;
+      border: 1px solid #CBD5E1;
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-label span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22C55E;
+      box-shadow: 0 0 0 5px rgba(34,197,94,.12);
+    }
+
+    .hero h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(3.1rem, 7vw, 6.15rem);
+      line-height: .95;
+      letter-spacing: -.065em;
+      color: var(--navy);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .hi {
+      display: block;
+      font-size: .3em;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 13px;
+    }
+
+    .hero h1 .name {
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--dark-blue);
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 11px;
+      font-size: .83rem;
+      font-weight: 750;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--navy);
+      box-shadow: 0 10px 22px rgba(11,31,58,.14);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(30,64,175,.2);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      background: var(--white);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .hero-meta-item i {
+      width: 16px;
+      color: var(--accent);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      padding: 13px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(255,255,255,.74);
+      box-shadow: var(--shadow-lg);
+      transform: rotate(1deg);
+    }
+
+    .hero-image-wrap::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: rgba(30,64,175,.1);
+      top: -70px;
+      right: -65px;
+      z-index: -1;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 1 / .92;
+      object-fit: cover;
+      border-radius: 21px;
+      filter: saturate(.92);
+    }
+
+    .hero-image-credit {
+      position: absolute;
+      bottom: 23px;
+      right: 24px;
+      padding: 5px 8px;
+      border-radius: 7px;
+      background: rgba(11,31,58,.72);
+      color: rgba(255,255,255,.9);
+      font-size: .61rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-float {
+      position: absolute;
+      left: -32px;
+      bottom: 34px;
+      width: 205px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 16px;
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-float-label {
+      color: var(--muted);
+      font-size: .64rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 6px;
+    }
+
+    .hero-float strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      color: var(--navy);
+      font-size: .94rem;
+    }
+
+    .hero-float small {
+      display: block;
+      color: var(--muted);
+      font-size: .68rem;
+      margin-top: 3px;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .84fr 1.16fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image-card {
+      position: relative;
+      padding: 12px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-image-card img {
+      width: 100%;
+      aspect-ratio: .9 / 1;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .support-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: var(--white);
+      background: rgba(11,31,58,.78);
+      font-size: .64rem;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+    }
+
+    .about-content h3 {
+      font-family: "Manrope", sans-serif;
+      color: var(--navy);
+      font-size: 1.55rem;
+      letter-spacing: -.03em;
+      margin-bottom: 15px;
+    }
+
+    .about-content > p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .info-box {
+      padding: 17px;
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .info-box .label {
+      display: block;
+      color: var(--muted);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .info-box strong {
+      color: var(--navy);
+      font-size: .86rem;
+    }
+
+    .mindset {
+      margin-top: 14px;
+      padding: 19px;
+      border-radius: 15px;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .mindset strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      margin-bottom: 4px;
+    }
+
+    .mindset p {
+      color: #CBD5E1;
+      font-size: .82rem;
+    }
+
+    /* =========================================================
+       STRENGTHS
+       ========================================================= */
+
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .strength-card {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      transition: var(--transition);
+    }
+
+    .strength-card:hover {
+      transform: translateY(-5px);
+      border-color: #B7C6DB;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .strength-number {
+      font-size: .7rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: .08em;
+      margin-bottom: 22px;
+    }
+
+    .strength-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: var(--accent);
+      background: var(--accent-light);
+      margin-bottom: 18px;
+    }
+
+    .strength-card h3 {
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: .98rem;
+      margin-bottom: 7px;
+    }
+
+    .strength-card p {
+      color: var(--muted);
+      font-size: .77rem;
+    }
+
+    /* =========================================================
+       EXPERIENCE
+       ========================================================= */
+
+    .experience-card {
+      position: relative;
+      padding: 38px;
+      border-radius: var(--radius-lg);
+      background: var(--navy);
+      color: var(--white);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .experience-card::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: rgba(30,64,175,.25);
+      right: -130px;
+      top: -160px;
+    }
+
+    .experience-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 31px;
+    }
+
+    .experience-company {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .company-mark {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.14);
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: .85rem;
+    }
+
+    .experience-company h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.35rem;
+    }
+
+    .experience-company p {
+      color: #AFC0D4;
+      font-size: .8rem;
+      margin-top: 2px;
+    }
+
+    .experience-date {
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 9px;
+      color: #D8E4F1;
+      font-size: .73rem;
+      white-space: nowrap;
+    }
+
+    .experience-body {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 50px;
+    }
+
+    .experience-location {
+      color: #AFC0D4;
+      font-size: .8rem;
+      margin-bottom: 18px;
+    }
+
+    .experience-location i {
+      vertical-align: -3px;
+      margin-right: 5px;
+      width: 15px;
+    }
+
+    .experience-body h4 {
+      font-family: "Manrope", sans-serif;
+      margin-bottom: 13px;
+      font-size: .85rem;
+      color: #FFFFFF;
+    }
+
+    .experience-list {
+      list-style: none;
+    }
+
+    .experience-list li {
+      position: relative;
+      padding-left: 19px;
+      margin-bottom: 10px;
+      color: #D5E0EB;
+      font-size: .82rem;
+    }
+
+    .experience-list li::before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #7EA2FF;
+      left: 2px;
+      top: .68em;
+    }
+
+    .visit-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      color: #FFFFFF;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .visit-link:hover {
+      color: #AFC7FF;
+    }
+
+    /* =========================================================
+       PROJECTS
+       ========================================================= */
+
+    .project-group {
+      margin-bottom: 85px;
+    }
+
+    .project-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-group-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .project-group-head h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.45rem;
+      color: var(--navy);
+      letter-spacing: -.03em;
+    }
+
+    .project-group-head p {
+      color: var(--muted);
+      font-size: .78rem;
+      max-width: 560px;
+      text-align: right;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #B7C6DB;
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+    }
+
+    .project-media {
+      position: relative;
+      min-height: 235px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(126,162,255,.25), transparent 32%),
+        linear-gradient(145deg, var(--navy), var(--dark-blue));
+      overflow: hidden;
+    }
+
+    .project-card.featured .project-media {
+      min-height: 100%;
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 235px;
+      object-fit: cover;
+    }
+
+    .project-placeholder {
+      height: 100%;
+      min-height: 235px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-placeholder::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+    }
+
+    .project-placeholder::after {
+      content: "";
+      position: absolute;
+      width: 125px;
+      height: 125px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 50%;
+    }
+
+    .placeholder-content {
+      position: relative;
+      z-index: 1;
+      color: var(--white);
+    }
+
+    .placeholder-content i {
+      width: 30px;
+      height: 30px;
+      margin: 0 auto 10px;
+      color: #AFC7FF;
+    }
+
+    .placeholder-content strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: .86rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .placeholder-content span {
+      display: block;
+      margin-top: 5px;
+      color: #AFC0D4;
+      font-size: .67rem;
+    }
+
+    .project-status {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 9px;
+      border-radius: 7px;
+      background: rgba(11,31,58,.83);
+      color: var(--white);
+      font-size: .62rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .project-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-category {
+      color: var(--accent);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .project-title {
+      font-family: "Manrope", sans-serif;
+      color: var(--navy);
+      font-size: 1.18rem;
+      line-height: 1.2;
+      letter-spacing: -.025em;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-bottom: 20px;
+    }
+
+    .contribution {
+      padding: 15px;
+      margin-bottom: 19px;
+      border-radius: 12px;
+      background: var(--background);
+      border: 1px solid var(--border);
+    }
+
+    .contribution strong {
+      display: block;
+      color: var(--navy);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 8px;
+    }
+
+    .contribution ul {
+      list-style: none;
+    }
+
+    .contribution li {
+      position: relative;
+      padding-left: 14px;
+      color: var(--muted);
+      font-size: .73rem;
+      margin-bottom: 5px;
+    }
+
+    .contribution li:last-child {
+      margin-bottom: 0;
+    }
+
+    .contribution li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 2px;
+    }
+
+    .tag {
+      padding: 5px 8px;
+      border-radius: 7px;
+      background: #F1F5F9;
+      color: #475569;
+      border: 1px solid #E2E8F0;
+      font-size: .63rem;
+      font-weight: 650;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 11px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: .69rem;
+      font-weight: 750;
+      transition: var(--transition);
+    }
+
+    .project-link:hover {
+      color: var(--white);
+      border-color: var(--navy);
+      background: var(--navy);
+    }
+
+    .project-link.primary {
+      color: var(--white);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .project-link.primary:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .page-links {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .page-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 10px 12px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: .72rem;
+      background: var(--background);
+      transition: var(--transition);
+    }
+
+    .page-link:hover {
+      border-color: #AFC0D4;
+      background: var(--white);
+    }
+
+    .page-link span:first-child {
+      font-weight: 700;
+    }
+
+    .page-link small {
+      color: var(--muted);
+      font-size: .62rem;
+    }
+
+    .personal-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .personal-grid .project-card {
+      min-height: 100%;
+    }
+
+    /* =========================================================
+       SKILLS
+       ========================================================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .skill-box {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+    }
+
+    .skill-box h3 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: .95rem;
+      margin-bottom: 16px;
+    }
+
+    .skill-box h3 i {
+      width: 18px;
+      color: var(--accent);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-pill {
+      padding: 7px 10px;
+      border-radius: 8px;
+      background: var(--background);
+      border: 1px solid var(--border);
+      color: #475569;
+      font-size: .7rem;
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       ORGANIZATION / ADDITIONAL
+       ========================================================= */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .content-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+    }
+
+    .content-card h3 {
+      font-family: "Manrope", sans-serif;
+      color: var(--navy);
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .content-card .meta {
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 750;
+      margin-bottom: 19px;
+    }
+
+    .clean-list {
+      list-style: none;
+    }
+
+    .clean-list li {
+      position: relative;
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: .78rem;
+      margin-bottom: 9px;
+    }
+
+    .clean-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 17px;
+    }
+
+    .mini-tag {
+      color: var(--dark-blue);
+      background: #EEF4FF;
+      padding: 6px 8px;
+      border-radius: 7px;
+      font-size: .63rem;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       ACHIEVEMENTS
+       ========================================================= */
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .achievement {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+      transition: var(--transition);
+    }
+
+    .achievement:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .achievement-icon {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: #EEF4FF;
+      color: var(--accent);
+    }
+
+    .achievement strong {
+      display: block;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: .82rem;
+      line-height: 1.4;
+    }
+
+    .achievement span {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+      margin-top: 4px;
+    }
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-section {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(30,64,175,.18), transparent 30%),
+        var(--navy);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .contact-section .eyebrow {
+      color: #9DB7FF;
+    }
+
+    .contact-section .eyebrow::before {
+      background: #9DB7FF;
+    }
+
+    .contact-section h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin-bottom: 18px;
+    }
+
+    .contact-section .lead {
+      max-width: 590px;
+      color: #B8C8DA;
+      font-size: .95rem;
+      margin-bottom: 28px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-actions .btn-primary {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .contact-actions .btn-primary:hover {
+      background: #EAF0F7;
+    }
+
+    .contact-actions .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,.22);
+    }
+
+    .contact-actions .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.4);
+    }
+
+    .contact-info {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.055);
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+
+    .contact-info-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-info-item:first-child {
+      padding-top: 0;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: #AFC7FF;
+      background: rgba(255,255,255,.07);
+    }
+
+    .contact-info-item small {
+      display: block;
+      color: #91A7BF;
+      font-size: .62rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 3px;
+    }
+
+    .contact-info-item a,
+    .contact-info-item strong {
+      color: var(--white);
+      font-size: .78rem;
+      font-weight: 650;
+      word-break: break-word;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      padding: 28px 0;
+      background: #08172B;
+      color: #91A7BF;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      font-size: .68rem;
+    }
+
+    .footer-brand span {
+      font-size: .7rem;
+    }
+
+    .footer-copy {
+      font-size: .68rem;
+      text-align: right;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity .65s ease,
+        transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1050px) {
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .about-grid {
+        gap: 45px;
+      }
+
+      .strength-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience-body {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .project-card.featured {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured .project-media {
+        min-height: 260px;
+      }
+
+      .contact-grid {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      :root {
+        --nav-height: 70px;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 16px 20px 22px;
+        background: rgba(255,255,255,.97);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 18px 35px rgba(11,31,58,.08);
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .25s ease, opacity .25s ease;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links a {
+        padding: 12px;
+      }
+
+      .nav-links a.active::after {
+        left: 12px;
+        right: auto;
+        width: 25px;
+        bottom: 5px;
+      }
+
+      .nav-cv {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .hero-visual {
+        max-width: 690px;
+      }
+
+      .about-image-card {
+        max-width: 520px;
+      }
+
+      .contact-info {
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 36px;
+      }
+
+      .hero {
+        padding: 112px 0 65px;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 15vw, 4.2rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .hero-float {
+        left: 12px;
+        bottom: 18px;
+        width: 180px;
+      }
+
+      .info-grid,
+      .strength-grid,
+      .skills-grid,
+      .two-column,
+      .achievement-grid,
+      .project-grid,
+      .personal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.featured {
+        grid-column: auto;
+      }
+
+      .project-group {
+        margin-bottom: 58px;
+      }
+
+      .project-group-head {
+        display: block;
+      }
+
+      .project-group-head p {
+        text-align: left;
+        margin-top: 8px;
+      }
+
+      .experience-card {
+        padding: 24px;
+      }
+
+      .experience-top {
+        display: block;
+      }
+
+      .experience-date {
+        display: inline-flex;
+        margin-top: 15px;
+      }
+
+      .project-content {
+        padding: 22px;
+      }
+
+      .contact-section h2 {
+        font-size: clamp(2.4rem, 13vw, 4rem);
+      }
+
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-copy {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .brand-role {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: .82rem;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .hero-float {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-top: 12px;
+        width: 100%;
+      }
+
+      .hero-image-wrap {
+        transform: none;
+      }
+
+      .page-link {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header>
- <div class="wrap nav">
-  <a class="logo" href="#home">Randi<span>.</span></a>
-  <a class="l" href="#home">Home</a><a class="l" href="#about">About</a><a class="l" href="#skills">Skills</a><a class="l" href="#projects">Projects</a><a class="l" href="#experience">Experience</a><a class="l" href="#achievements">Achievements</a>
-  <a class="btn p s" href="#contact">Contact</a>
-  <button id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">☰</button>
- </div>
- <nav id="menu" aria-label="Menu utama">
-  <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
- </nav>
-</header>
 
-<main>
-<section class="hero" id="home"><div class="wrap hg">
- <div>
-  <p class="hi">Hi, I'm</p>
-  <h1 id="h1"></h1>
-  <p class="role" id="role"></p>
-  <p class="tag" id="tag"></p>
-  <p class="alt" id="alt"></p>
-  <div class="acts" id="heroActs"></div>
- </div>
- <div class="vis" id="heroVis"></div>
-</div></section>
+  <!-- =========================================================
+       NAVBAR
+       ========================================================= -->
 
-<section id="about"><div class="wrap ab">
- <div>
-  <h2>About</h2>
-  <p style="margin-top:18px" id="aboutText"></p>
-  <div class="str" id="strengths"></div>
- </div>
- <div>
-  <div class="vis" id="aboutVis"></div>
-  <ul class="card facts" id="facts"></ul>
- </div>
-</div></section>
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
 
-<section id="skills"><div class="wrap">
- <div class="head"><h2>Skills</h2><p class="sub">Keterampilan yang saya pakai dalam project, PKL, dan pekerjaan digital.</p></div>
- <div class="sg" id="skillGrid"></div>
-</div></section>
+      <a href="#home" class="brand" aria-label="Randi Syahputra — Home">
 
-<section id="projects"><div class="wrap">
- <div class="head"><h2>Featured Projects</h2><p class="sub">Setiap project menampilkan kontribusi dan teknologi yang saya gunakan. Status ditulis apa adanya.</p></div>
- <div class="pg" id="pg"></div>
- <div class="card dw rv"><h3>Other Projects &amp; Digital Work</h3><div class="chips" id="dw"></div></div>
-</div></section>
+        <!-- REPLACE WITH RANDI LOGO -->
+        <div class="brand-mark" aria-hidden="true">RS</div>
 
-<section id="experience" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap">
- <div class="head"><h2>Experience</h2></div>
- <div class="eg" id="eg"></div>
- <h3 class="sec">Additional Experience</h3>
- <div class="eg" id="extra"></div>
-</div></section>
+        <!--
+        Jika sudah punya logo:
+        <img src="assets/logo-randi.png"
+             alt="Randi Syahputra Logo"
+             style="width:42px;height:42px;border-radius:13px;">
+        -->
 
-<section id="achievements"><div class="wrap">
- <div class="head"><h2>Achievements</h2></div>
- <div class="ag" id="ag"></div>
-</div></section>
+        <div class="brand-text">
+          <span class="brand-name">Randi Syahputra</span>
+          <span class="brand-role">RPL Student • Junior Web & Digital</span>
+        </div>
+      </a>
 
-<section id="contact"><div class="wrap">
- <h2>Let's Connect</h2>
- <p class="sub">Terbuka untuk kesempatan magang, kerja entry-level, dan proyek di bidang web dan digital.</p>
- <div class="acts" id="ca"></div>
- <div class="ci" id="ci"></div>
-</div></section>
-</main>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
 
-<footer><div class="wrap">
- <div>© 2026 Randi Syahputra<br>RPL Student | Junior Web &amp; Digital</div>
- <nav aria-label="Footer"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a></nav>
-</div></footer>
-<button id="toTop" aria-label="Kembali ke atas">↑</button>
+      <div class="nav-actions">
+        <!-- REPLACE WITH CV PDF URL -->
+        <a href="#contact"
+           class="nav-cv"
+           aria-label="Download CV placeholder">
+          <i data-lucide="download"></i>
+          Download CV
+        </a>
 
-<script>
-/* =========================================================================
-   SEMUA ISI ADA DI SINI. Hanya data dari briefmu; yang belum ada = "[ISI ...]".
-   - Link kosong ("") = tombol otomatis tidak ditampilkan.
-   - Gambar Unsplash (images.*): tempel URL foto yang KAMU pilih, format:
-       https://images.unsplash.com/photo-XXXX?auto=format&fit=crop&q=80&w=1200
-     (buka foto di unsplash.com, klik kanan gambar, "Copy image address").
-     Kalau kosong, tampil kotak "Visual / Supporting Image" yang rapi.
-   - Screenshot project: isi images: ["assets/nama.png"]. Kosong = placeholder.
-   ========================================================================= */
-const CONFIG = {
-  name: "Randi Syahputra",
-  role: "RPL Student | Junior Web & Digital",
-  tagline: "Building digital experiences through web development, WordPress, AI assistants, and creative technology.",
-  altSub: "Web Development • WordPress • AI Assistant • Digital Tools",
-  email: "randisyahputra280109@gmail.com",
-  phoneDisplay: "085782026880",
-  whatsapp: "6285782026880",            // dari 085782026880 (format internasional)
-  portfolioUrl: "https://arlotarlotnasional-cmd.github.io/Portofolio-Randi.html/",
-  cv: "",                               // <!-- REPLACE WITH CV PDF URL --> mis. "assets/cv.pdf"
-  location: "Bekasi, Jawa Barat",
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="navLinks">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
 
-  images: {                             // Unsplash: hanya visual pendukung, BUKAN screenshot project
-    hero:   { url:"", alt:"Modern software developer workspace" },
-    about:  { url:"", alt:"Software developer workspace" },
-    skills: { url:"" }                  // background sangat halus (opacity rendah)
-  },
+    </div>
+  </header>
 
-  about: "Siswa kelas XII Rekayasa Perangkat Lunak (RPL) yang memiliki pengalaman Praktik Kerja Lapangan di bidang IT dan Web Development. Memiliki pengalaman dalam pengembangan dan pengelolaan website, WordPress, web hosting, pengolahan dokumen dan data, desain digital, video editing, serta eksplorasi AI Assistant menggunakan Aksita AI dan Fonte. Terbiasa mempelajari teknologi baru secara mandiri, menyelesaikan masalah, dan mengembangkan proyek digital dari tahap ide hingga implementasi.",
-  strengths: [["Web & IT","Website, WordPress, hosting, dan deployment."],["AI & Automation","AI assistant dan conversation workflow."],["Digital & Creative","Desain, video editing, dan konten visual."],["Leadership & Initiative","Kepemimpinan di OSIS dan usaha sendiri."]],
-  facts: [["Sekolah","SMK Nurjamilah"],["Jurusan","Rekayasa Perangkat Lunak (RPL)"],["Periode","2025–2027 · Expected graduation 2027"],["PKL","IT / Web Development Intern, PQI Consultant"],["Domisili","Bekasi, Jawa Barat"]],
 
-  skills: {
-    "Web Development": ["HTML","CSS","JavaScript","PHP","SQL","MySQL","Python"],
-    "WordPress & Web Tools": ["WordPress","Elementor","ACF","CPT UI","Forminator","WP Mail SMTP","Automator"],
-    "AI & Conversational": ["Aksita AI","Fonte","AI Agent","Conversation Workflow","WhatsApp AI Assistant"],
-    "Design & Digital Media": ["Canva","Figma","Graphic Design","Flyer Design","Video Editing","Basic Animation"],
-    "Development Tools": ["Git","GitHub","Web Hosting","Deployment"],
-    "Office & Data": ["Microsoft Excel","Microsoft Word","PowerPoint","PDF","Data Processing","Reporting"]
-  },
+  <main>
 
-  projects: [
-   { name:"Healthly — Health Education Platform", cat:"Web Development / Health Education", status:"Prototype / Development",
-     desc:"Platform edukasi kesehatan berbasis web untuk membantu pengguna memahami keluhan, informasi kondisi kesehatan, kebiasaan hidup sehat, dan tanda peringatan.",
-     mine:["[ISI: kontribusi kamu di Healthly]"],
-     features:["Alur: Keluhan → Informasi edukatif → Safe self-care → Medication education → Natural/supportive approaches → Warning signs → When to seek professional help"],
-     note:"Healthly bukan alat diagnosis dan bukan alat pemberi resep.",
-     tech:["HTML","CSS","JavaScript","GitHub","GitHub Pages","JSON / localStorage (konsep)"],
-     images:[], demo:"https://arlotarlotnasional-cmd.github.io/Healthy.html/", demoLabel:"Lihat Project", repo:"" },
-   { name:"Ranzha — Personal Finance Application", cat:"Web Application", status:"In Development",
-     desc:"Aplikasi web untuk membantu pengguna mengelola dan memantau keuangan pribadi.",
-     mine:["[ISI: kontribusi kamu di Ranzha]"], features:[],
-     tech:["PHP","MySQL","HTML","CSS","JavaScript","Web Hosting","InfinityFree"],
-     images:[], demo:"https://ranzha.infinityfree.me/auth.php?page=login", demoLabel:"Buka Aplikasi", repo:"" },
-   { name:"WhatsApp AI Customer Service Assistant", cat:"AI Assistant / Conversational Workflow · PQI Consultant", status:"PKL Project", pkl:true,
-     desc:"AI Assistant untuk membantu pengguna memperoleh informasi mengenai layanan PQI Consultant melalui percakapan berbasis WhatsApp. Project ini mencakup konfigurasi AI Agent menggunakan Aksita AI, perancangan conversation workflow menggunakan Fonte, serta pengujian interaksi assistant melalui WhatsApp.",
-     mine:["Membuat dan mengonfigurasi AI Agent PQI Consultant pada Aksita AI.","Menentukan konteks dan instruksi assistant.","Merancang conversation flow menggunakan Fonte.","Menyusun menu, percabangan, dan respons pada workflow.","Menguji kemampuan assistant dalam menangani pertanyaan pengguna secara bebas.","Melakukan pengujian interaksi melalui WhatsApp.","Mengevaluasi dan menyesuaikan respons serta alur percakapan."], features:[],
-     tech:["Aksita AI","Fonte","WhatsApp"],
-     slots:["Aksita AI Agent Configuration","Fonte Conversation Workflow","WhatsApp Conversation Testing"], images:[], demo:"", repo:"" },
-   { name:"Certificate Verification System", cat:"Web / WordPress / Database", status:"Prototype / Development",
-     desc:"Prototype sistem verifikasi sertifikat yang memungkinkan pengguna melakukan pengecekan berdasarkan kode sertifikat atau mekanisme QR/barcode.",
-     mine:["[ISI: kontribusi kamu yang sudah benar-benar jadi]"],
-     features:["Pengecekan lewat kode sertifikat atau QR/barcode","Tidak menampilkan public directory yang mengekspos seluruh data sertifikat"],
-     tech:["WordPress","PHP","ACF","CPT UI","Forminator","Database concept"], images:[], demo:"", repo:"" },
-   { name:"PQI Consultant Website & Digital Projects", cat:"WordPress / Web Management", status:"PKL Project", pkl:true,
-     desc:"Pengalaman pengembangan dan pengelolaan website PQI Consultant selama kegiatan PKL.",
-     mine:["Website content management","Page creation / editing","Layout adjustment","Forms","Digital content","Website troubleshooting","Lead generation support","Deployment"], features:[],
-     tech:["WordPress","Elementor","ACF","CPT UI","Forminator","WP Mail SMTP","Automator","Figma","Canva","GitHub","Web Hosting"], images:[], demo:"", repo:"" },
-   { name:"Personal Portfolio Website", cat:"Web Development", status:"In Development",
-     desc:"Website portofolio pribadi yang menampilkan profil, skill, project, dan pengalaman.",
-     mine:[], features:[], tech:["HTML","CSS","JavaScript","GitHub Pages"],
-     images:[], demo:"https://arlotarlotnasional-cmd.github.io/Portofolio-Randi.html/", demoLabel:"Lihat Website", repo:"" },
-   { name:"Interactive Birthday Website", cat:"Creative Web Development", status:"Personal Project", ok:true,
-     desc:"Website interaktif bertema ulang tahun.",
-     mine:[], features:["Interactive envelope","Letter reveal","Photos","Audio","Animation","Interactive UI"],
-     tech:["HTML","CSS","JavaScript","GitHub Pages"], images:[], demo:"", repo:"" },
-   { name:"ISO Training Flyer — PQI Consultant", cat:"Graphic Design", status:"PKL Work", pkl:true,
-     desc:"Membuat materi flyer digital bertema ISO untuk kebutuhan komunikasi/publikasi internal menggunakan Canva, dengan memperhatikan struktur informasi, visual hierarchy, dan branding perusahaan.",
-     mine:[], features:[], tech:["Canva"], images:[], demo:"", repo:"" }
-  ],
-  digitalWork: ["Training presentation materials","PowerPoint presentations","Excel data processing","Training post-test / Google Forms","PDF documentation","Certificate design","Canva visual design","Figma design","Video editing","Basic animation","Excel reporting and data processing"],
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
 
-  pkl: { role:"IT / Web Development Intern", org:"PQI Consultant", date:"Agustus 2026 – Sekarang · Bekasi, Jawa Barat", points:[
-    "Membantu pengembangan dan pengelolaan website menggunakan WordPress dan Elementor.","Mengelola kebutuhan website menggunakan ACF, CPT UI, Forminator, WP Mail SMTP, dan Automator.","Membuat, mengedit, dan mengatur halaman serta konten website sesuai kebutuhan.","Mengembangkan dan menguji prototype WhatsApp AI Assistant menggunakan Aksita AI dan Fonte.","Merancang conversation flow, menu, percabangan, serta pengujian interaksi AI Assistant.","Menggunakan GitHub, web hosting, dan deployment untuk mendukung proyek web.","Mengolah data dan dokumen menggunakan Microsoft Excel, Word, PowerPoint, dan PDF.","Membantu kebutuhan desain digital, flyer, materi visual, dan konten menggunakan Canva dan Figma."] },
-  osis: { role:"Ketua Sekbid Seni dan Budaya", org:"OSIS", date:"2026 · Kelas XI", points:[
-    "Menjabat sebagai Ketua Sekbid Seni dan Budaya.","Terlibat dalam pelaksanaan Class Meeting, kegiatan 17 Agustus, Batik Day, G30S/PKI, dan Wisuda.","Menjadi Penanggung Jawab (PJ) kegiatan 17 Agustus dan Class Meeting.","Mengoordinasikan sekitar 20 orang dalam persiapan dan pelaksanaan kegiatan.","Membantu mengatur perlengkapan/logistik, konsumsi, dekorasi, dokumentasi, registrasi, persiapan venue, serta pelaksanaan acara.","Mengembangkan leadership, teamwork, komunikasi, perencanaan, problem solving, responsibility, dan time management."] },
-  edu: { role:"Rekayasa Perangkat Lunak (RPL)", org:"SMK Nurjamilah", date:"2025–2027 · Expected graduation 2027", points:[] },
-  extra: [
-   { role:"Student Entrepreneurship", org:"", date:"Sejak SMP, berlanjut saat SMK", points:["Memulai aktivitas penjualan makanan dan minuman sejak SMP dan berlanjut saat SMK.","Pada periode tertentu, omzet penjualan mencapai sekitar Rp100.000–Rp200.000 per hari.","Mengelola proses penjualan, komunikasi dengan pembeli, dan kebutuhan operasional sederhana."] },
-   { role:"Freelance Design & Project Assistance", org:"", date:"", points:["Menerima permintaan desain berdasarkan brief.","Membuat desain visual sesuai kebutuhan requester.","Membantu penyusunan dokumen/material berbasis brief.","Berkomunikasi dengan requester dan melakukan revisi sesuai kebutuhan.","Mengembangkan kemampuan desain, komunikasi, attention to detail, dan client-oriented work."] }
-  ],
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-  achievements: [
-   { k:"Medali Emas", t:"Peraih Medali Emas", d:"Olimpiade Sains Indonesia · Tingkat Nasional" },
-   { k:"Peserta", t:"Peserta Lomba Video Editing Promosi OPPO", d:"Tingkat Nasional" },
-   { k:"Juara Harapan 2", t:"Juara Harapan 2, Lomba Desain Poster Hari Guru", d:"Tingkat Nasional" },
-   { k:"Penulis Terpilih", t:"Penulis Terpilih, Lomba Puisi", d:"Tingkat Nasional" }
-  ]
-};
+        <div class="hero-copy reveal">
 
-/* ============================ RENDER (tidak perlu diedit) ============================ */
-document.documentElement.classList.add("js");
-const C = CONFIG, $ = id => document.getElementById(id);
-const chips = a => a.map(x=>`<span>${x}</span>`).join("");
-const ul = a => a.length ? `<ul>${a.map(x=>`<li${x.startsWith("[ISI")?' class="todo"':""}>${x}</li>`).join("")}</ul>` : "";
-const btn = (h,t,c="") => h ? `<a class="btn ${c}" href="${h}" ${h.startsWith("mailto")||h.startsWith("#")?"":'target="_blank" rel="noopener noreferrer"'}>${t}</a>` : "";
-const sup = (o,label) => o.url
-  ? `<img src="${o.url}" alt="${o.alt}" loading="lazy"><span class="cap">Photo via Unsplash</span>`
-  : `<div class="fb"><div><b>Visual / Supporting Image</b>${label}</div></div>`;
-const wa = `https://wa.me/${C.whatsapp}?text=${encodeURIComponent("Halo Randi, saya melihat portofolio Anda.")}`;
+          <div class="hero-label">
+            <span></span>
+            RPL Student • Junior Web & Digital
+          </div>
 
-$("h1").textContent = C.name.toUpperCase(); $("role").textContent = C.role; $("tag").textContent = C.tagline; $("alt").textContent = C.altSub;
-const cvBtn = C.cv ? btn(C.cv,"Download CV","g") : `<button class="btn g" type="button" disabled title="CV belum diunggah" style="opacity:.6;cursor:not-allowed">Download CV (segera)</button>`;
-$("heroActs").innerHTML = btn("#projects","View My Projects","p")+btn("#contact","Contact Me","g")+cvBtn;
-$("heroVis").innerHTML = sup(C.images.hero,"Ganti di CONFIG.images.hero");
-$("aboutVis").innerHTML = sup(C.images.about,"Ganti di CONFIG.images.about");
-$("aboutText").textContent = C.about;
-$("strengths").innerHTML = C.strengths.map(s=>`<div class="card rv"><h3>${s[0]}</h3><p style="color:var(--muted)">${s[1]}</p></div>`).join("");
-$("facts").innerHTML = C.facts.map(f=>`<li><b>${f[0]}</b>${f[1]}</li>`).join("");
-if (C.images.skills.url) $("skills").style.setProperty("--skillbg",`url("${C.images.skills.url}")`);
-$("skillGrid").innerHTML = Object.entries(C.skills).map(([k,v])=>`<div class="card rv"><h3>${k}</h3><div class="chips">${chips(v)}</div></div>`).join("");
+          <h1>
+            <span class="hi">Hi, I'm</span>
+            <span class="name">RANDI<br>SYAHPUTRA</span>
+          </h1>
 
-const shots = p => {
-  const n = p.slots ? p.slots.length : 1;
-  const cell = i => {
-    const src = p.images[i], lab = p.slots ? p.slots[i] : p.name;
-    return src ? `<div class="shot"><img src="${src}" alt="Project Screenshot: ${lab}" loading="lazy"><span class="lab">Project Screenshot</span></div>`
-               : `<div class="shot"><div class="ph"><b>PROJECT SCREENSHOT</b>${p.slots ? lab : "Belum diunggah"}</div></div>`;
-  };
-  return `<div class="shots ${n>1?"n3":""}">${Array.from({length:n},(_,i)=>cell(i)).join("")}</div>`;
-};
-$("pg").innerHTML = C.projects.map(p=>`
- <article class="proj rv">${shots(p)}
-  <div class="pb">
-   <div class="meta"><span class="st ${p.pkl?"pkl":p.ok?"ok":""}">${p.status}</span>${p.cat}</div>
-   <h3>${p.name}</h3><p>${p.desc}</p>
-   ${p.mine.length?`<div><h4>My Contribution</h4>${ul(p.mine)}</div>`:""}
-   ${p.features.length?`<div><h4>Key Features</h4>${ul(p.features)}</div>`:""}
-   ${p.note?`<p class="note">${p.note}</p>`:""}
-   <div><h4>Technologies</h4><div class="chips">${chips(p.tech)}</div></div>
-   ${(p.demo||p.repo)?`<div class="acts">${btn(p.demo,p.demoLabel||"Lihat Project","p s")}${btn(p.repo,"GitHub","s")}</div>`:""}
-  </div></article>`).join("");
-$("dw").innerHTML = chips(C.digitalWork);
+          <p class="hero-subtitle">
+            Web Development • WordPress • AI Assistant • Digital Tools
+          </p>
 
-const xp = (e,cls="") => `<div class="card xp rv ${cls}"><div class="meta">${e.date}</div><h3>${e.role}</h3>${e.org?`<div style="color:var(--muted);font-size:14px">${e.org}</div>`:""}${ul(e.points)}</div>`;
-$("eg").innerHTML = xp(C.pkl,"full")+xp(C.osis)+xp(C.edu);
-$("extra").innerHTML = C.extra.map(e=>xp(e)).join("");
-$("ag").innerHTML = C.achievements.map(a=>`<div class="card rv"><div class="medal">★</div><div class="k">${a.k}</div><h3>${a.t}</h3><p>${a.d}</p></div>`).join("");
+          <p class="hero-description">
+            Building digital projects through web development, AI assistants,
+            WordPress, and creative technology.
+          </p>
 
-$("ca").innerHTML = btn(wa,"WhatsApp","p")+btn("mailto:"+C.email,"Email","g")+cvBtn;
-$("ci").innerHTML = `<b style="color:#fff">${C.name}</b> · ${C.location}<br>WhatsApp: ${C.phoneDisplay}<br>Email: <a href="mailto:${C.email}">${C.email}</a><br>Portfolio: <a href="${C.portfolioUrl}" target="_blank" rel="noopener noreferrer">${C.portfolioUrl}</a>`;
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              View My Projects
+              <i data-lucide="arrow-up-right"></i>
+            </a>
 
-const burger=$("burger"), menu=$("menu");
-burger.onclick=()=>{const o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o);burger.setAttribute("aria-label",o?"Tutup menu":"Buka menu")};
-menu.addEventListener("click",e=>{if(e.target.tagName==="A"){menu.classList.remove("open");burger.setAttribute("aria-expanded","false")}});
-const toTop=$("toTop"); addEventListener("scroll",()=>toTop.classList.toggle("show",scrollY>600),{passive:true});
-toTop.onclick=()=>scrollTo({top:0,behavior:"smooth"});
-const els=document.querySelectorAll(".rv");
-if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.06});els.forEach(e=>io.observe(e))}else els.forEach(e=>e.classList.add("on"));
-</script>
+            <a href="#contact" class="btn btn-secondary">
+              Contact Me
+              <i data-lucide="mail"></i>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span class="hero-meta-item">
+              <i data-lucide="map-pin"></i>
+              Bekasi, Jawa Barat
+            </span>
+
+            <span class="hero-meta-item">
+              <i data-lucide="graduation-cap"></i>
+              SMK Nurjamilah • RPL
+            </span>
+
+            <span class="hero-meta-item">
+              <i data-lucide="calendar"></i>
+              Expected Graduation 2027
+            </span>
+          </div>
+
+        </div>
+
+        <div class="hero-visual reveal">
+
+          <div class="hero-image-wrap">
+
+            <!-- Verified Unsplash image -->
+            <img
+              class="hero-image"
+              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
+              alt="Modern software developer workspace with laptop and coding screen"
+              loading="eager">
+
+            <span class="hero-image-credit">
+              Photo via Unsplash
+            </span>
+
+          </div>
+
+          <div class="hero-float">
+            <div class="hero-float-label">Current Focus</div>
+            <strong>Web & Digital</strong>
+            <small>Learning • Building • Exploring</small>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         ABOUT
+         ======================================================= -->
+
+    <section class="section alt" id="about">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">About Me</span>
+          <h2>Learning, building, and growing through real projects.</h2>
+          <p>
+            A short overview of my background, education, and learning mindset.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-image-card reveal">
+
+            <!-- Verified Unsplash image -->
+            <img
+              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1000"
+              alt="Developer typing code on a laptop"
+              loading="lazy">
+
+            <span class="support-label">Supporting Visual • Unsplash</span>
+
+          </div>
+
+          <div class="about-content reveal">
+
+            <h3>RPL Student | Junior Web & Digital</h3>
+
+            <p>
+              Siswa kelas XII Rekayasa Perangkat Lunak (RPL) yang memiliki
+              pengalaman Praktik Kerja Lapangan di bidang IT dan Web Development.
+              Memiliki pengalaman dalam pengembangan dan pengelolaan website,
+              WordPress, web hosting, pengolahan dokumen dan data, desain digital,
+              video editing, serta eksplorasi AI Assistant menggunakan Aksita AI
+              dan Fonte. Terbiasa mempelajari teknologi baru secara mandiri,
+              menyelesaikan masalah, dan mengembangkan proyek digital dari tahap
+              ide hingga implementasi.
+            </p>
+
+            <p>
+              Selain pengalaman PKL, saya juga membuat berbagai project mandiri
+              untuk belajar, bereksperimen, dan mengembangkan kemampuan di bidang
+              web development dan creative technology.
+            </p>
+
+            <div class="info-grid">
+
+              <div class="info-box">
+                <span class="label">Education</span>
+                <strong>SMK Nurjamilah</strong>
+              </div>
+
+              <div class="info-box">
+                <span class="label">Major</span>
+                <strong>Rekayasa Perangkat Lunak</strong>
+              </div>
+
+              <div class="info-box">
+                <span class="label">Period</span>
+                <strong>2025–2027</strong>
+              </div>
+
+              <div class="info-box">
+                <span class="label">Location</span>
+                <strong>Bekasi, Jawa Barat</strong>
+              </div>
+
+            </div>
+
+            <div class="mindset">
+              <strong>Learning Mindset</strong>
+              <p>
+                Mempelajari teknologi baru secara mandiri, mencoba melalui
+                project nyata, dan terus mengembangkan kemampuan melalui
+                eksplorasi serta problem solving.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         FOUR STRENGTHS
+         ======================================================= -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Personal Brand</span>
+          <h2>Four areas that shape my work.</h2>
+          <p>
+            Kombinasi kemampuan teknis, eksplorasi teknologi, kreativitas,
+            dan pengalaman organisasi.
+          </p>
+        </div>
+
+        <div class="strength-grid">
+
+          <article class="strength-card reveal">
+            <div class="strength-number">01</div>
+            <div class="strength-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+            <h3>Web & IT</h3>
+            <p>
+              Web development, WordPress, hosting, deployment, dan digital tools.
+            </p>
+          </article>
+
+          <article class="strength-card reveal">
+            <div class="strength-number">02</div>
+            <div class="strength-icon">
+              <i data-lucide="bot"></i>
+            </div>
+            <h3>AI & Automation</h3>
+            <p>
+              Eksplorasi AI Assistant dan conversational workflow menggunakan
+              Aksita AI dan Fonte.
+            </p>
+          </article>
+
+          <article class="strength-card reveal">
+            <div class="strength-number">03</div>
+            <div class="strength-icon">
+              <i data-lucide="palette"></i>
+            </div>
+            <h3>Digital & Creative</h3>
+            <p>
+              Desain digital, visual content, Canva, Figma, video editing,
+              dan creative web project.
+            </p>
+          </article>
+
+          <article class="strength-card reveal">
+            <div class="strength-number">04</div>
+            <div class="strength-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Leadership & Initiative</h3>
+            <p>
+              Pengalaman organisasi, koordinasi kegiatan, teamwork,
+              communication, dan responsibility.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         PROFESSIONAL EXPERIENCE
+         ======================================================= -->
+
+    <section class="section alt" id="experience">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Professional Experience</span>
+          <h2>Practical Work Experience — PQI Consultant.</h2>
+          <p>
+            Pengalaman Praktik Kerja Lapangan di bidang IT dan Web Development.
+          </p>
+        </div>
+
+        <article class="experience-card reveal">
+
+          <div class="experience-top">
+
+            <div class="experience-company">
+              <div class="company-mark">PQI</div>
+
+              <div>
+                <h3>PQI Consultant</h3>
+                <p>IT / Web Development Intern</p>
+              </div>
+            </div>
+
+            <div class="experience-date">
+              Agustus 2026 – Sekarang
+            </div>
+
+          </div>
+
+          <div class="experience-body">
+
+            <div>
+              <div class="experience-location">
+                <i data-lucide="map-pin"></i>
+                Bekasi, Jawa Barat
+              </div>
+
+              <h4>Role</h4>
+              <p style="color:#D5E0EB;font-size:.82rem;">
+                IT / Web Development Intern
+              </p>
+
+              <a
+                href="https://pqiconsultant.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="visit-link">
+                Visit PQI Consultant
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+
+            <div>
+              <h4>Responsibilities & Contributions</h4>
+
+              <ul class="experience-list">
+                <li>
+                  Membantu pengembangan dan pengelolaan website menggunakan
+                  WordPress dan Elementor.
+                </li>
+                <li>
+                  Mengelola kebutuhan website menggunakan ACF, CPT UI,
+                  Forminator, WP Mail SMTP, dan Automator.
+                </li>
+                <li>
+                  Membuat, mengedit, dan mengatur halaman serta konten website
+                  sesuai kebutuhan.
+                </li>
+                <li>
+                  Mengembangkan dan menguji prototype WhatsApp AI Assistant
+                  menggunakan Aksita AI dan Fonte.
+                </li>
+                <li>
+                  Merancang conversation flow, menu, percabangan, serta
+                  pengujian interaksi AI Assistant.
+                </li>
+                <li>
+                  Menggunakan GitHub, web hosting, dan deployment untuk
+                  mendukung proyek web.
+                </li>
+                <li>
+                  Mengolah data dan dokumen menggunakan Microsoft Excel,
+                  Word, PowerPoint, dan PDF.
+                </li>
+                <li>
+                  Membantu kebutuhan desain digital, flyer, materi visual,
+                  dan konten menggunakan Canva dan Figma.
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         PROJECTS
+         ======================================================= -->
+
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Selected Projects</span>
+          <h2>Professional work and independent projects.</h2>
+          <p>
+            Project PKL dan project mandiri ditampilkan secara terpisah
+            agar konteks kontribusi tetap jelas.
+          </p>
+        </div>
+
+
+        <!-- ===================================================
+             PROFESSIONAL PROJECTS
+             =================================================== -->
+
+        <div class="project-group">
+
+          <div class="project-group-head reveal">
+            <div>
+              <span class="eyebrow">Professional Projects</span>
+              <h3>PQI Consultant — PKL</h3>
+            </div>
+
+            <p>
+              Project yang dikerjakan dalam konteks Praktik Kerja Lapangan
+              di PQI Consultant.
+            </p>
+          </div>
+
+
+          <!-- PKL PROJECT 01 -->
+
+          <article class="project-card featured reveal">
+
+            <div class="project-media">
+              <div class="project-status">Professional Experience / PKL</div>
+
+              <div class="project-placeholder">
+                <div class="placeholder-content">
+                  <i data-lucide="layout-dashboard"></i>
+                  <strong>Project Screenshot</strong>
+                  <span>Replace with real project screenshot</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                WordPress / Web Development
+              </div>
+
+              <h3 class="project-title">
+                PQI Consultant Website & Web Management
+              </h3>
+
+              <p class="project-description">
+                Pengembangan dan pengelolaan berbagai kebutuhan website
+                PQI Consultant selama kegiatan Praktik Kerja Lapangan.
+              </p>
+
+              <div class="contribution">
+                <strong>My Contribution</strong>
+
+                <ul>
+                  <li>Membuat dan mengedit halaman website.</li>
+                  <li>Mengatur layout dan konten.</li>
+                  <li>Mengelola kebutuhan WordPress.</li>
+                  <li>Menggunakan Elementor.</li>
+                  <li>Menggunakan ACF dan CPT UI.</li>
+                  <li>Mengelola form menggunakan Forminator.</li>
+                  <li>Mendukung kebutuhan email menggunakan WP Mail SMTP.</li>
+                  <li>Menggunakan Automator sesuai kebutuhan workflow.</li>
+                  <li>Membantu kebutuhan visual menggunakan Canva dan Figma.</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">Elementor</span>
+                <span class="tag">ACF</span>
+                <span class="tag">CPT UI</span>
+                <span class="tag">Forminator</span>
+                <span class="tag">WP Mail SMTP</span>
+                <span class="tag">Automator</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">Web Hosting</span>
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="https://pqiconsultant.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link primary">
+                  Visit Website
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- PKL PROJECT 02 -->
+
+          <article class="project-card featured reveal">
+
+            <div class="project-media">
+              <div class="project-status">Professional Experience / PKL</div>
+
+              <div class="project-placeholder">
+                <div class="placeholder-content">
+                  <i data-lucide="book-open"></i>
+                  <strong>Project Screenshot</strong>
+                  <span>Replace with real project screenshot</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                Web Development / Landing Page / WordPress
+              </div>
+
+              <h3 class="project-title">
+                Operational Excellence Playbook
+              </h3>
+
+              <p class="project-description">
+                Ekosistem beberapa halaman yang saling berkaitan untuk
+                kebutuhan Operational Excellence Playbook.
+              </p>
+
+              <div class="page-links">
+
+                <a
+                  href="https://pqiconsultant.com/playbook-baru/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="page-link">
+                  <span>01 — Playbook Landing Page</span>
+                  <small>Open ↗</small>
+                </a>
+
+                <a
+                  href="https://pqiconsultant.com/playbook-baru-2-pqi-consultant/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="page-link">
+                  <span>02 — Playbook Content / Follow-up Page</span>
+                  <small>Open ↗</small>
+                </a>
+
+                <a
+                  href="https://pqiconsultant.com/excellence-hub/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="page-link">
+                  <span>03 — Playbook Home / Excellence Hub</span>
+                  <small>Open ↗</small>
+                </a>
+
+                <a
+                  href="https://pqiconsultant.com/excellence-hub-pqi-consultant/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="page-link">
+                  <span>Related — Explore PQI</span>
+                  <small>Open ↗</small>
+                </a>
+
+              </div>
+
+              <div class="contribution">
+                <strong>Project Structure</strong>
+
+                <ul>
+                  <li>Playbook Landing Page memiliki form untuk kebutuhan playbook.</li>
+                  <li>Playbook Content / Follow-up Page menjadi bagian lanjutan dari ekosistem.</li>
+                  <li>Playbook Home / Excellence Hub menjadi halaman utama terkait playbook.</li>
+                  <li>Explore PQI ditampilkan sebagai related page.</li>
+                  <li>Project ditampilkan sebagai satu ecosystem, bukan tiga project terpisah.</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">Elementor</span>
+                <span class="tag">Landing Page</span>
+                <span class="tag">Web Development</span>
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="https://pqiconsultant.com/playbook-baru/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link primary">
+                  View Playbook
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- PKL PROJECT 03 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-media">
+              <div class="project-status">PKL</div>
+
+              <div class="project-placeholder">
+                <div class="placeholder-content">
+                  <i data-lucide="message-circle"></i>
+                  <strong>Project Screenshot</strong>
+                  <span>Replace with real AI Assistant screenshot</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                AI Assistant / Conversational Workflow
+              </div>
+
+              <h3 class="project-title">
+                WhatsApp AI Customer Service Assistant
+              </h3>
+
+              <p class="project-description">
+                AI Assistant untuk membantu pengguna memperoleh informasi
+                mengenai layanan PQI Consultant melalui percakapan
+                berbasis WhatsApp.
+              </p>
+
+              <div class="contribution">
+                <strong>My Contribution</strong>
+
+                <ul>
+                  <li>Membuat dan mengonfigurasi AI Agent PQI Consultant pada Aksita AI.</li>
+                  <li>Menentukan konteks dan instruksi assistant.</li>
+                  <li>Merancang conversation flow menggunakan Fonte.</li>
+                  <li>Menyusun menu, percabangan, dan respons pada workflow.</li>
+                  <li>Menguji kemampuan assistant dalam menangani pertanyaan pengguna secara bebas.</li>
+                  <li>Melakukan pengujian interaksi melalui WhatsApp.</li>
+                  <li>Mengevaluasi dan menyesuaikan respons serta alur percakapan.</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">Aksita AI</span>
+                <span class="tag">Fonte</span>
+                <span class="tag">AI Agent</span>
+                <span class="tag">Conversation Workflow</span>
+                <span class="tag">WhatsApp</span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- PKL PROJECT 04 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-media">
+              <div class="project-status">Draft / Not Published</div>
+
+              <div class="project-placeholder">
+                <div class="placeholder-content">
+                  <i data-lucide="badge-check"></i>
+                  <strong>Project Screenshot</strong>
+                  <span>Draft project — no public URL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                WordPress / Certificate Management
+              </div>
+
+              <h3 class="project-title">
+                Certificate Verification System
+              </h3>
+
+              <p class="project-description">
+                Prototype sistem verifikasi sertifikat yang dirancang untuk
+                membantu proses pengecekan sertifikat berdasarkan kode
+                sertifikat atau mekanisme QR/barcode.
+              </p>
+
+              <div class="contribution">
+                <strong>Status</strong>
+                <ul>
+                  <li>Masih dalam tahap draft di WordPress.</li>
+                  <li>Belum dipublish sebagai fitur live.</li>
+                  <li>Tidak memiliki public URL.</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">ACF</span>
+                <span class="tag">CPT UI</span>
+                <span class="tag">PHP</span>
+                <span class="tag">Forminator</span>
+              </div>
+
+              <div class="project-links">
+                <span class="project-link">
+                  Draft Project
+                  <i data-lucide="file-clock"></i>
+                </span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- PKL PROJECT 05 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-media">
+              <div class="project-status">Draft / Not Published</div>
+
+              <div class="project-placeholder">
+                <div class="placeholder-content">
+                  <i data-lucide="file-pen-line"></i>
+                  <strong>Project Screenshot</strong>
+                  <span>Draft project — no public URL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                Form / Certificate Workflow
+              </div>
+
+              <h3 class="project-title">
+                Form E Certificate
+              </h3>
+
+              <p class="project-description">
+                Pengembangan Form E Certificate untuk kebutuhan proses
+                terkait sertifikat di lingkungan PQI Consultant.
+              </p>
+
+              <div class="contribution">
+                <strong>Status</strong>
+                <ul>
+                  <li>Project terpisah dari Certificate Verification System.</li>
+                  <li>Masih berupa draft di WordPress.</li>
+                  <li>Belum dipublish.</li>
+                  <li>Tidak memiliki public URL.</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">Form Workflow</span>
+                <span class="tag">Certificate</span>
+              </div>
+
+              <div class="project-links">
+                <span class="project-link">
+                  Draft Project
+                  <i data-lucide="file-clock"></i>
+                </span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- PKL PROJECT 06 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-media">
+              <div class="project-status">Professional Experience / PKL</div>
+
+              <div class="project-placeholder">
+                <div class="placeholder-content">
+                  <i data-lucide="image"></i>
+                  <strong>Project Screenshot</strong>
+                  <span>Replace with real flyer/material screenshot</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                Graphic Design / Digital Media
+              </div>
+
+              <h3 class="project-title">
+                ISO Training Flyer & Digital Materials
+              </h3>
+
+              <p class="project-description">
+                Membuat materi flyer digital bertema ISO untuk kebutuhan
+                komunikasi/publikasi internal menggunakan Canva, dengan
+                memperhatikan struktur informasi, visual hierarchy,
+                dan branding perusahaan.
+              </p>
+
+              <div class="project-tags">
+                <span class="tag">Canva</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Graphic Design</span>
+                <span class="tag">Digital Media</span>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+
+
+        <!-- ===================================================
+             PERSONAL PROJECTS
+             =================================================== -->
+
+        <div class="project-group">
+
+          <div class="project-group-head reveal">
+            <div>
+              <span class="eyebrow">Personal Projects</span>
+              <h3>Independent Work</h3>
+            </div>
+
+            <p>
+              Project mandiri yang dibuat untuk learning, experimentation,
+              dan personal development — bukan project PKL.
+            </p>
+          </div>
+
+
+          <div class="project-grid personal-grid">
+
+            <!-- HEALTHLY -->
+
+            <article class="project-card reveal">
+
+              <div class="project-media">
+                <div class="project-status">Prototype / Development</div>
+
+                <div class="project-placeholder">
+                  <div class="placeholder-content">
+                    <i data-lucide="heart-pulse"></i>
+                    <strong>Healthly</strong>
+                    <span>Independent Web Project</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content">
+
+                <div class="project-category">
+                  Independent Web Project
+                </div>
+
+                <h3 class="project-title">
+                  Healthly — Health Education Platform
+                </h3>
+
+                <p class="project-description">
+                  Platform edukasi kesehatan berbasis web untuk membantu
+                  pengguna memahami keluhan, informasi kondisi kesehatan,
+                  kebiasaan hidup sehat, dan tanda peringatan.
+                </p>
+
+                <div class="contribution">
+                  <strong>Concept</strong>
+
+                  <ul>
+                    <li>Keluhan → Informasi edukatif.</li>
+                    <li>Safe self-care.</li>
+                    <li>Medication education.</li>
+                    <li>Natural/supportive approaches.</li>
+                    <li>Warning signs.</li>
+                    <li>When to seek professional help.</li>
+                  </ul>
+                </div>
+
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">GitHub</span>
+                  <span class="tag">GitHub Pages</span>
+                  <span class="tag">JSON / localStorage</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="https://arlotarlotnasional-cmd.github.io/Healthy.html/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link primary">
+                    View Live
+                    <i data-lucide="external-link"></i>
+                  </a>
+                </div>
+
+              </div>
+            </article>
+
+
+            <!-- RANZHA -->
+
+            <article class="project-card reveal">
+
+              <div class="project-media">
+                <div class="project-status">In Development</div>
+
+                <div class="project-placeholder">
+                  <div class="placeholder-content">
+                    <i data-lucide="wallet-cards"></i>
+                    <strong>Ranzha</strong>
+                    <span>Independent Web Application</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content">
+
+                <div class="project-category">
+                  Independent Web Application
+                </div>
+
+                <h3 class="project-title">
+                  Ranzha — Personal Finance Application
+                </h3>
+
+                <p class="project-description">
+                  Aplikasi web untuk membantu pengguna mengelola dan
+                  memantau keuangan pribadi.
+                </p>
+
+                <div class="project-tags">
+                  <span class="tag">PHP</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Web Hosting</span>
+                  <span class="tag">InfinityFree</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="https://ranzha.infinityfree.me/auth.php?page=login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link primary">
+                    View Live
+                    <i data-lucide="external-link"></i>
+                  </a>
+                </div>
+
+              </div>
+            </article>
+
+
+            <!-- FIND THE TOY -->
+
+            <article class="project-card reveal">
+
+              <div class="project-media">
+                <div class="project-status">Personal Project</div>
+
+                <div class="project-placeholder">
+                  <div class="placeholder-content">
+                    <i data-lucide="gamepad-2"></i>
+                    <strong>Find the Toy</strong>
+                    <span>Independent Web Game</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content">
+
+                <div class="project-category">
+                  Independent Web Game
+                </div>
+
+                <h3 class="project-title">
+                  Find the Toy
+                </h3>
+
+                <p class="project-description">
+                  Mini web game yang dibuat secara mandiri sebagai project
+                  eksperimen dan pembelajaran web development.
+                </p>
+
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">GitHub Pages</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="https://arlotarlotnasional-cmd.github.io/mini-game-find-the-toy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link primary">
+                    View Live
+                    <i data-lucide="external-link"></i>
+                  </a>
+                </div>
+
+              </div>
+            </article>
+
+
+            <!-- BIRTHDAY -->
+
+            <article class="project-card reveal">
+
+              <div class="project-media">
+                <div class="project-status">Personal Project</div>
+
+                <div class="project-placeholder">
+                  <div class="placeholder-content">
+                    <i data-lucide="gift"></i>
+                    <strong>Birthday Website</strong>
+                    <span>Independent Creative Web Project</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content">
+
+                <div class="project-category">
+                  Independent Creative Web Project
+                </div>
+
+                <h3 class="project-title">
+                  Interactive Birthday Website
+                </h3>
+
+                <p class="project-description">
+                  Website interaktif bertema birthday yang dibuat secara
+                  mandiri sebagai eksplorasi creative web development.
+                </p>
+
+                <div class="contribution">
+                  <strong>Features</strong>
+
+                  <ul>
+                    <li>Interactive envelope.</li>
+                    <li>Letter reveal.</li>
+                    <li>Photos.</li>
+                    <li>Audio.</li>
+                    <li>Animation.</li>
+                    <li>Interactive UI.</li>
+                  </ul>
+                </div>
+
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">GitHub Pages</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="https://arlotarlotnasional-cmd.github.io/Birthday-Cards.html/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link primary">
+                    View Live
+                    <i data-lucide="external-link"></i>
+                  </a>
+                </div>
+
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         SKILLS
+         ======================================================= -->
+
+    <section class="section alt" id="skills">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Technical Skills</span>
+          <h2>Tools and technologies I work with.</h2>
+          <p>
+            Skill set berdasarkan teknologi dan tools yang telah saya gunakan
+            dalam project dan kegiatan belajar.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-box reveal">
+            <h3>
+              <i data-lucide="code-2"></i>
+              Web Development
+            </h3>
+
+            <div class="skill-list">
+              <span class="skill-pill">HTML</span>
+              <span class="skill-pill">CSS</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">PHP</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">Python</span>
+            </div>
+          </article>
+
+
+          <article class="skill-box reveal">
+            <h3>
+              <i data-lucide="globe"></i>
+              WordPress & Web Tools
+            </h3>
+
+            <div class="skill-list">
+              <span class="skill-pill">WordPress</span>
+              <span class="skill-pill">Elementor</span>
+              <span class="skill-pill">ACF</span>
+              <span class="skill-pill">CPT UI</span>
+              <span class="skill-pill">Forminator</span>
+              <span class="skill-pill">WP Mail SMTP</span>
+              <span class="skill-pill">Automator</span>
+            </div>
+          </article>
+
+
+          <article class="skill-box reveal">
+            <h3>
+              <i data-lucide="bot"></i>
+              AI & Conversational
+            </h3>
+
+            <div class="skill-list">
+              <span class="skill-pill">Aksita AI</span>
+              <span class="skill-pill">Fonte</span>
+              <span class="skill-pill">AI Agent</span>
+              <span class="skill-pill">Conversation Workflow</span>
+              <span class="skill-pill">WhatsApp AI Assistant</span>
+            </div>
+          </article>
+
+
+          <article class="skill-box reveal">
+            <h3>
+              <i data-lucide="palette"></i>
+              Design & Digital Media
+            </h3>
+
+            <div class="skill-list">
+              <span class="skill-pill">Canva</span>
+              <span class="skill-pill">Figma</span>
+              <span class="skill-pill">Graphic Design</span>
+              <span class="skill-pill">Flyer Design</span>
+              <span class="skill-pill">Video Editing</span>
+              <span class="skill-pill">Basic Animation</span>
+            </div>
+          </article>
+
+
+          <article class="skill-box reveal">
+            <h3>
+              <i data-lucide="git-branch"></i>
+              Development Tools
+            </h3>
+
+            <div class="skill-list">
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">Web Hosting</span>
+              <span class="skill-pill">Deployment</span>
+            </div>
+          </article>
+
+
+          <article class="skill-box reveal">
+            <h3>
+              <i data-lucide="file-spreadsheet"></i>
+              Office & Data
+            </h3>
+
+            <div class="skill-list">
+              <span class="skill-pill">Microsoft Excel</span>
+              <span class="skill-pill">Microsoft Word</span>
+              <span class="skill-pill">PowerPoint</span>
+              <span class="skill-pill">PDF</span>
+              <span class="skill-pill">Data Processing</span>
+              <span class="skill-pill">Reporting</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         ORGANIZATIONAL + ADDITIONAL EXPERIENCE
+         ======================================================= -->
+
+    <section class="section" id="experience-extra">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Additional Experience</span>
+          <h2>Leadership, initiative, and practical experience.</h2>
+          <p>
+            Pengalaman di luar project development yang membentuk kemampuan
+            komunikasi, koordinasi, tanggung jawab, dan problem solving.
+          </p>
+        </div>
+
+        <div class="two-column">
+
+          <!-- OSIS -->
+
+          <article class="content-card reveal">
+
+            <h3>OSIS — Ketua Sekbid Seni dan Budaya</h3>
+            <div class="meta">2026 • Kelas XI</div>
+
+            <ul class="clean-list">
+              <li>Menjabat sebagai Ketua Sekbid Seni dan Budaya.</li>
+              <li>
+                Terlibat dalam pelaksanaan Class Meeting, kegiatan 17 Agustus,
+                Batik Day, G30S/PKI, dan Wisuda.
+              </li>
+              <li>
+                Menjadi Penanggung Jawab (PJ) kegiatan 17 Agustus dan Class Meeting.
+              </li>
+              <li>Mengoordinasikan sekitar 20 orang.</li>
+              <li>
+                Membantu mengatur perlengkapan/logistik, konsumsi, dekorasi,
+                dokumentasi, registrasi, persiapan venue, serta pelaksanaan acara.
+              </li>
+            </ul>
+
+            <div class="mini-tags">
+              <span class="mini-tag">Leadership</span>
+              <span class="mini-tag">Teamwork</span>
+              <span class="mini-tag">Communication</span>
+              <span class="mini-tag">Planning</span>
+              <span class="mini-tag">Problem Solving</span>
+              <span class="mini-tag">Responsibility</span>
+              <span class="mini-tag">Time Management</span>
+            </div>
+
+          </article>
+
+
+          <!-- ENTREPRENEURSHIP -->
+
+          <article class="content-card reveal">
+
+            <h3>Student Entrepreneurship</h3>
+            <div class="meta">Additional Experience</div>
+
+            <ul class="clean-list">
+              <li>
+                Memulai aktivitas penjualan makanan dan minuman sejak SMP
+                dan berlanjut saat SMK.
+              </li>
+              <li>
+                Pada periode tertentu, omzet penjualan mencapai sekitar
+                Rp100.000–Rp200.000 per hari.
+              </li>
+              <li>
+                Mengelola proses penjualan, komunikasi dengan pembeli,
+                dan kebutuhan operasional sederhana.
+              </li>
+            </ul>
+
+            <h3 style="margin-top:30px;">Freelance Design & Project Assistance</h3>
+
+            <ul class="clean-list" style="margin-top:15px;">
+              <li>Menerima permintaan desain berdasarkan brief.</li>
+              <li>Membuat desain visual sesuai kebutuhan requester.</li>
+              <li>
+                Membantu penyusunan dokumen/material berbasis brief.
+              </li>
+              <li>
+                Berkomunikasi dengan requester dan melakukan revisi
+                sesuai kebutuhan.
+              </li>
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         ACHIEVEMENTS
+         ======================================================= -->
+
+    <section class="section alt" id="achievements">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Achievements</span>
+          <h2>Selected achievements and participation.</h2>
+          <p>
+            Pencapaian yang dicantumkan berdasarkan informasi yang tersedia,
+            tanpa menambahkan tahun yang belum diberikan.
+          </p>
+        </div>
+
+        <div class="achievement-grid">
+
+          <article class="achievement reveal">
+            <div class="achievement-icon">
+              <i data-lucide="medal"></i>
+            </div>
+            <div>
+              <strong>Peraih Medali Emas — Olimpiade Sains Indonesia</strong>
+              <span>Tingkat Nasional</span>
+            </div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="achievement-icon">
+              <i data-lucide="video"></i>
+            </div>
+            <div>
+              <strong>Peserta Lomba Video Editing Promosi OPPO</strong>
+              <span>Tingkat Nasional</span>
+            </div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="achievement-icon">
+              <i data-lucide="palette"></i>
+            </div>
+            <div>
+              <strong>Juara Harapan 2 — Lomba Desain Poster Hari Guru</strong>
+              <span>Tingkat Nasional</span>
+            </div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="achievement-icon">
+              <i data-lucide="pen-tool"></i>
+            </div>
+            <div>
+              <strong>Penulis Terpilih — Lomba Puisi</strong>
+              <span>Tingkat Nasional</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         CONTACT
+         ======================================================= -->
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+
+        <div class="reveal">
+
+          <span class="eyebrow">Let's Connect</span>
+
+          <h2>
+            Let's build<br>
+            something useful.
+          </h2>
+
+          <p class="lead">
+            Saya terbuka untuk kesempatan belajar, project, internship,
+            maupun peluang kerja junior yang relevan dengan Web, IT,
+            Digital Tools, dan creative technology.
+          </p>
+
+          <div class="contact-actions">
+
+            <a
+              href="https://wa.me/628578226880"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary">
+              WhatsApp Me
+              <i data-lucide="message-circle"></i>
+            </a>
+
+            <a
+              href="mailto:randisyahputra280109@gmail.com"
+              class="btn btn-secondary">
+              Send Email
+              <i data-lucide="mail"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-info reveal">
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">
+              <i data-lucide="user"></i>
+            </div>
+
+            <div>
+              <small>Name</small>
+              <strong>Randi Syahputra</strong>
+            </div>
+
+          </div>
+
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">
+              <i data-lucide="map-pin"></i>
+            </div>
+
+            <div>
+              <small>Location</small>
+              <strong>Bekasi, Jawa Barat</strong>
+            </div>
+
+          </div>
+
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">
+              <i data-lucide="mail"></i>
+            </div>
+
+            <div>
+              <small>Email</small>
+              <a href="mailto:randisyahputra280109@gmail.com">
+                randisyahputra280109@gmail.com
+              </a>
+            </div>
+
+          </div>
+
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">
+              <i data-lucide="message-circle"></i>
+            </div>
+
+            <div>
+              <small>WhatsApp</small>
+              <a
+                href="https://wa.me/628578226880"
+                target="_blank"
+                rel="noopener noreferrer">
+                085782026880
+              </a>
+            </div>
+
+          </div>
+
+
+          <div class="contact-info-item">
+
+            <div class="contact-icon">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+
+            <div>
+              <small>Education</small>
+              <strong>SMK Nurjamilah • RPL • 2025–2027</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer>
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <!-- REPLACE WITH RANDI LOGO -->
+        <div class="brand-mark">RS</div>
+
+        <span>
+          RPL Student | Junior Web & Digital
+        </span>
+
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Randi Syahputra
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* =======================================================
+         LUCIDE ICONS
+         ======================================================= */
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+
+      /* =======================================================
+         NAVBAR SCROLL EFFECT
+         ======================================================= */
+
+      const navbar = document.getElementById("navbar");
+
+      const updateNavbar = () => {
+        if (window.scrollY > 18) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      };
+
+      updateNavbar();
+      window.addEventListener("scroll", updateNavbar, { passive: true });
+
+
+      /* =======================================================
+         MOBILE MENU
+         ======================================================= */
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      const closeMenu = () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Buka menu");
+        menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+
+        document.body.classList.remove("menu-open");
+      };
+
+      const openMenu = () => {
+        navLinks.classList.add("open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Tutup menu");
+        menuToggle.innerHTML = '<i data-lucide="x"></i>';
+
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+
+        document.body.classList.add("menu-open");
+      };
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.contains("open");
+
+        if (isOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+
+      /* =======================================================
+         CLOSE MOBILE MENU WHEN LINK CLICKED
+         ======================================================= */
+
+      document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+
+      /* =======================================================
+         ESC KEY
+         ======================================================= */
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+          closeMenu();
+        }
+      });
+
+
+      /* =======================================================
+         ACTIVE NAVIGATION STATE
+         ======================================================= */
+
+      const sections = document.querySelectorAll("main section[id]");
+      const navItems = document.querySelectorAll(".nav-link");
+
+      const setActiveNav = () => {
+        let current = "home";
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 140;
+
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach(link => {
+          const href = link.getAttribute("href");
+          link.classList.toggle("active", href === "#" + current);
+        });
+      };
+
+      setActiveNav();
+
+      window.addEventListener("scroll", setActiveNav, { passive: true });
+
+
+      /* =======================================================
+         REVEAL ANIMATION
+         ======================================================= */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.08,
+            rootMargin: "0px 0px -40px 0px"
+          }
+        );
+
+        revealElements.forEach(element => {
+          observer.observe(element);
+        });
+
+      } else {
+
+        revealElements.forEach(element => {
+          element.classList.add("visible");
+        });
+
+      }
+
+
+      /* =======================================================
+         CLOSE MENU ON RESIZE
+         ======================================================= */
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 850) {
+          closeMenu();
+        }
+      });
+
+
+      /* =======================================================
+         PREVENT EMPTY CV PLACEHOLDER FROM BREAKING UX
+         ======================================================= */
+
+      const cvButton = document.querySelector(".nav-cv");
+
+      if (cvButton) {
+        cvButton.addEventListener("click", event => {
+          const confirmed = window.confirm(
+            "Link CV PDF belum dipasang. Ganti href tombol ini dengan URL PDF CV kamu."
+          );
+
+          if (!confirmed) {
+            event.preventDefault();
+          }
+        });
+      }
+
+    });
+  </script>
+
 </body>
 </html>
