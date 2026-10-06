@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Randi Syahputra | RPL Student • Junior Web & Digital</title>
-  <meta name="description" content="Portfolio profesional Randi Syahputra — RPL Student | Junior Web & Digital. Web Development, WordPress, AI Assistant, Digital Tools.">
+  <meta name="description" content="Portfolio profesional Randi Syahputra — RPL Student | Junior Web & Digital. Web Development, WordPress, AI Assistant, Digital Creative, and Digital Tools.">
   <meta name="author" content="Randi Syahputra">
   <meta name="theme-color" content="#0B1F3A">
 
@@ -1497,6 +1497,148 @@
       transform: translateY(0);
     }
 
+
+    /* =========================================================
+       EVIDENCE / PROOF GALLERY
+       ========================================================= */
+
+    .evidence-section {
+      background: #F8FAFC;
+    }
+
+    .evidence-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: -22px 0 30px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--white);
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .evidence-note i {
+      flex: 0 0 auto;
+      color: var(--accent);
+      width: 18px;
+      margin-top: 2px;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .evidence-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .evidence-card:hover {
+      transform: translateY(-4px);
+      border-color: #B7C6DB;
+      box-shadow: var(--shadow-md);
+    }
+
+    .evidence-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #EAF0F7;
+    }
+
+    .evidence-media img,
+    .evidence-media video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .evidence-body {
+      padding: 18px;
+    }
+
+    .evidence-label {
+      display: inline-flex;
+      padding: 5px 8px;
+      border-radius: 7px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: .61rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .evidence-body h3 {
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: .94rem;
+      line-height: 1.3;
+      margin-bottom: 5px;
+    }
+
+    .evidence-body p {
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .proof-chip {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+    }
+
+    .proof-chip i {
+      flex: 0 0 auto;
+      width: 17px;
+      color: var(--accent);
+    }
+
+    .proof-chip span {
+      color: var(--muted);
+      font-size: .68rem;
+      line-height: 1.35;
+    }
+
+    .proof-chip strong {
+      display: block;
+      color: var(--navy);
+      font-size: .72rem;
+      margin-bottom: 2px;
+    }
+
+    .additional-experience {
+      margin-top: 18px;
+    }
+
+    .additional-experience .content-card {
+      height: 100%;
+    }
+
     /* =========================================================
        RESPONSIVE
        ========================================================= */
@@ -1751,6 +1893,26 @@
       }
     }
 
+
+    @media (max-width: 900px) {
+      .evidence-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .proof-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .evidence-grid,
+      .proof-strip {
+        grid-template-columns: 1fr;
+      }
+      .evidence-note {
+        margin-top: -10px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -1797,7 +1959,8 @@
       background: #EEF4FF;
     }
 
-    .achievement-image img {
+    .achievement-image img,
+    .achievement-image video {
       width: 100%;
       height: 100%;
       display: block;
@@ -1891,6 +2054,7 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#evidence" class="nav-link">Evidence</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#achievements" class="nav-link">Achievements</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -1899,9 +2063,9 @@
 
       <div class="nav-actions">
         <!-- REPLACE WITH CV PDF URL -->
-        <a href="#contact"
+        <a href="CV-Randi-Syahputra.pdf"
            class="nav-cv"
-           aria-label="Download CV placeholder">
+           aria-label="Download CV">
           <i data-lucide="download"></i>
           Download CV
         </a>
@@ -1943,12 +2107,12 @@
           </h1>
 
           <p class="hero-subtitle">
-            Web Development • WordPress • AI Assistant • Digital Tools
+            Web Development • WordPress • AI Assistant • Digital Creative
           </p>
 
           <p class="hero-description">
-            Building digital projects through web development, AI assistants,
-            WordPress, and creative technology.
+            Building digital projects through web development, WordPress, AI assistants,
+            content design, and creative technology.
           </p>
 
           <div class="hero-actions">
@@ -1986,15 +2150,15 @@
 
           <div class="hero-image-wrap">
 
-            <!-- Verified Unsplash image -->
+            <!-- User-provided portfolio asset -->
             <img
               class="hero-image"
-              src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1400"
-              alt="Modern software developer workspace with laptop and coding screen"
+              src="Portfolio/foto-awal.jpg"
+              alt="Randi Syahputra — portfolio profile photo"
               loading="eager">
 
             <span class="hero-image-credit">
-              Photo via Unsplash
+              Randi Syahputra
             </span>
 
           </div>
@@ -2025,13 +2189,13 @@
 
           <div class="about-image-card reveal">
 
-            <!-- Verified Unsplash image -->
+            <!-- User-provided portfolio asset -->
             <img
-              src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1000"
-              alt="Developer typing code on a laptop"
+              src="Portfolio/muka.jpg"
+              alt="Randi Syahputra"
               loading="lazy">
 
-            <span class="support-label">Supporting Visual • Unsplash</span>
+            <span class="support-label">Randi Syahputra</span>
 
           </div>
 
@@ -2140,7 +2304,7 @@
             </div>
             <h3>Digital & Creative</h3>
             <p>
-              Desain digital, visual content, Canva, Figma, video editing,
+              Desain digital, visual content, Canva, Figma, CapCut, video editing,
               dan creative web project.
             </p>
           </article>
@@ -2258,6 +2422,30 @@
 
         </article>
 
+        <div class="two-column additional-experience">
+          <article class="content-card reveal">
+            <h3>Freelance Design & Project Assistance</h3>
+            <div class="meta">Additional Experience</div>
+            <ul class="clean-list">
+              <li>Menerima request desain dan membuat visual berdasarkan brief.</li>
+              <li>Membantu dokumen/material project dan melakukan revisi sesuai kebutuhan.</li>
+              <li>Berkomunikasi dengan requester untuk memahami kebutuhan pekerjaan.</li>
+            </ul>
+            <div class="mini-tags"><span class="mini-tag">Canva</span><span class="mini-tag">Figma</span><span class="mini-tag">CapCut</span><span class="mini-tag">Creative Work</span></div>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Entrepreneurship / Food & Beverage Sales</h3>
+            <div class="meta">Additional Experience</div>
+            <ul class="clean-list">
+              <li>Memiliki pengalaman menjual makanan dan minuman sejak SMP pada periode tertentu.</li>
+              <li>Belajar melayani pembeli, berkomunikasi, dan mengelola penjualan secara mandiri.</li>
+              <li>Pengalaman ini mendukung kemampuan responsibility, initiative, dan customer communication.</li>
+            </ul>
+            <div class="mini-tags"><span class="mini-tag">Customer Service</span><span class="mini-tag">Communication</span><span class="mini-tag">Initiative</span></div>
+          </article>
+        </div>
+
       </div>
     </section>
 
@@ -2300,7 +2488,7 @@
             <div class="project-media">
               <div class="project-status">Professional Experience / PKL</div>
 
-              <img class="project-image" src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600" alt="PQI Consultant website and web development workspace" loading="lazy">
+              <img class="project-image" src="Portfolio/home-page.jpg" alt="PQI Consultant website project evidence" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2368,7 +2556,7 @@
             <div class="project-media">
               <div class="project-status">Professional Experience / PKL</div>
 
-              <img class="project-image" src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600" alt="Temporary playbook and certificate style supporting visual" loading="lazy">
+              <img class="project-image" src="Portfolio/playbook.jpg" alt="Operational Excellence Playbook project evidence" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2467,7 +2655,7 @@
             <div class="project-media">
               <div class="project-status">PKL</div>
 
-              <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Developer workspace supporting the WhatsApp AI Assistant project" loading="lazy">
+              <img class="project-image" src="Portfolio/bukti%20ai%20customer%20service%20PQI%20consultant%20%281%29.png" alt="WhatsApp AI Customer Service Assistant project evidence" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2519,7 +2707,7 @@
             <div class="project-media">
               <div class="project-status">Draft / Not Published</div>
 
-              <img class="project-image" src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&q=80&w=1600" alt="Temporary certificate verification project visual" loading="lazy">
+              <img class="project-image" src="Portfolio/Verify-PQI.png" alt="Certificate Verification System project evidence" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2573,7 +2761,7 @@
             <div class="project-media">
               <div class="project-status">Draft / Not Published</div>
 
-              <img class="project-image" src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1600" alt="Temporary certificate form project visual" loading="lazy">
+              <img class="project-image" src="Portfolio/Form-e-certificate.png" alt="Form E Certificate project evidence" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2625,7 +2813,7 @@
             <div class="project-media">
               <div class="project-status">Professional Experience / PKL</div>
 
-              <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Digital design and creative technology workspace" loading="lazy">
+              <img class="project-image" src="Portfolio/ISO.png" alt="ISO training flyer project evidence" loading="lazy">
             </div>
 
             <div class="project-content">
@@ -2686,7 +2874,7 @@
               <div class="project-media">
                 <div class="project-status">Prototype / Development</div>
 
-                <img class="project-image" src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600" alt="Healthly web development supporting visual" loading="lazy">
+                <img class="project-image" src="Portfolio/healthly.png" alt="Healthly project screenshot" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -2749,7 +2937,7 @@
               <div class="project-media">
                 <div class="project-status">In Development</div>
 
-                <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Ranzha web application supporting visual" loading="lazy">
+                <img class="project-image" src="Portfolio/Ranzha-finance.png" alt="Ranzha project screenshot" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -2799,7 +2987,7 @@
               <div class="project-media">
                 <div class="project-status">Personal Project</div>
 
-                <img class="project-image" src="https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&q=80&w=1600" alt="Find the Toy web game supporting visual" loading="lazy">
+                <img class="project-image" src="Portfolio/mini-game.jpg" alt="Find the Toy project screenshot" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -2846,7 +3034,7 @@
               <div class="project-media">
                 <div class="project-status">Personal Project</div>
 
-                <img class="project-image" src="https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&q=80&w=1600" alt="Interactive Birthday Website supporting visual" loading="lazy">
+                <img class="project-image" src="Portfolio/muka.jpg" alt="Interactive Birthday Website supporting visual" loading="lazy">
               </div>
 
               <div class="project-content">
@@ -2904,6 +3092,89 @@
 
       </div>
     </section>
+
+
+
+<section class="section evidence-section" id="evidence">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Proof & Evidence</span>
+      <h2>Real project evidence, organized clearly.</h2>
+      <p>
+        Beberapa bukti visual dari project, PKL, desain, dan aktivitas yang saya kerjakan.
+        Screenshot asli diprioritaskan agar recruiter dapat melihat contoh pekerjaan nyata.
+      </p>
+    </div>
+
+    <div class="evidence-note reveal">
+      <i data-lucide="badge-check"></i>
+      <span>Evidence di bawah ini menggunakan asset yang tersedia. Project PKL dan project mandiri tetap dipisahkan secara jelas dari konteks pengerjaannya.</span>
+    </div>
+
+    <div class="evidence-grid">
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/home-page.jpg" alt="PQI Consultant website evidence" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">PKL • Web</span><h3>PQI Consultant Website</h3><p>Contoh visual pekerjaan website dan web management selama PKL.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/bukti%20ai%20customer%20service%20PQI%20consultant%20%281%29.png" alt="WhatsApp AI Customer Service Assistant evidence" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">PKL • AI</span><h3>WhatsApp AI Assistant</h3><p>Bukti visual konfigurasi dan pengujian AI customer service.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/Verify-PQI.png" alt="Certificate Verification System evidence" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">PKL • Draft</span><h3>Certificate Verification</h3><p>Visual prototype/draft sistem verifikasi sertifikat.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/Form-e-certificate.png" alt="Form E Certificate evidence" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">PKL • Draft</span><h3>Form E Certificate</h3><p>Contoh visual form dan kebutuhan e-certificate.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/Ranzha-finance.png" alt="Ranzha personal finance application" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">Independent • Web</span><h3>Ranzha Finance</h3><p>Project mandiri PHP/MySQL untuk eksplorasi web application.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/healthy.png" alt="Healthly health education platform" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">Independent • Web</span><h3>Healthly</h3><p>Project mandiri static web untuk edukasi kesehatan.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/mini-game.jpg" alt="Find the Toy web game" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">Independent • Game</span><h3>Find the Toy</h3><p>Mini web game mandiri untuk latihan HTML, CSS, dan JavaScript.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/OSIS.png" alt="OSIS activity evidence" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">Leadership</span><h3>OSIS & Event Coordination</h3><p>Bukti visual kegiatan organisasi dan pengalaman koordinasi.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><img src="Portfolio/hari-guru-sertifikat.jpg" alt="Hari Guru design certificate evidence" loading="lazy"></div>
+        <div class="evidence-body"><span class="evidence-label">Achievement</span><h3>Poster Design — Hari Guru</h3><p>Bukti sertifikat/pencapaian lomba desain poster.</p></div>
+      </article>
+
+      <article class="evidence-card reveal">
+        <div class="evidence-media"><video src="Portfolio/oppo-promosi.mp4" muted playsinline controls preload="metadata" aria-label="Video editing promosi OPPO"></video></div>
+        <div class="evidence-body"><span class="evidence-label">Creative • Video</span><h3>Video Editing — OPPO Promotion</h3><p>Bukti karya video editing yang tersedia dalam asset portfolio.</p></div>
+      </article>
+
+    </div>
+
+    <div class="proof-strip">
+      <div class="proof-chip reveal"><i data-lucide="globe-2"></i><span><strong>Web</strong>Website & web application projects</span></div>
+      <div class="proof-chip reveal"><i data-lucide="bot"></i><span><strong>AI</strong>Conversational workflow & testing</span></div>
+      <div class="proof-chip reveal"><i data-lucide="palette"></i><span><strong>Creative</strong>Design, visual & video editing</span></div>
+      <div class="proof-chip reveal"><i data-lucide="users"></i><span><strong>Leadership</strong>OSIS & event coordination</span></div>
+    </div>
+
+  </div>
+</section>
 
 <section class="section alt" id="skills">
       <div class="container">
@@ -2983,6 +3254,7 @@
               <span class="skill-pill">Graphic Design</span>
               <span class="skill-pill">Flyer Design</span>
               <span class="skill-pill">Video Editing</span>
+              <span class="skill-pill">CapCut</span>
               <span class="skill-pill">Basic Animation</span>
             </div>
           </article>
@@ -3039,7 +3311,7 @@
         <div class="achievement-grid">
 
           <article class="achievement reveal">
-            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
+            <div class="achievement-image"><img src="Portfolio/2%20Oktober%202026.png" alt="Achievement evidence" loading="lazy"></div>
             <div class="achievement-icon">
               <i data-lucide="medal"></i>
             </div>
@@ -3050,7 +3322,7 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
+            <div class="achievement-image"><video src="Portfolio/oppo-promosi.mp4" muted playsinline controls preload="metadata" aria-label="Video editing promosi OPPO"></video></div>
             <div class="achievement-icon">
               <i data-lucide="video"></i>
             </div>
@@ -3061,7 +3333,7 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
+            <div class="achievement-image"><img src="Portfolio/hari-guru-sertifikat.jpg" alt="Achievement evidence" loading="lazy"></div>
             <div class="achievement-icon">
               <i data-lucide="palette"></i>
             </div>
@@ -3072,7 +3344,18 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="achievement-image"><img src="https://images.unsplash.com/photo-1568124925946-0054739daaba?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Preview sementara sertifikat pencapaian — ganti dengan sertifikat asli" loading="lazy"></div>
+            <div class="achievement-image"><img src="Portfolio/OSIS.png" alt="OSIS leadership and event coordination evidence" loading="lazy"></div>
+            <div class="achievement-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <div>
+              <strong>OSIS — Leadership & Event Coordination</strong>
+              <span>Ketua Sekbid Seni dan Budaya • PJ 17 Agustus & Class Meeting</span>
+            </div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="achievement-image"><img src="Portfolio/sertifikat-penulis.jpg" alt="Achievement evidence" loading="lazy"></div>
             <div class="achievement-icon">
               <i data-lucide="pen-tool"></i>
             </div>
@@ -3248,6 +3531,17 @@
     document.addEventListener("DOMContentLoaded", () => {
 
       /* =======================================================
+         LOCAL ASSET FALLBACK
+         ======================================================= */
+
+      document.querySelectorAll("img").forEach(img => {
+        img.addEventListener("error", () => {
+          img.style.opacity = "0";
+          img.parentElement?.classList.add("asset-missing");
+        }, { once: true });
+      });
+
+      /* =======================================================
          LUCIDE ICONS
          ======================================================= */
 
@@ -3414,23 +3708,6 @@
       });
 
 
-      /* =======================================================
-         PREVENT EMPTY CV PLACEHOLDER FROM BREAKING UX
-         ======================================================= */
-
-      const cvButton = document.querySelector(".nav-cv");
-
-      if (cvButton) {
-        cvButton.addEventListener("click", event => {
-          const confirmed = window.confirm(
-            "Link CV PDF belum dipasang. Ganti href tombol ini dengan URL PDF CV kamu."
-          );
-
-          if (!confirmed) {
-            event.preventDefault();
-          }
-        });
-      }
 
     });
   </script>
